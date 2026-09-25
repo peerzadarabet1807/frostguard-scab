@@ -11,6 +11,9 @@ authors = [{ name = "peerzadarabet1807" }]
 pythonpath = ["."]
 testpaths = ["tests"]
 addopts = "-ra"
+markers = [
+    "network: hits the live Open-Meteo API (opt-in via FROSTGUARD_NETWORK_TESTS=1)",
+]
 filterwarnings = [
     "ignore::DeprecationWarning",
 ]
