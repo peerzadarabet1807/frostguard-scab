@@ -1,0 +1,42 @@
+# --- Python ---------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Notebooks ------------------------------------------------------------
+.ipynb_checkpoints/
+
+# --- Models ---------------------------------------------------------------
+# Trained weights come from Google Colab and are too large for git.
+# The tiny fallback graph IS versioned so the stack runs out-of-the-box.
+*.onnx
+!models/fallback/
+!models/fallback/*.onnx
+*.pt
+*.pth
+
+# --- Raw datasets & training artefacts ------------------------------------
+datasets/
+data/raw/
+data/datasets/
+runs/
+Apple-Scab*/
+*.zip
+
+# --- Caches ---------------------------------------------------------------
+.cache/
+*.sqlite
+
+# --- Environment / IDE / OS -----------------------------------------------
+.env
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,16 @@
+[project]
+name = "frostguard-scab"
+version = "0.1.0"
+description = "Physics-informed apple scab & frost early-warning system for Kashmir orchards (Revised Mills + ONNX vision)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "peerzadarabet1807" }]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
