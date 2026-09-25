@@ -16,4 +16,7 @@ markers = [
 ]
 filterwarnings = [
     "ignore::DeprecationWarning",
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+    # demo/charts.py shares one hover selection across panels on purpose.
+    "ignore:Automatically deduplicated selection parameter",
 ]
