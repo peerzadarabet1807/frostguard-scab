@@ -33,6 +33,8 @@ from demo.charts import DARK, LIGHT, Palette, draw_detections, risk_chart  # noq
 from src.engine.weather_fetcher import KASHMIR_ORCHARD_ZONES, MOCK_SCENARIOS, load_weather_csv  # noqa: E402
 
 API_URL = os.getenv("FROSTGUARD_API_URL", "http://localhost:8000").rstrip("/")
+# Browser-facing URL for links (inside Docker the API is `http://api:8000`, unreachable from the browser).
+PUBLIC_API_URL = os.getenv("FROSTGUARD_PUBLIC_API_URL", API_URL).rstrip("/")
 DATA_DIR = PROJECT_ROOT / "data"
 REPLAY_CSV = DATA_DIR / "shopian_spring_2024_hourly.csv"
 HORIZON_HOURS = 48
@@ -268,7 +270,7 @@ with st.sidebar:
     st.caption(f"**Backend:** {backend.label}")
     backend_kind = "trained YOLO11n" if health["vision_backend"] == "trained" else "fallback heuristic"
     st.caption(f"**Vision model:** `{health['model']}` ({backend_kind})")
-    st.caption(f"[API docs]({API_URL}/docs)" if backend.remote else "Start `uvicorn src.api.app:app` for the REST API")
+    st.caption(f"[API docs]({PUBLIC_API_URL}/docs)" if backend.remote else "Start `uvicorn src.api.app:app` for the REST API")
 
 st.title("Orchard scab & frost risk")
 st.caption("Revised Mills infection periods from hourly leaf wetness and temperature, plus lesion confirmation from leaf photos.")

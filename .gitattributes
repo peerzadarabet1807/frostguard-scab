@@ -1,0 +1,8 @@
+# Normalise text to LF in the repo (containers and CI run on Linux).
+* text=auto eol=lf
+
+*.onnx binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.pt   binary
