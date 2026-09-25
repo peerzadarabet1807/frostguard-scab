@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------------------
+# FrostGuard-Scab — slim runtime for the Docker images (API + dashboard).
+# No PyTorch / Ultralytics / Jupyter: training happens on Google Colab and the
+# service only needs ONNX Runtime. See requirements.txt for the full dev stack.
+# ---------------------------------------------------------------------------
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+httpx>=0.27
+streamlit>=1.35
+matplotlib>=3.8
+pillow>=10.0
+openmeteo-requests>=1.2
+requests-cache>=1.2
+retry-requests>=2.0
+pandas>=2.1
+numpy>=1.26
+onnx>=1.16
+onnxruntime>=1.17

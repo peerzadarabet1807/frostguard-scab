@@ -21,6 +21,7 @@ def client(tmp_path_factory: pytest.TempPathFactory) -> Iterator[TestClient]:
     mp = pytest.MonkeyPatch()
     mp.setenv("FROSTGUARD_MODEL_PATH", str(tmp_path_factory.mktemp("m") / "absent.onnx"))
     mp.setenv("FROSTGUARD_CACHE_DIR", str(tmp_path_factory.mktemp("cache")))
+    mp.setenv("FROSTGUARD_OFFLINE", "0")  # network paths are stubbed per test instead
     with TestClient(app) as test_client:
         yield test_client
     mp.undo()
