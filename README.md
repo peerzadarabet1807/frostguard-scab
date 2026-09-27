@@ -17,7 +17,7 @@ Revised Mills infection periods on live Open-Meteo weather, plus a YOLO11n lesio
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](web/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-training%20on%20Colab-EE4C2C?logo=pytorch&logoColor=white)](notebooks/train_yolo_colab.ipynb)
 [![Docker](https://img.shields.io/badge/Docker-compose-2496ED?logo=docker&logoColor=white)](docker-compose.yml)
-[![Hugging Face](https://img.shields.io/badge/API-Hugging%20Face%20Spaces-FFD21E?logo=huggingface&logoColor=black)](#deployment)
+[![Render](https://img.shields.io/badge/API-Render-46E3B7?logo=render&logoColor=black)](#deployment)
 
 <a href="https://colab.research.google.com/github/peerzadarabet1807/frostguard-scab/blob/main/notebooks/train_yolo_colab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
@@ -80,7 +80,7 @@ flags **six Mills infection periods** between 1 April and 15 May.
 | 🎓 | **Google Colab** notebook: Roboflow dataset → YOLO11n fine-tune on a T4 → ONNX; the executed run is committed | [`notebooks/`](notebooks/) · [`runs/`](runs/scab_yolo11n) |
 | 🔌 | **FastAPI** backend: risk, lesion detection, model card, replay datasets | [`src/api/app.py`](src/api/app.py) |
 | ⚛️ | **React + TypeScript** web app: clickable zone map, synchronised 48 h small multiples, alerts, table view, leaf scan with box overlays, light/dark, mobile | [`web/`](web/) |
-| 🚀 | **Deployed**: web app on **GitHub Pages**, API + model on a **Hugging Face Space**, model weights on a **GitHub release** | [`.github/workflows/`](.github/workflows/) |
+| 🚀 | **Deployed**: web app on **GitHub Pages**, API + model on **Render** (free Docker web service), model weights on a **GitHub release** | [`render.yaml`](render.yaml) · [`.github/workflows/`](.github/workflows/) |
 | 🐳 | **Docker Compose**: API (`:8000`) + nginx-served web app (`:8080`) | [`docker-compose.yml`](docker-compose.yml) |
 
 ## Trained model results
@@ -170,11 +170,11 @@ Every threshold is a field of [`EngineConfig`](src/engine/mills_physics.py) and 
  └────────────────────────────────────────────────────┘        │  (SHA-256 pinned)      │
                                                                 └───────────┬────────────┘
                                                                             │ downloaded at image build
- ┌────────── GitHub Pages ───────────┐   HTTPS / JSON   ┌──────────────────▼──────── Hugging Face Space ──┐
+ ┌────────── GitHub Pages ───────────┐   HTTPS / JSON   ┌──────────────────▼─── Render (free Docker web) ──┐
  │ web/  React 19 + TypeScript       │ ───────────────▶ │ Dockerfile: FastAPI + ONNX Runtime (CPU)        │
  │  zone map · 48 h charts · alerts  │                  │  /api/v1/predict-risk ─▶ engine/mills_physics   │
  │  leaf upload + box overlay        │ ◀─────────────── │  /api/v1/detect-lesion ─▶ vision/detector       │
- │  (VITE_API_URL → Space URL)       │                  │  /api/v1/model · /datasets · /scenarios · /docs │
+ │  (VITE_API_URL → Render URL)      │                  │  /api/v1/model · /datasets · /scenarios · /docs │
  └───────────────────────────────────┘                  └───────────────────┬─────────────────────────────┘
                                                                             │ hourly forecast / ERA5
                                                                      Open-Meteo API
@@ -225,20 +225,28 @@ air-gapped on simulated weather.
 | Piece | Where | How it gets there |
 |---|---|---|
 | Web app | GitHub Pages: **https://peerzadarabet1807.github.io/frostguard-scab/** | [`pages.yml`](.github/workflows/pages.yml) builds `web/` with `VITE_API_URL` = the repository variable `FROSTGUARD_API_URL` on every push to `web/**` |
-| API + model | Hugging Face Space (Docker, free CPU) | `python scripts/deploy_hf_space.py`, or [`deploy-space.yml`](.github/workflows/deploy-space.yml) on backend changes once an `HF_TOKEN` secret exists |
-| Model weights | GitHub release [`model-v1`](https://github.com/peerzadarabet1807/frostguard-scab/releases/tag/model-v1) | `gh release create` with the ONNX file, `best.pt` and `model_card.json` |
+| API + model | Render free web service (Docker, Singapore): **https://frostguard-scab-api.onrender.com** ([docs](https://frostguard-scab-api.onrender.com/docs)) | [`render.yaml`](render.yaml) Blueprint; Render redeploys on pushes to `main` once CI passes |
+| Model weights | GitHub release [`model-v1`](https://github.com/peerzadarabet1807/frostguard-scab/releases/tag/model-v1) | Downloaded and SHA-256-verified while the API image builds |
 
-**First-time setup** (after `hf auth login` with a *write* token):
+**Deploy your own copy of the API:**
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/peerzadarabet1807/frostguard-scab)
+
+Then point the web app at it and publish:
 
 ```bash
-python scripts/deploy_hf_space.py                        # creates <hf-user>/frostguard-scab, prints its URL
-gh variable set FROSTGUARD_API_URL --body https://<hf-user>-frostguard-scab.hf.space
-gh workflow run pages.yml                                # publish the web app
+gh variable set FROSTGUARD_API_URL --body https://<your-service>.onrender.com
+gh workflow run pages.yml
 ```
 
-Free Spaces sleep after 48 h without traffic. The web app then shows a "waking up the backend" state and
-retries until the Space is back (about a minute). Anyone can point the web app at their own backend with
-`?api=https://your-host` or through the status pill in the header.
+**Free-tier behaviour.** The service has 512 MB of RAM and 0.1 CPU, and it sleeps after 15 minutes without
+traffic. The first request after that waits for it to wake (about 30–60 s); the web app shows a "waking up the
+backend" state and retries meanwhile. Once awake, a leaf scan takes about 1–2 s and a 48 h assessment about 2 s
+(measured under the same limits; see [BENCHMARKS.md](BENCHMARKS.md#hosted-latency)).
+
+Anyone can point the web app at another backend with `?api=https://your-host` or through the status pill in the
+header. A Hugging Face Docker Space also works (`python scripts/deploy_hf_space.py`), but since 2026 it requires
+a Hugging Face PRO account.
 
 ## Retrain the detector on Google Colab
 
@@ -293,7 +301,7 @@ Measured on an Intel i7-10710U laptop CPU. Full method and tables are in [BENCHM
 ## Testing & CI
 
 ```bash
-pytest -q                           # 174 Python tests (trained-model checks skip until the model is downloaded)
+pytest -q                           # 175 Python tests (trained-model checks skip until the model is downloaded)
 cd web && npm test                  # 19 web tests (Vitest + Testing Library)
 cd web && npm run lint && npm run typecheck
 ```
@@ -310,7 +318,8 @@ cd web && npm run lint && npm run typecheck
 |---|---|---|
 | `FROSTGUARD_MODEL_PATH` | `models/scab_detector.onnx` | Detector to load (falls back to the heuristic graph if missing) |
 | `FROSTGUARD_OFFLINE` | `0` | `1` = never call Open-Meteo; simulated weather |
-| `FROSTGUARD_CORS_ORIGINS` | `*` | Comma-separated allowed origins (the Space allows GitHub Pages + localhost) |
+| `FROSTGUARD_CORS_ORIGINS` | `*` | Comma-separated allowed origins ([`render.yaml`](render.yaml) allows GitHub Pages + localhost) |
+| `FROSTGUARD_ORT_THREADS` | auto | Pin ONNX Runtime threads and disable spin-waiting; `1` makes detection ~5× faster on fractional-CPU hosts |
 | `FROSTGUARD_CACHE_DIR` | `.cache` | Open-Meteo HTTP cache |
 | `FROSTGUARD_MAX_UPLOAD_MB` | `10` | Leaf-photo upload limit |
 | `PORT` / `WEB_CONCURRENCY` | `8000` / `1` | API container port and worker count |
@@ -330,10 +339,11 @@ frostguard-scab/
 ├── runs/scab_yolo11n/    # training curves, metrics, sample predictions (weights live on the release)
 ├── models/               # model_card.json · fallback/ graph (trained .onnx is git-ignored, see release)
 ├── data/                 # Shopian ERA5 spring 2024 · mock scenarios · samples/ (held-out leaves)
-├── scripts/              # download_model · build_model_card · deploy_hf_space · benchmark · build_sample_data
+├── scripts/              # download_model · build_model_card · benchmark · build_sample_data · deploy_hf_space (alt.)
 ├── tests/                # pytest suites (engine, weather, vision, API, trained model)
-├── .github/workflows/    # ci · pages · deploy-space
-├── Dockerfile            # API image (also used by the Hugging Face Space)
+├── .github/workflows/    # ci · pages
+├── Dockerfile            # API image (also what Render deploys)
+├── render.yaml           # Render Blueprint for the hosted API
 └── docker-compose.yml    # API + web
 ```
 

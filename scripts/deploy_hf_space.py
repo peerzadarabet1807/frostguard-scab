@@ -1,4 +1,7 @@
-"""Deploy the FrostGuard API (FastAPI + trained model) to a Hugging Face Docker Space.
+"""Alternative deployment: the FrostGuard API on a Hugging Face Docker Space.
+
+The primary host is Render (``render.yaml``). Since 2026 Hugging Face requires a PRO
+subscription for Docker Spaces, so use this only with a PRO account.
 
 The Space is built from the repository's own ``Dockerfile``; this script stages only what
 that image needs, writes the Space card, sets the CORS allow-list and uploads everything.
@@ -9,8 +12,7 @@ Usage::
     python scripts/deploy_hf_space.py               # -> <your-hf-user>/frostguard-scab
     python scripts/deploy_hf_space.py --space someone/other-name --no-wait
 
-Environment: ``HF_TOKEN`` overrides the cached login and ``HF_SPACE`` the target Space
-(both used by the GitHub Action).
+Environment: ``HF_TOKEN`` overrides the cached login and ``HF_SPACE`` the target Space.
 """
 
 from __future__ import annotations

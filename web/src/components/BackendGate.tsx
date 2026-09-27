@@ -8,10 +8,10 @@ interface Props {
   onRetry: () => void;
 }
 
-/** Shown until the API answers. Free Hugging Face Spaces sleep when idle and take ~1 min to wake. */
+/** Shown until the API answers. Free-tier hosts (Render, HF Spaces) sleep when idle and take ~1 min to wake. */
 export function BackendGate({ status, apiUrl, attempt, maxAttempts, onRetry }: Props) {
   if (status === "online") return null;
-  const isHosted = apiUrl.includes(".hf.space");
+  const isHosted = /\.onrender\.com|\.hf\.space/.test(apiUrl);
 
   if (status === "offline") {
     return (
@@ -38,7 +38,7 @@ export function BackendGate({ status, apiUrl, attempt, maxAttempts, onRetry }: P
         <h2>{status === "connecting" ? "Connecting to the backend…" : "Waking up the backend…"}</h2>
         <p>
           {isHosted
-            ? "The model runs on a free Hugging Face Space, which sleeps when idle. The first visit after a quiet spell takes up to a minute."
+            ? "The model runs on a free-tier server that sleeps after 15 minutes without visitors. Waking it takes up to a minute."
             : `Waiting for the API at ${apiUrl}.`}
         </p>
         {status === "waking" && (
