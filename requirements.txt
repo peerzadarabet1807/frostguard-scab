@@ -1,17 +1,13 @@
 # ---------------------------------------------------------------------------
-# FrostGuard-Scab — full development environment
-# (Docker images use the slimmer requirements-runtime.txt)
+# FrostGuard-Scab — full Python development environment
+# (Docker images use the slimmer requirements-runtime.txt; the React UI lives in web/)
 # ---------------------------------------------------------------------------
 
 # --- REST API --------------------------------------------------------------
 fastapi>=0.110
 uvicorn[standard]>=0.29
 python-multipart>=0.0.9      # multipart/form-data uploads in FastAPI
-httpx>=0.27                  # FastAPI TestClient + Streamlit -> API calls
-
-# --- Dashboard -------------------------------------------------------------
-streamlit>=1.35
-matplotlib>=3.8
+httpx>=0.27                  # FastAPI TestClient
 pillow>=10.0
 
 # --- Weather ingestion -----------------------------------------------------
@@ -22,14 +18,19 @@ retry-requests>=2.0
 # --- Data & ML runtime -----------------------------------------------------
 pandas>=2.1
 numpy>=1.26
+pyyaml>=6.0                  # scripts/build_model_card.py
 onnx>=1.16                   # builds the offline fallback detector graph
 onnxruntime>=1.17
-lightgbm>=4.3
+lightgbm>=4.3                # planned leaf-wetness calibration (see README roadmap)
 
-# --- Training tooling (heavy lifting happens on Google Colab) -------------
+# --- Training & analysis tooling (heavy lifting happens on Google Colab) ---
 ultralytics>=8.3
 roboflow>=1.1
+matplotlib>=3.8
 jupyter>=1.0
+
+# --- Deployment ------------------------------------------------------------
+huggingface_hub>=0.34        # scripts/deploy_hf_space.py
 
 # --- Testing ---------------------------------------------------------------
 pytest>=8.0
