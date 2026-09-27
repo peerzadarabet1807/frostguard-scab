@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ApiClient } from "./api";
-import type { Health, ModelInfo, ReplayDataset, RiskRequest, RiskResponse, Scenario, Zone } from "../types";
+import { istHourFloor } from "./format";
+import { fetchForecast } from "./openmeteo";
+import type { Health, ModelInfo, ReplayDataset, RiskRequest, RiskResponse, Scenario, WeatherRecord, Zone } from "../types";
 
 export type BackendStatus = "connecting" | "waking" | "online" | "offline";
 
@@ -76,6 +78,47 @@ export function useMeta(client: ApiClient, enabled: boolean) {
     };
   }, [client, enabled]);
   return { meta, error };
+}
+
+const LIVE_REFRESH_MS = 15 * 60_000;
+
+interface LiveState {
+  key: string;
+  records: WeatherRecord[] | null;
+  asOf: string | null;
+  error: string | null;
+}
+
+/** Hourly forecast for a zone, fetched by the browser from Open-Meteo and refreshed every 15 min. */
+export function useLiveWeather(zone: Zone | undefined, enabled: boolean) {
+  const [tick, setTick] = useState(0);
+  const [state, setState] = useState<LiveState | null>(null);
+  const key = enabled && zone ? `${zone.key}#${tick}` : null;
+
+  useEffect(() => {
+    if (!enabled) return;
+    const id = setInterval(() => setTick((t) => t + 1), LIVE_REFRESH_MS);
+    return () => clearInterval(id);
+  }, [enabled]);
+
+  useEffect(() => {
+    if (!key || !zone) return;
+    const controller = new AbortController();
+    fetchForecast(zone.latitude, zone.longitude, controller.signal)
+      .then((records) => setState({ key, records, asOf: istHourFloor(), error: null }))
+      .catch((err: Error) => {
+        if (!controller.signal.aborted) setState({ key, records: null, asOf: null, error: err.message });
+      });
+    return () => controller.abort();
+  }, [key, zone]);
+
+  const current = state?.key === key ? state : null;
+  return {
+    records: current?.records ?? null,
+    asOf: current?.asOf ?? null,
+    error: current?.error ?? null,
+    loading: key !== null && current === null,
+  };
 }
 
 /** Fetch a risk assessment whenever the request changes, keeping the last result while reloading. */

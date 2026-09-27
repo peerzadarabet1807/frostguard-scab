@@ -9,9 +9,9 @@ import { ModelPanel } from "./components/ModelPanel";
 import { RiskSummary } from "./components/RiskSummary";
 import { API_URL_STORAGE_KEY, ApiClient, resolveApiUrl, safeStorage } from "./lib/api";
 import { istIso } from "./lib/format";
-import { useBackend, useMeta, useRisk } from "./lib/hooks";
+import { useBackend, useLiveWeather, useMeta, useRisk } from "./lib/hooks";
 import { PALETTES, useTheme } from "./lib/theme";
-import type { RiskRequest } from "./types";
+import type { RiskRequest, WeatherRecord } from "./types";
 
 // Recharts is the largest dependency; split it out of the first paint.
 const RiskCharts = lazy(() => import("./components/RiskCharts").then((m) => ({ default: m.RiskCharts })));
@@ -26,8 +26,22 @@ const INITIAL: ControlState = {
   budBreak: "auto",
 };
 
-function buildRequest(state: ControlState): RiskRequest {
+interface LiveWeather {
+  records: WeatherRecord[] | null;
+  asOf: string | null;
+  loading: boolean;
+}
+
+function buildRequest(state: ControlState, live: LiveWeather): RiskRequest | null {
   const req: RiskRequest = { zone: state.zone, horizon_hours: 48 };
+  if (state.source === "live") {
+    if (live.loading) return null; // wait for the browser's Open-Meteo fetch
+    if (live.records && live.asOf) {
+      req.weather = live.records;
+      req.as_of = live.asOf;
+    }
+    // Otherwise the API fetches the forecast itself (and falls back to simulated weather).
+  }
   if (state.budBreak !== "auto") req.bud_break = state.budBreak === "yes";
   if (state.source === "scenario") {
     req.use_mock = true;
@@ -54,9 +68,15 @@ export default function App() {
   const [controls, setControls] = useState<ControlState>(INITIAL);
   const dataset = meta?.datasets[0];
 
-  const request = useMemo(() => (online && meta ? buildRequest(controls) : null), [online, meta, controls]);
-  const risk = useRisk(client, request);
   const zone = meta?.zones.find((z) => z.key === (controls.source === "replay" ? dataset?.zone : controls.zone));
+  const live = useLiveWeather(zone, online && controls.source === "live");
+  const { records: liveRecords, asOf: liveAsOf, loading: liveLoading } = live;
+  const request = useMemo(
+    () => (online && meta ? buildRequest(controls, { records: liveRecords, asOf: liveAsOf, loading: liveLoading }) : null),
+    [online, meta, controls, liveRecords, liveAsOf, liveLoading],
+  );
+  const risk = useRisk(client, request);
+  const liveViaBrowser = controls.source === "live" && liveRecords !== null;
 
   const onApiUrlChange = (url: string | null) => {
     const storage = safeStorage();
@@ -124,7 +144,13 @@ export default function App() {
                 )}
                 {risk.data ? (
                   <>
-                    <RiskSummary risk={risk.data} zone={zone} loading={risk.loading} />
+                    <RiskSummary
+                      risk={risk.data}
+                      zone={zone}
+                      loading={risk.loading}
+                      liveViaBrowser={liveViaBrowser}
+                      liveError={controls.source === "live" ? live.error : null}
+                    />
                     <section className={`card ${risk.loading ? "is-stale" : ""}`}>
                       <Suspense fallback={<div className="charts-placeholder" aria-hidden="true" />}>
                         <RiskCharts timeline={risk.data.timeline} palette={palette} />

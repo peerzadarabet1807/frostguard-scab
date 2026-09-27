@@ -93,7 +93,16 @@ export interface RiskResponse {
   warnings: string[];
 }
 
+export interface WeatherRecord {
+  time: string;
+  temperature_2m: number;
+  relative_humidity_2m: number | null;
+  precipitation: number | null;
+  dew_point_2m: number | null;
+}
+
 export interface RiskRequest {
+  weather?: WeatherRecord[];
   zone?: string;
   latitude?: number;
   longitude?: number;
