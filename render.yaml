@@ -1,0 +1,22 @@
+# Render Blueprint: FrostGuard-Scab API (FastAPI + ONNX Runtime + trained YOLO11n) on the free plan.
+# One-click deploy: https://render.com/deploy?repo=https://github.com/peerzadarabet1807/frostguard-scab
+# The image downloads and SHA-256-verifies the model-v1 release at build time (see Dockerfile).
+services:
+  - type: web
+    name: frostguard-scab-api
+    runtime: docker
+    plan: free
+    region: singapore # closest Render region to Kashmir
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass # redeploy on pushes to main once CI is green
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: WEB_CONCURRENCY
+        value: "1" # 512 MB / 0.1 CPU: one worker
+      - key: FROSTGUARD_ORT_THREADS
+        value: "1" # no ONNX Runtime thread spinning on a fractional CPU (~5x faster there)
+      - key: FROSTGUARD_CORS_ORIGINS
+        value: https://peerzadarabet1807.github.io,http://localhost:5173,http://localhost:4173,http://localhost:8080

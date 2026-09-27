@@ -137,6 +137,15 @@ class TestInference:
         assert det.backend == "trained"
         assert det.class_names == {0: "apple_scab"}  # read from ONNX metadata
 
+    def test_thread_pinning_from_env(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        # Fractional-CPU hosts (e.g. Render free) run one non-spinning ORT thread.
+        monkeypatch.setenv("FROSTGUARD_ORT_THREADS", "1")
+        det = ScabVisionDetector(model_path=MISSING_MODEL)
+        opts = det.session.get_session_options()
+        assert opts.intra_op_num_threads == 1
+        assert opts.get_session_config_entry("session.intra_op.allow_spinning") == "0"
+        assert det.detect(render_healthy_leaf()).lesion_count == 0
+
     def test_env_var_selects_model(self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
         trained = tmp_path / "custom.onnx"
         shutil.copy(ensure_fallback_model(), trained)

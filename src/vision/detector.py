@@ -200,8 +200,13 @@ class ScabVisionDetector:
         options = ort.SessionOptions()
         options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
         options.log_severity_level = 3
-        if intra_op_threads:
-            options.intra_op_num_threads = intra_op_threads
+        threads = intra_op_threads or int(os.getenv("FROSTGUARD_ORT_THREADS", "0") or 0)
+        if threads:
+            # Pinned thread count (e.g. 1 on fractional-CPU hosts): also stop idle worker threads
+            # from busy-waiting, which otherwise burns a small CPU quota without doing work.
+            options.intra_op_num_threads = threads
+            options.inter_op_num_threads = 1
+            options.add_session_config_entry("session.intra_op.allow_spinning", "0")
         providers = providers or ["CPUExecutionProvider"]
 
         self.backend: Backend

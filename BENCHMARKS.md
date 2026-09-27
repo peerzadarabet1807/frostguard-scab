@@ -75,9 +75,18 @@ JPEG decode plus letterboxing (~20 ms) dominates the 5 ms network.
 
 ### Hosted latency
 
-The Hugging Face Space runs on a free 2-vCPU container, so expect detection latency in the same range as the
-single-threaded rows (~120 ms). After 48 h without traffic the Space sleeps, and the first request then waits
-for it to boot (about a minute). The web app shows a "waking up" state while that happens.
+The hosted API runs on Render's free plan: **512 MB RAM and 0.1 CPU**. These numbers come from the production
+image under the same limits (`docker run --memory 512m --cpus 0.1`):
+
+| Setting | Cold start | Leaf detection (3 runs) | Peak memory |
+|---|---:|---|---:|
+| ONNX Runtime default threads | 57 s | 8.8 · 8.4 · 6.7 s | 207 MB |
+| `FROSTGUARD_ORT_THREADS=1` (used in [`render.yaml`](render.yaml)) | **29 s** | **3.6 · 1.7 · 1.2 s** | 194 MB |
+
+On a tenth of a core, ONNX Runtime's default worker threads spend the CPU quota busy-waiting.
+One pinned thread with spinning disabled is about 5× faster. A 48 h risk assessment takes about 2.5 s at this
+CPU share. The free service sleeps after 15 minutes idle; the web app shows a "waking up" state until the
+first request succeeds.
 
 ## Reaching < 15 ms
 

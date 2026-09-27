@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 # FrostGuard-Scab API: FastAPI + ONNX Runtime + the trained YOLO11n detector.
-# Used by docker-compose (port 8000) and by the Hugging Face Space (same image).
+# Used by docker-compose (port 8000) and deployed to Render (render.yaml); same image.
 
 FROM python:3.11-slim
 
@@ -32,7 +32,7 @@ COPY scripts/download_model.py scripts/
 RUN python scripts/download_model.py \
     || echo "WARNING: trained model unavailable - the API will serve the fallback detector"
 
-# uid 1000 matches the user Hugging Face Spaces run containers as.
+# Non-root user (uid 1000, also the Hugging Face Spaces convention).
 RUN useradd --create-home --uid 1000 frostguard \
     && mkdir -p /tmp/frostguard-cache \
     && chmod 1777 /tmp/frostguard-cache
