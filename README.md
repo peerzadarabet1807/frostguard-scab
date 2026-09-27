@@ -19,6 +19,9 @@ Revised Mills infection periods on live Open-Meteo weather, plus a YOLO11n lesio
 [![Docker](https://img.shields.io/badge/Docker-compose-2496ED?logo=docker&logoColor=white)](docker-compose.yml)
 [![Render](https://img.shields.io/badge/API-Render-46E3B7?logo=render&logoColor=black)](#deployment)
 
+**[Open the live app](https://peerzadarabet1807.github.io/frostguard-scab/)** · [API docs](https://frostguard-scab-api.onrender.com/docs) · [Model release](https://github.com/peerzadarabet1807/frostguard-scab/releases/tag/model-v1)<br>
+<sub>The free backend sleeps when idle; the first visit may take up to a minute to wake it.</sub>
+
 <a href="https://colab.research.google.com/github/peerzadarabet1807/frostguard-scab/blob/main/notebooks/train_yolo_colab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 <picture>
