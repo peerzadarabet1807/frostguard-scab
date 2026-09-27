@@ -69,7 +69,41 @@ def test_zones(client: TestClient) -> None:
 
 def test_openapi_lists_endpoints(client: TestClient) -> None:
     paths = client.get("/openapi.json").json()["paths"]
-    assert {"/health", "/api/v1/predict-risk", "/api/v1/detect-lesion"} <= paths.keys()
+    assert {
+        "/health",
+        "/api/v1/predict-risk",
+        "/api/v1/detect-lesion",
+        "/api/v1/model",
+        "/api/v1/scenarios",
+        "/api/v1/datasets",
+    } <= paths.keys()
+
+
+def test_root_redirects_to_docs(client: TestClient) -> None:
+    res = client.get("/", follow_redirects=False)
+    assert res.status_code == 307 and res.headers["location"] == "/docs"
+
+
+def test_model_info_for_fallback(client: TestClient) -> None:
+    body = client.get("/api/v1/model").json()
+    assert body["backend"] == "fallback"
+    assert body["classes"] == ["apple_scab"]
+    assert body["input_size"] == 640
+    assert body["card"] is None  # the card describes the trained model only
+
+
+def test_scenarios(client: TestClient) -> None:
+    body = client.get("/api/v1/scenarios").json()
+    assert {s["key"] for s in body} == {"scab_outbreak", "frost", "dry", "spring_mixed"}
+    assert all(s["description"] for s in body)
+
+
+def test_datasets(client: TestClient) -> None:
+    (ds,) = client.get("/api/v1/datasets").json()
+    assert ds["key"] == "shopian_spring_2024" and ds["zone"] == "shopian"
+    assert pd.Timestamp(ds["start"]) == pd.Timestamp("2024-04-02T00:00:00+05:30")
+    # Last hour is 15 May 23:00, so a full 48 h horizon must start by 14 May 00:00.
+    assert pd.Timestamp(ds["end"]) == pd.Timestamp("2024-05-14T00:00:00+05:30")
 
 
 # ---------------------------------------------------------------------------
@@ -142,10 +176,28 @@ class TestPredictRisk:
         assert body["warnings"] == []
         assert pd.Timestamp(body["timeline"][0]["time"]) == now
 
+    def test_replay_real_era5_window(self, client: TestClient) -> None:
+        body = client.post(
+            "/api/v1/predict-risk", json={"replay": "shopian_spring_2024", "as_of": "2024-04-26T06:00:00+05:30"}
+        ).json()
+        assert body["weather_source"] == "replay"
+        assert body["location"]["name"] == "Shopian"
+        assert len(body["timeline"]) == 48
+        assert body["risk_level"] == "CRITICAL"
+        assert body["fungicide"]["action"] == "protectant"
+        assert body["fungicide"]["window_hours"] == pytest.approx(19.0)
+
+    def test_replay_outside_range_is_422(self, client: TestClient) -> None:
+        res = client.post("/api/v1/predict-risk", json={"replay": "shopian_spring_2024", "as_of": "2025-01-01T00:00:00"})
+        assert res.status_code == 422
+        assert "outside the replay range" in res.json()["detail"]
+
     @pytest.mark.parametrize(
         "payload",
         [
             {},
+            {"replay": "shopian_spring_2024"},
+            {"replay": "narnia_2099", "as_of": "2024-04-26T06:00:00"},
             {"latitude": 33.7},
             {"zone": "srinagar-downtown"},
             {"latitude": 123.0, "longitude": 74.8},
