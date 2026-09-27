@@ -244,6 +244,12 @@ traffic. The first request after that waits for it to wake (about 30–60 s); th
 backend" state and retries meanwhile. Once awake, a leaf scan takes about 1–2 s and a 48 h assessment about 2 s
 (measured under the same limits; see [BENCHMARKS.md](BENCHMARKS.md#hosted-latency)).
 
+**Live forecasts are fetched by the visitor's browser.** Open-Meteo's free API rate-limits per IP address, and
+free hosts share outbound IPs between many apps, so the web app downloads the forecast itself and sends the
+hourly records to the API for scoring. The Mills model still runs server-side. API clients that request a
+`zone` directly get the server-side fetch, which falls back to simulated weather (with a warning) if that
+shared limit is hit.
+
 Anyone can point the web app at another backend with `?api=https://your-host` or through the status pill in the
 header. A Hugging Face Docker Space also works (`python scripts/deploy_hf_space.py`), but since 2026 it requires
 a Hugging Face PRO account.

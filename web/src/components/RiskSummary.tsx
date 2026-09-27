@@ -20,9 +20,14 @@ interface Props {
   risk: RiskResponse;
   zone: Zone | undefined;
   loading: boolean;
+  /** The browser fetched the forecast from Open-Meteo and the API scored it. */
+  liveViaBrowser?: boolean;
+  /** Why the browser couldn't fetch the forecast (the API fetched it instead). */
+  liveError?: string | null;
 }
 
-export function RiskSummary({ risk, zone, loading }: Props) {
+export function RiskSummary({ risk, zone, loading, liveViaBrowser = false, liveError = null }: Props) {
+  const source = liveViaBrowser ? "Open-Meteo live forecast" : SOURCE_LABEL[risk.weather_source];
   const level = LEVEL_META[risk.risk_level];
   const blurb =
     risk.risk_level !== "CRITICAL"
@@ -39,7 +44,7 @@ export function RiskSummary({ risk, zone, loading }: Props) {
       <div className="summary-head">
         <div>
           <p className="eyebrow">
-            {zone?.name ?? risk.location.name ?? "Custom location"} · {SOURCE_LABEL[risk.weather_source]}
+            {zone?.name ?? risk.location.name ?? "Custom location"} · {source}
           </p>
           <h1>Next {risk.horizon_hours} hours</h1>
           <p className="meta-line">Decision time {formatFull(risk.as_of)} IST</p>
@@ -96,6 +101,7 @@ export function RiskSummary({ risk, zone, loading }: Props) {
       </div>
 
       <p className="advice">{risk.fungicide.message}</p>
+      {liveError && <p className="note">ℹ Couldn't fetch the forecast from this browser ({liveError}); the API fetched it instead.</p>}
       {risk.warnings.map((w) => (
         <p key={w} className="note">
           ℹ {w}

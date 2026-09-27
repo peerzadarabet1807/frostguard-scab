@@ -50,6 +50,13 @@ export function istDate(iso: string): string {
   return parts;
 }
 
+/** Start of the current orchard-local (IST, UTC+05:30) hour as an ISO string. */
+export function istHourFloor(nowMs: number = Date.now()): string {
+  const IST_OFFSET_MS = 5.5 * 3_600_000;
+  const floored = Math.floor((nowMs + IST_OFFSET_MS) / 3_600_000) * 3_600_000 - IST_OFFSET_MS;
+  return new Date(floored).toISOString();
+}
+
 export function istHour(iso: string): number {
   return Number(new Intl.DateTimeFormat("en-GB", { timeZone: ORCHARD_TZ, hour: "2-digit", hour12: false }).format(new Date(iso))) % 24;
 }

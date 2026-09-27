@@ -23,6 +23,17 @@ describe("RiskSummary", () => {
     expect(screen.getByText(/Shopian · ERA5 replay/)).toBeInTheDocument();
   });
 
+  it("labels browser-fetched forecasts as live Open-Meteo data", () => {
+    const risk = riskResponse({ weather_source: "uploaded" });
+    render(<RiskSummary risk={risk} zone={zone} loading={false} liveViaBrowser />);
+    expect(screen.getByText(/Shopian · Open-Meteo live forecast/)).toBeInTheDocument();
+  });
+
+  it("explains when the browser could not fetch the forecast", () => {
+    render(<RiskSummary risk={riskResponse()} zone={zone} loading={false} liveError="blocked" />);
+    expect(screen.getByText(/the API fetched it instead/)).toBeInTheDocument();
+  });
+
   it("marks stale content while reloading", () => {
     const { container } = render(<RiskSummary risk={riskResponse()} zone={zone} loading />);
     expect(container.querySelector(".summary")).toHaveClass("is-stale");
