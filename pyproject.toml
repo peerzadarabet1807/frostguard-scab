@@ -1,6 +1,6 @@
 [project]
 name = "frostguard-scab"
-version = "0.1.0"
+version = "0.2.0"
 description = "Physics-informed apple scab & frost early-warning system for Kashmir orchards (Revised Mills + ONNX vision)."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,6 +17,4 @@ markers = [
 filterwarnings = [
     "ignore::DeprecationWarning",
     "ignore:Using `httpx` with `starlette.testclient` is deprecated",
-    # demo/charts.py shares one hover selection across panels on purpose.
-    "ignore:Automatically deduplicated selection parameter",
 ]
