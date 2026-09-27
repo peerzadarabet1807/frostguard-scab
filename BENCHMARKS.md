@@ -84,7 +84,9 @@ image under the same limits (`docker run --memory 512m --cpus 0.1`):
 | `FROSTGUARD_ORT_THREADS=1` (used in [`render.yaml`](render.yaml)) | **29 s** | **3.6 · 1.7 · 1.2 s** | 194 MB |
 
 On a tenth of a core, ONNX Runtime's default worker threads spend the CPU quota busy-waiting.
-One pinned thread with spinning disabled is about 5× faster. A 48 h risk assessment takes about 2.5 s at this
+One pinned thread with spinning disabled is about 5× faster. On the deployed Render service, the API reports
+**0.55–0.8 s** model inference per leaf once warm (27 Sep 2026); Render's free CPU evidently bursts above the
+0.1 CPU simulated here. A 48 h risk assessment takes about 2.5 s at this
 CPU share. The free service sleeps after 15 minutes idle; the web app shows a "waking up" state until the
 first request succeeds.
 
