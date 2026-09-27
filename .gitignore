@@ -23,10 +23,13 @@ htmlcov/
 *.pth
 
 # --- Raw datasets & training artefacts ------------------------------------
+# runs/ is versioned (curves, metrics, sample predictions); weights live on the
+# model-v1 GitHub release instead (see scripts/download_model.py).
 datasets/
 data/raw/
 data/datasets/
-runs/
+runs/**/weights/
+*.part
 Apple-Scab*/
 *.zip
 
