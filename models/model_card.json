@@ -1,0 +1,53 @@
+{
+  "name": "FrostGuard apple scab detector",
+  "architecture": "YOLO11n (Ultralytics), fine-tuned from COCO-pretrained yolo11n.pt",
+  "task": "object detection",
+  "classes": [
+    "Apple - Scab"
+  ],
+  "input_size": 640,
+  "parameters": 2582347,
+  "gflops": 6.4,
+  "dataset": {
+    "name": "PDD – Apple – Scab (Roboflow Universe, thesis-okplj/pdd-apple-scab v1)",
+    "url": "https://universe.roboflow.com/thesis-okplj/pdd-apple-scab",
+    "license": "CC BY 4.0",
+    "origin": "PlantVillage leaf photographs (lab conditions, single leaf on plain background)",
+    "train_images": 160,
+    "val_images": 40,
+    "val_split": "20 % random hold-out of train (seed 42); the dataset version ships no validation split"
+  },
+  "training": {
+    "epochs": 20,
+    "epochs_completed": 20,
+    "best_epoch": 17,
+    "batch": 16,
+    "optimizer": "auto",
+    "lr0": 0.01,
+    "cos_lr": true,
+    "seed": 42,
+    "hardware": "Google Colab, NVIDIA Tesla T4"
+  },
+  "metrics": {
+    "split": "val",
+    "mAP50": 0.531,
+    "mAP50_95": 0.224,
+    "precision": 0.447,
+    "recall": 0.585
+  },
+  "export": {
+    "format": "ONNX (opset 17, simplified, static 1x3x640x640)",
+    "file": "scab_detector.onnx",
+    "size_bytes": 10604609,
+    "sha256": "33b099a4e530f9a604a533466b8d40583542b20df508f9ec8f01215d96962fe0",
+    "release_tag": "model-v1",
+    "url": "https://github.com/peerzadarabet1807/frostguard-scab/releases/download/model-v1/scab_detector.onnx"
+  },
+  "intended_use": "Decision support: confirming visible scab lesions on single apple-leaf photos.",
+  "limitations": [
+    "Trained on 160 lab photos of single leaves; expect false positives on fruit, field scenes, microscopy or cluttered backgrounds.",
+    "Validation set is small (40 images), so metrics carry wide uncertainty.",
+    "Weights derive from Ultralytics YOLO11 and are distributed under AGPL-3.0."
+  ],
+  "license": "AGPL-3.0 (model weights)"
+}
