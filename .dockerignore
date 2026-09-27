@@ -13,9 +13,12 @@ venv
 notebooks
 tests
 docs
-scripts
 runs
 datasets
 *.pt
-*.md
-!README.md
+*.part
+scripts/*
+!scripts/download_model.py
+web/node_modules
+web/dist
+web/coverage

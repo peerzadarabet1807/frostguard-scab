@@ -6,33 +6,66 @@ on:
   pull_request:
 
 jobs:
-  test:
+  api:
+    name: API tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
           cache-dependency-path: requirements-runtime.txt
-      - name: Install runtime dependencies (no PyTorch needed for tests)
+      - name: Install runtime dependencies (no PyTorch needed)
         run: pip install -r requirements-runtime.txt pytest
+      - name: Download the trained model from the model-v1 release (SHA-256 verified)
+        run: python scripts/download_model.py
       - name: Run tests (network calls are stubbed; live Open-Meteo test is opt-in)
         run: pytest -q
 
+  web:
+    name: Web (lint, typecheck, test, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
   docker:
+    name: Docker images
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Build image
-        run: docker build -t frostguard-scab:ci .
-      - name: Smoke-test API container
+      - uses: actions/checkout@v7
+      - name: Build API image (bakes in the release model)
+        run: docker build -t frostguard-scab-api:ci .
+      - name: Build web image
+        run: docker build -f web/Dockerfile -t frostguard-scab-web:ci .
+      - name: Smoke-test the API container
         run: |
-          docker run -d --name api -p 8000:8000 -e FROSTGUARD_OFFLINE=1 frostguard-scab:ci
+          docker run -d --name api -p 8000:8000 -e FROSTGUARD_OFFLINE=1 frostguard-scab-api:ci
           for i in $(seq 1 30); do curl -fsS http://localhost:8000/health && break; sleep 2; done
+          curl -fsS http://localhost:8000/health | grep -q '"vision_backend":"trained"'
           curl -fsS -X POST http://localhost:8000/api/v1/predict-risk \
-            -H 'Content-Type: application/json' -d '{"zone": "shopian"}' | head -c 400
+            -H 'Content-Type: application/json' -d '{"zone": "shopian"}' | head -c 300
+          curl -fsS -X POST http://localhost:8000/api/v1/detect-lesion \
+            -F "file=@data/samples/scab_leaf_4.jpg;type=image/jpeg" | grep -q '"scab_detected":true'
+      - name: Smoke-test the web container
+        run: |
+          docker run -d --name web -p 8080:8080 frostguard-scab-web:ci
+          for i in $(seq 1 15); do curl -fsS http://localhost:8080/ >/dev/null && break; sleep 1; done
+          curl -fsS http://localhost:8080/ | grep -q '<div id="root">'

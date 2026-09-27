@@ -1,52 +1,33 @@
 name: frostguard-scab
 
-x-app: &app
-  build:
-    context: .
-    dockerfile: Dockerfile
-  image: frostguard-scab:latest
-  restart: unless-stopped
-  environment: &env
-    LOG_LEVEL: INFO
-    # Set to 1 to skip Open-Meteo and use simulated weather (air-gapped demos).
-    FROSTGUARD_OFFLINE: ${FROSTGUARD_OFFLINE:-0}
-
 services:
   api:
-    <<: *app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: frostguard-scab-api:latest
     container_name: frostguard-api
-    command: ["uvicorn", "src.api.app:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+    restart: unless-stopped
     ports:
       - "8000:8000"
     environment:
-      <<: *env
-      FROSTGUARD_MODEL_PATH: /app/models/scab_detector.onnx
-    volumes:
-      # Drop the Colab-trained scab_detector.onnx into ./models - no rebuild needed.
-      - ./models:/app/models:ro
-    healthcheck:
-      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
-      interval: 30s
-      timeout: 5s
-      start_period: 20s
-      retries: 3
+      LOG_LEVEL: INFO
+      WEB_CONCURRENCY: 2
+      # Set to 1 to skip Open-Meteo and use simulated weather (air-gapped demos).
+      FROSTGUARD_OFFLINE: ${FROSTGUARD_OFFLINE:-0}
+      FROSTGUARD_CORS_ORIGINS: http://localhost:8080,http://localhost:5173
 
-  dashboard:
-    <<: *app
-    container_name: frostguard-dashboard
-    command: ["streamlit", "run", "demo/app_streamlit.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8000
+    image: frostguard-scab-web:latest
+    container_name: frostguard-web
+    restart: unless-stopped
     ports:
-      - "8501:8501"
-    environment:
-      <<: *env
-      FROSTGUARD_API_URL: http://api:8000
-      FROSTGUARD_PUBLIC_API_URL: http://localhost:8000
-    healthcheck:
-      test: ["CMD", "curl", "-fsS", "http://localhost:8501/_stcore/health"]
-      interval: 30s
-      timeout: 5s
-      start_period: 20s
-      retries: 3
+      - "8080:8080"
     depends_on:
       api:
         condition: service_healthy
