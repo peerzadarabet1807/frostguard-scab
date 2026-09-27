@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+from src.engine.replay import REPLAY_DATASETS
 from src.engine.weather_fetcher import KASHMIR_ORCHARD_ZONES
 
 MockScenarioName = Literal["scab_outbreak", "frost", "dry", "spring_mixed"]
@@ -26,13 +27,14 @@ class WeatherRecord(BaseModel):
 
 
 class RiskRequest(BaseModel):
-    """Either a location (``zone`` or ``latitude``+``longitude``) or uploaded ``weather``."""
+    """A location (``zone`` or ``latitude``+``longitude``), uploaded ``weather``, or a ``replay`` dataset."""
 
     model_config = ConfigDict(
         json_schema_extra={
             "examples": [
                 {"zone": "shopian", "horizon_hours": 48},
                 {"latitude": 33.716, "longitude": 74.831, "use_mock": True, "mock_scenario": "scab_outbreak"},
+                {"replay": "shopian_spring_2024", "as_of": "2024-04-26T06:00:00+05:30"},
                 {
                     "weather": [
                         {"time": "2024-04-12T00:00:00+05:30", "temperature_2m": 11.2, "relative_humidity_2m": 96, "precipitation": 1.4},
@@ -53,14 +55,22 @@ class RiskRequest(BaseModel):
     bud_break: bool | None = Field(None, description="Force phenology; null infers it from the date")
     use_mock: bool = Field(False, description="Skip Open-Meteo and use simulated weather")
     mock_scenario: MockScenarioName = "spring_mixed"
+    replay: str | None = Field(None, description=f"Replay a historical dataset at `as_of`: one of {sorted(REPLAY_DATASETS)}")
 
     @model_validator(mode="after")
     def _check_source(self) -> RiskRequest:
         if self.zone is not None and self.zone.lower() not in KASHMIR_ORCHARD_ZONES:
             raise ValueError(f"unknown zone {self.zone!r}; choose from {sorted(KASHMIR_ORCHARD_ZONES)}")
+        if self.replay is not None:
+            if self.replay not in REPLAY_DATASETS:
+                raise ValueError(f"unknown replay dataset {self.replay!r}; choose from {sorted(REPLAY_DATASETS)}")
+            if self.as_of is None:
+                raise ValueError("`as_of` is required with `replay`")
+            if self.weather is not None:
+                raise ValueError("`weather` and `replay` are mutually exclusive")
         has_coords = self.latitude is not None and self.longitude is not None
-        if self.weather is None and self.zone is None and not has_coords:
-            raise ValueError("provide `weather` records, a `zone`, or both `latitude` and `longitude`")
+        if self.weather is None and self.replay is None and self.zone is None and not has_coords:
+            raise ValueError("provide `weather` records, a `replay` dataset, a `zone`, or `latitude` and `longitude`")
         if (self.latitude is None) != (self.longitude is None):
             raise ValueError("`latitude` and `longitude` must be given together")
         return self
@@ -117,7 +127,7 @@ class InfectionEvent(BaseModel):
 
 class RiskResponse(BaseModel):
     location: Location
-    weather_source: Literal["open-meteo", "mock", "uploaded"]
+    weather_source: Literal["open-meteo", "mock", "uploaded", "replay"]
     as_of: datetime
     horizon_hours: int
     infection_probability: float = Field(..., ge=0, le=1)
@@ -170,3 +180,30 @@ class HealthResponse(BaseModel):
     vision_backend: Literal["trained", "fallback"]
     model: str
     time: datetime
+
+
+class ScenarioOut(BaseModel):
+    key: str
+    label: str
+    description: str
+
+
+class DatasetOut(BaseModel):
+    key: str
+    zone: str
+    title: str
+    source: str
+    start: datetime = Field(..., description="Earliest `as_of` with a full look-back window")
+    end: datetime = Field(..., description="Latest `as_of` with a full 48 h horizon")
+
+
+class ModelInfo(BaseModel):
+    backend: Literal["trained", "fallback"]
+    model: str
+    classes: list[str]
+    input_size: int
+    exported_by: str | None = Field(None, description="Ultralytics version recorded in the ONNX metadata")
+    exported_at: str | None = None
+    card: dict[str, Any] | None = Field(
+        None, description="models/model_card.json, present only when its SHA-256 matches the loaded model"
+    )

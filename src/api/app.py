@@ -9,6 +9,8 @@ Interactive docs at http://localhost:8000/docs.
 
 from __future__ import annotations
 
+import hashlib
+import json
 import logging
 import os
 from collections.abc import AsyncIterator
@@ -20,20 +22,26 @@ from typing import Annotated, Any
 import pandas as pd
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from PIL import Image, UnidentifiedImageError
 
 from src import __version__
 from src.api.schemas import (
+    DatasetOut,
     DetectionResponse,
     HealthResponse,
+    ModelInfo,
     RiskRequest,
     RiskResponse,
+    ScenarioOut,
     ZoneOut,
 )
 from src.engine.mills_physics import FrostScabPhysicsEngine
+from src.engine.replay import REPLAY_DATASETS, replay_bounds, replay_window
 from src.engine.weather_fetcher import (
     DEFAULT_TIMEZONE,
     KASHMIR_ORCHARD_ZONES,
+    MOCK_SCENARIOS,
     WeatherFetcher,
     WeatherResult,
 )
@@ -42,7 +50,21 @@ from src.vision.detector import ScabVisionDetector
 logger = logging.getLogger("frostguard.api")
 
 MAX_UPLOAD_BYTES = int(os.getenv("FROSTGUARD_MAX_UPLOAD_MB", "10")) * 1024 * 1024
+MODEL_CARD_PATH = Path(__file__).resolve().parents[2] / "models" / "model_card.json"
 Image.MAX_IMAGE_PIXELS = 50_000_000  # guard against decompression bombs
+
+
+def load_model_card(detector: ScabVisionDetector, card_path: Path = MODEL_CARD_PATH) -> dict[str, Any] | None:
+    """The model card, but only if it describes the exact ONNX file that was loaded."""
+    model_file = Path(detector.model_path)
+    if detector.is_fallback or not card_path.is_file() or not model_file.is_file():
+        return None
+    card = json.loads(card_path.read_text(encoding="utf-8"))
+    digest = hashlib.sha256(model_file.read_bytes()).hexdigest()
+    if card.get("export", {}).get("sha256") != digest:
+        logger.warning("model_card.json does not match %s (sha256 %s…); not serving it", model_file.name, digest[:12])
+        return None
+    return card
 
 
 @asynccontextmanager
@@ -54,6 +76,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     app.state.fetcher = WeatherFetcher(cache_dir=os.getenv("FROSTGUARD_CACHE_DIR", ".cache"))
     app.state.detector = ScabVisionDetector()
     app.state.detector.warmup()
+    app.state.model_card = load_model_card(app.state.detector)
     logger.info("FrostGuard API ready (vision backend: %s)", app.state.detector.backend)
     yield
 
@@ -108,10 +131,50 @@ def health(request: Request) -> dict[str, Any]:
     }
 
 
+@app.get("/", include_in_schema=False)
+def root() -> RedirectResponse:
+    return RedirectResponse("/docs")
+
+
+@app.get("/api/v1/model", response_model=ModelInfo, tags=["vision"])
+def model_info(request: Request) -> dict[str, Any]:
+    """Which detector is loaded, its classes, and (for the trained model) its model card."""
+    detector: ScabVisionDetector = request.app.state.detector
+    meta = detector.session.get_modelmeta().custom_metadata_map
+    return {
+        "backend": detector.backend,
+        "model": Path(detector.model_path).name,
+        "classes": [detector.class_names[k] for k in sorted(detector.class_names)],
+        "input_size": detector.input_size,
+        "exported_by": f"Ultralytics {meta['version']}" if "version" in meta else meta.get("producer"),
+        "exported_at": meta.get("date"),
+        "card": request.app.state.model_card,
+    }
+
+
 @app.get("/api/v1/zones", response_model=list[ZoneOut], tags=["risk"])
 def list_zones() -> list[dict[str, Any]]:
     """Kashmir orchard zones known to the service."""
     return [vars(zone) for zone in KASHMIR_ORCHARD_ZONES.values()]
+
+
+@app.get("/api/v1/scenarios", response_model=list[ScenarioOut], tags=["risk"])
+def list_scenarios() -> list[dict[str, Any]]:
+    """Simulated weather regimes available with ``use_mock=true``."""
+    return [
+        {"key": key, "label": key.replace("_", " ").capitalize(), "description": scenario.description}
+        for key, scenario in MOCK_SCENARIOS.items()
+    ]
+
+
+@app.get("/api/v1/datasets", response_model=list[DatasetOut], tags=["risk"])
+def list_datasets() -> list[dict[str, Any]]:
+    """Historical datasets for ``replay``, with the valid ``as_of`` range for a 24 h look-back + 48 h horizon."""
+    out = []
+    for ds in REPLAY_DATASETS.values():
+        start, end = replay_bounds(ds.key, past_hours=24, horizon_hours=48)
+        out.append({"key": ds.key, "zone": ds.zone, "title": ds.title, "source": ds.source, "start": start, "end": end})
+    return out
 
 
 @app.post("/api/v1/predict-risk", response_model=RiskResponse, tags=["risk"])
@@ -122,13 +185,25 @@ def predict_risk(payload: RiskRequest, request: Request) -> dict[str, Any]:
       weather plus `horizon_hours` of forecast from Open-Meteo, falling back to simulated
       weather if the API is unreachable (reported in `warnings`).
     * **Upload mode** (`weather`): scores the supplied hourly records as-is.
+    * **Replay mode** (`replay` + `as_of`): scores a real historical window, e.g. Shopian ERA5
+      weather in spring 2024, as if `as_of` were now.
     """
     engine: FrostScabPhysicsEngine = request.app.state.engine
     fetcher: WeatherFetcher = request.app.state.fetcher
     warnings: list[str] = []
+    if payload.replay is not None and payload.zone is None and payload.latitude is None:
+        payload.zone = REPLAY_DATASETS[payload.replay].zone
     name, lat, lon = _resolve_location(payload)
 
-    if payload.weather is not None:
+    if payload.replay is not None:
+        assert payload.as_of is not None
+        try:
+            window = replay_window(payload.replay, pd.Timestamp(payload.as_of), payload.past_hours, payload.horizon_hours)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc)) from exc
+        weather = WeatherResult(window, "replay")
+        as_of = payload.as_of
+    elif payload.weather is not None:
         weather = WeatherResult(_records_to_frame(payload), "uploaded")
         as_of = payload.as_of
     else:
@@ -196,7 +271,7 @@ def detect_lesion(
     if detector.is_fallback:
         warnings.append(
             "models/scab_detector.onnx not found: using the colour-heuristic fallback detector. "
-            "Train YOLO11n with notebooks/train_yolo_colab.ipynb for field-grade accuracy."
+            "Run scripts/download_model.py to install the trained YOLO11n model."
         )
     body = result.to_dict()
     confidences = [d.confidence for d in result.detections]

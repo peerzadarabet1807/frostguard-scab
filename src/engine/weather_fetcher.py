@@ -54,7 +54,7 @@ KASHMIR_ORCHARD_ZONES: dict[str, OrchardZone] = {
 }
 SHOPIAN = KASHMIR_ORCHARD_ZONES["shopian"]
 
-WeatherSource = Literal["open-meteo", "mock", "uploaded"]
+WeatherSource = Literal["open-meteo", "mock", "uploaded", "replay"]
 
 
 @dataclass(frozen=True)
@@ -135,17 +135,18 @@ class MockScenario:
     mean_rh: float
     rain_windows: tuple[tuple[int, int], ...]  # (start_hour, duration_hours)
     rain_rate_mm: float = 1.2
+    description: str = ""
 
 
 MOCK_SCENARIOS: dict[str, MockScenario] = {
-    # Mild, showery spell: a textbook primary-infection period.
-    "scab_outbreak": MockScenario(13.0, 4.0, 78.0, ((18, 26), (62, 10))),
-    # Clear, cold radiative nights at bud break.
-    "frost": MockScenario(2.5, 7.0, 58.0, ()),
-    # Warm, dry, low-risk anticyclone.
-    "dry": MockScenario(17.0, 8.0, 42.0, ()),
-    # Typical Kashmir April: cool days, one moderate shower.
-    "spring_mixed": MockScenario(10.0, 6.0, 68.0, ((30, 8),)),
+    "scab_outbreak": MockScenario(
+        13.0, 4.0, 78.0, ((18, 26), (62, 10)), description="Mild, showery spell: a textbook primary-infection period."
+    ),
+    "frost": MockScenario(2.5, 7.0, 58.0, (), description="Clear, cold radiative nights at bud break."),
+    "dry": MockScenario(17.0, 8.0, 42.0, (), description="Warm, dry anticyclone with low scab risk."),
+    "spring_mixed": MockScenario(
+        10.0, 6.0, 68.0, ((30, 8),), description="Typical Kashmir April: cool days and one moderate shower."
+    ),
 }
 
 
