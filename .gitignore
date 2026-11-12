@@ -1,5 +1,6 @@
 # --- Python ---------------------------------------------------------------
 .venv/
+.venv-*/
 venv/
 __pycache__/
 *.py[cod]
@@ -19,6 +20,9 @@ htmlcov/
 *.onnx
 !models/fallback/
 !models/fallback/*.onnx
+# The input check's image encoder (16.8 MB, MIT) is versioned so the Docker build needs no extra download.
+!models/gate/
+!models/gate/*.onnx
 *.pt
 *.pth
 
@@ -32,6 +36,9 @@ runs/**/weights/
 *.part
 Apple-Scab*/
 *.zip
+
+# --- Local scratch (input check study, downloaded photos) ---------------
+/.work/
 
 # --- Caches ---------------------------------------------------------------
 .cache/

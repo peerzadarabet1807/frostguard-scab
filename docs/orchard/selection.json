@@ -1,0 +1,613 @@
+{
+ "description": "Photos chosen from the candidates of scripts/build_ood_set.py --discover, after looking at every candidate on its contact sheet. Rule: the category's subject fills a large part of the frame, at most one photo per near-duplicate series, no people as the main subject. Every skipped candidate has a reason code.",
+ "reason_codes": {
+  "dup": "near-duplicate of a chosen photo or of another photo in the same series",
+  "subject": "the category's subject is small, partly hidden or not the main subject",
+  "other": "does not show this category",
+  "art": "drawing, print, painting, render, diagram, scan or composite",
+  "people": "people are the main subject",
+  "animal": "an animal is the main subject",
+  "enough": "a similar photo of this category was already chosen (keeps the categories balanced)",
+  "moved": "chosen for another category instead",
+  "lab": "a plain-background lab-style leaf: covered by the PlantVillage photos"
+ },
+ "categories": {
+  "healthy": {
+   "titles": [
+    "Apple tree foglia in aria.jpg",
+    "First Malus Domestica leaf.jpg",
+    "Apple tree leaf.jpg",
+    "Malus domestica in Aveyron (7).jpg",
+    "Apple tree leaf J1.jpg",
+    "Malus domestica - Apple Leaves - Kullu - 2014-05-09 2200.JPG",
+    "Листья яблони.jpg",
+    "20240602 Apple tree Malus domestica jabłoń domowa Franciscan monastery Katowice Panewniki 35.jpg",
+    "Apple leaves.jpg",
+    "Starr-130809-2923-Malus pumila-Cv Gordon leaves-Kula-Maui (24964102760).jpg",
+    "Starr-150323-0550-Malus pumila-leaves-Hawea Pl Olinda-Maui (25239191216).jpg",
+    "Starr-130809-2953-Malus pumila-Cv Pettingill leaves-Kula-Maui (24964219800).jpg",
+    "Malus domestica ‘Landsberska’ leaves Zabrze.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Ehrenbach, red apple tree leaves.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Malus domestica a1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rain-tree Luangwa Zambia Jul23 A7C 05818.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Ehrenbach from west, leaves of apple tree turning red.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Malus domestica leaf epidermis and stomata print 100x.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Apple Tree (43564762).jpeg",
+     "reason": "subject"
+    },
+    {
+     "title": "Philenoptera violacea 1DS-II 4368.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Malay apple Syzygium malaccense leaves with galls West Sumatra.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Annona squamosa or sugar-apple tree leaves.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Philenoptera violacea Kruger-NP.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Aphids on Sodom Apple leaves Ilorin Kwara State Nigeria.png",
+     "reason": "other"
+    },
+    {
+     "title": "Malus domestica epidermis print with stomata 400x.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Philenoptera violacea 50D 3082.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Leaves Water Apple Valparai Feb26 A7CR 10137.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Philenoptera violacea 50D 3078.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apples (Malus domestica), showing copper injury on the fruits and leaves in Pomological Watercolor POM00000032 (cropped).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Philenoptera violacea 50D 3035.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Ehrenbach, old apple tree with some red leaves.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Blooming Apple Tree (211954105).jpeg",
+     "reason": "other"
+    },
+    {
+     "title": "Philenoptera violacea 50D 2971.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple tree in field, detail, Ehrenbach.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Apple Leaf with Worm Infestation.jpg",
+     "reason": "moved"
+    },
+    {
+     "title": "Flower Water Apple Valparai Feb26 A7CR 10135.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Philenoptera violacea 20D 7988.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Oak apples - Keila.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-140719-1080-Malus pumila-leaves with aphids-Hawea Pl Olinda-Maui (25244529055).jpg",
+     "reason": "moved"
+    },
+    {
+     "title": "Angophora costata - leaves (adult).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Day 34 Apple-Leaf (Philenoptera violacea) (53591308225).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-140719-1081-Malus pumila-leaves with aphids-Hawea Pl Olinda-Maui (24948911770).jpg",
+     "reason": "moved"
+    },
+    {
+     "title": "Angophora floribunda - adult leaves 01.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple-leaf (Philenoptera violacea) (11711998106).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Custard apple tree leaves.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-140719-1079-Malus pumila-leaves with aphids-Hawea Pl Olinda-Maui (24613864194).jpg",
+     "reason": "moved"
+    },
+    {
+     "title": "Chinee Apple (Zizyphus mauritiana) fruit and leaves.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Day 34 Apple-Leaf (Philenoptera violacea) (53591179774).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Young Leaves Water Apple Valparai Feb26 A7CR 10181.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rinde Boskop.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Day 25 Apple-Leaf (Philenoptera violacea) (53478953972).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wax apple (Syzygium samarangense) with leaves.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Ripe Apples - geograph.org.uk - 589207.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple-leaf (Philenoptera violacea) fruits (11712060946).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Kangaroo apple leaves (6710349227).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple Tree south of Aspet (62087d9c-b50b-4306-b606-d7c89d3c7d89).JPG",
+     "reason": "subject"
+    },
+    {
+     "title": "Day 25 Apple-Leaf (Philenoptera violacea) flowers ... (53480267515).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-130809-2952-Malus pumila-Cv Pettingill leaves-Kula-Maui (24892130329).jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Apple Tree Skeletons, Oak Glen, CA 1-19-13c (8501703712).jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Day 24 Apple-Leaf (Philenoptera violacea) flowers ... (53473444904).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Custard apple leaves.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-140117-4007-Malus pumila-Anna flowers and leaves-Hawea Pl Olinda-Maui (24943545320).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple Tree Flocked with Snow, Oak Glen, CA 12-16 (31154340493).jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Apple With A Leaf Mark.jpg",
+     "reason": "other"
+    }
+   ]
+  },
+  "scab": {
+   "titles": [
+    "Apple scab in Tashkent region.jpg",
+    "Apple fruits scab.jpg",
+    "Apfelschorf Baum.jpg",
+    "Venturia inaequalis 01.JPG",
+    "Venturia.inaequalis2.-.lindsey.jpg",
+    "Camuesta con sarna.JPG",
+    "Wartenberg Angersbach Malus tree 202408 a.jpeg"
+   ],
+   "skipped": [
+    {
+     "title": "Apple scab.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Para Wiki.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Planting guide (16200591528).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Schurft bij appel (Venturia inaequalis on Malus domestica 'Schone van Boskoop').jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Planting guide (16188994959).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Manns' superior seeds (16202668740).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Apple scab SEM.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Planting guide (16362243596).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Apple scab 2017 D.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple scab 2017 A.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple scab 2017 B.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple scab 2017 C.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple with scab.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Holding Apple with scab.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Diseased apple.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "PSM V43 D089 Apple mold following apple scab.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "PSM V43 D088 Apple scab.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Appelschurft.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "DSCN6964 resize.JPG",
+     "reason": "other"
+    },
+    {
+     "title": "Venturia inaequalis a2 (1).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Venturia inaequalis a1 (2).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Venturia inaequalis a1 (1).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Болезни яблони 08.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Venturia inaequalis 355533332.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Venturia inaequalis 355533310.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Venturia inaequalis 355533348.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Venturia inaequalis 355533267.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Pomological Watercolor POM00001278.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Chory owoc jabłoni 02.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Pomological Watercolor POM00000114.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Chory owoc jabłoni 01.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apfelschorf.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Venturia.inaequalis.-.lindsey.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Venturia.inaequalis3.-.lindsey.jpg",
+     "reason": "art"
+    }
+   ]
+  },
+  "other_diseases": {
+   "titles": [
+    "Apple Powdery Mildew - geograph.org.uk - 1274755.jpg",
+    "Marssonina blotch on a 'Rome' apple leaf.jpg",
+    "Cedar apple rust heavily infected leaf underside.JPG",
+    "Podosphaera leucotricha (Detroit, USA) 3.jpg",
+    "Podosphaera leucotricha (Ellis & Everh.) E. S. Salmon -UGA1236181.png",
+    "Mycosphaerella pomi a1.jpg",
+    "Apple Leaf with Worm Infestation.jpg",
+    "Malus coronaria w Gymnosporangium juniperi-virginianae (27586370716).jpg",
+    "Podosphaera leucotricha (Detroit, USA) 1.jpg",
+    "Cedar apple rust on crab apple leaf upper surface.JPG",
+    "Cedar apple rust on crab apple leaf showing underside cup.JPG",
+    "Ruhland, Ortrander Str. bei Hausnr. 13e, Apfelbaum am Waldrand, Apfelmehltau, Frühling, 01.jpg",
+    "Apple tree leaves with insect damage.jpg",
+    "Starr-140719-1080-Malus pumila-leaves with aphids-Hawea Pl Olinda-Maui (25244529055).jpg",
+    "Starr-140719-1079-Malus pumila-leaves with aphids-Hawea Pl Olinda-Maui (24613864194).jpg"
+   ],
+   "skipped": [
+    {
+     "title": "2012-06-23 Gymnosporangium juniperi-virginianae Schweinitz 230353.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 2.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Podosphaera leucotricha (Ellis & Everh.) E. S. Salmon -UGA1236033.png",
+     "reason": "art"
+    },
+    {
+     "title": "Marssonina blotch on a 'Rome' apple tree.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Cedar Apple Rust (Gymnosporangium juniperi-virginianae).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium-juniperi-virginianae.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cedar apple rust showing stomata.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 186444343.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Conidia of Podosphaera leucotricha.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Pomological Watercolor POM00000771.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Allodus podophylli aecidia on leaf.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 186444327.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Podosphaera leucotricha (Detroit, USA) 2.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Podosphaera leucotricha (Ellis & Everh.) E. S. Salmon -UGA1236181.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "F78-09-9780123846846-ACLSV.png",
+     "reason": "art"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 186444313.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Planting guide (16187600718).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Planting guide (16200591528).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 186444287.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Borovice štítenka zhoubná 2.JPG",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0850).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rotten Apple (121167705).jpeg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 186444296.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0826).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-080326-3754-Syzygium jambos-leaf with Puccinia psidii-Haiku-Maui (24610907870).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 190163896.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0916).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Starr-080326-3755-Syzygium jambos-leaf with Puccinia psidii-Haiku-Maui (24788455062).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 188528119.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0961).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple scab SEM.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 190728566.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0944).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 187934574.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0962).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 187934886.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0885).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 190731347.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0938).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 190981536.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Spotted Lanternfly (20180829-APHIS-LSC-0846).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 189294462.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Борозняк (лярва хруща травневого) 02.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 197576582.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Борозняк (лярва хруща травневого) 01.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 188111157.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Manns' superior seeds (16202668740).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 189512326.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Planting guide (16187586378).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Gymnosporangium juniperi-virginianae 123111875.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Vick's garden and floral guide (16537221106).jpg",
+     "reason": "art"
+    }
+   ]
+  }
+ }
+}
