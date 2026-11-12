@@ -71,9 +71,11 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
     void run(blob, `${id}.jpg`, url, false);
   };
 
-  const rejected = result !== null && !result.analysed;
-  const unchecked = result !== null && result.analysed && !!result.input_check?.skipped && !result.input_check.passed;
-  const verdict = result && result.analysed ? leafVerdict(result, risk) : null;
+  // Only an explicit `analysed: false` means the input check turned the photo away; an API older than the
+  // input check sends no such field, and its results are shown as before.
+  const rejected = result !== null && result.analysed === false;
+  const unchecked = result !== null && !rejected && !!result.input_check?.skipped && !result.input_check.passed;
+  const verdict = result && !rejected ? leafVerdict(result, risk) : null;
 
   // Move focus to the notice when the input check turns a photo away, so keyboard users land on it.
   useEffect(() => {

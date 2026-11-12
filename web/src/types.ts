@@ -139,8 +139,8 @@ export interface InputCheck {
 
 export interface DetectionResponse {
   filename: string | null;
-  /** false when the input check failed and the detector was not run */
-  analysed: boolean;
+  /** false when the input check failed and the detector was not run (absent from APIs older than the check) */
+  analysed?: boolean;
   /** null when the photo was not analysed; false only means no scab lesions were found */
   scab_detected: boolean | null;
   lesion_count: number;
@@ -151,7 +151,7 @@ export interface DetectionResponse {
   inference_ms: number;
   backend: VisionBackend;
   model: string;
-  input_check: InputCheck | null;
+  input_check?: InputCheck | null;
   warnings: string[];
 }
 
