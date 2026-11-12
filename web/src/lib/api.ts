@@ -113,9 +113,11 @@ export class ApiClient {
     });
   }
 
-  detectLesion(file: Blob, filename: string, signal?: AbortSignal): Promise<DetectionResponse> {
+  /** `skipInputCheck`: run the detector even if the photo does not look like an apple leaf ("Analyse anyway"). */
+  detectLesion(file: Blob, filename: string, signal?: AbortSignal, skipInputCheck = false): Promise<DetectionResponse> {
     const form = new FormData();
     form.append("file", file, filename);
-    return this.request("/api/v1/detect-lesion", { method: "POST", body: form, signal });
+    const query = skipInputCheck ? "?skip_input_check=true" : "";
+    return this.request(`/api/v1/detect-lesion${query}`, { method: "POST", body: form, signal });
   }
 }

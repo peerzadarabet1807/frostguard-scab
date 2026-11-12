@@ -31,6 +31,19 @@ describe("ApiClient", () => {
     expect((err as ApiError).message).toContain("outside the replay range");
   });
 
+  it("asks the API to skip the input check only for Analyse anyway", async () => {
+    const fetchMock = vi.fn(async () => new Response(JSON.stringify({}), { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+    const client = new ApiClient("https://api.example");
+    await client.detectLesion(new Blob(["x"]), "leaf.jpg");
+    await client.detectLesion(new Blob(["x"]), "leaf.jpg", undefined, true);
+    const urls = fetchMock.mock.calls.map((c) => String((c as unknown[])[0]));
+    expect(urls).toEqual([
+      "https://api.example/api/v1/detect-lesion",
+      "https://api.example/api/v1/detect-lesion?skip_input_check=true",
+    ]);
+  });
+
   it("reports unreachable backends clearly", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Promise.reject(new TypeError("Failed to fetch"))));
     const err = await new ApiClient("https://down.example").health().catch((e: unknown) => e);

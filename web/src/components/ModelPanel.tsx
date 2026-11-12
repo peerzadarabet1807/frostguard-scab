@@ -1,4 +1,34 @@
-import type { ModelInfo } from "../types";
+import type { InputCheckInfo, ModelInfo, Rate } from "../types";
+
+const pct = (r: Rate) => `${(r.rate * 100).toFixed(1)}% (${r.k} of ${r.n})`;
+
+/** The input check in front of the detector, with the rates measured on test photos (results/input_check/). */
+function InputCheckFacts({ info }: { info: InputCheckInfo }) {
+  const fr = info.measured?.false_rejection;
+  const fa = info.measured?.false_acceptance;
+  return (
+    <div className="input-check-facts" data-testid="input-check-about">
+      <h3 className="card-subtitle">Input check</h3>
+      <p className="note">
+        Before the detector runs, a small image model (TinyCLIP ViT-8M/16, MIT licence) checks that the photo looks like an apple
+        leaf; if not, no scab result is given unless you choose Analyse anyway. A safeguard, not a guarantee.
+      </p>
+      {fr && fa && (
+        <dl className="facts">
+          <dt>Leaves turned away</dt>
+          <dd>
+            lab photos {pct(fr.plantvillage_test)} · orchard photos {pct(fr.orchard_test)} · detector training photos{" "}
+            {pct(fr.detector_training_data)}
+          </dd>
+          <dt>Other photos let through</dt>
+          <dd>
+            other leaves, fruit, bark, grass {pct(fa.near)} · unrelated photos {pct(fa.far)}
+          </dd>
+        </dl>
+      )}
+    </div>
+  );
+}
 
 interface Props {
   model: ModelInfo | null;
@@ -66,6 +96,7 @@ export function ModelPanel({ model }: Props) {
           </dl>
         </>
       )}
+      {model.input_check && <InputCheckFacts info={model.input_check} />}
     </section>
   );
 }
