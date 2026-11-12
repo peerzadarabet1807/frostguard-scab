@@ -125,9 +125,24 @@ export interface LesionBox {
   label: string;
 }
 
+/** Does the photo look like an apple leaf? Checked by the API before the detector runs. */
+export interface InputCheck {
+  score: number;
+  threshold: number;
+  passed: boolean;
+  /** the request asked to run the detector anyway ("Analyse anyway") */
+  skipped: boolean;
+  model: string;
+  version: string;
+  inference_ms: number;
+}
+
 export interface DetectionResponse {
   filename: string | null;
-  scab_detected: boolean;
+  /** false when the input check failed and the detector was not run */
+  analysed: boolean;
+  /** null when the photo was not analysed; false only means no scab lesions were found */
+  scab_detected: boolean | null;
   lesion_count: number;
   max_confidence: number | null;
   detections: LesionBox[];
@@ -136,7 +151,25 @@ export interface DetectionResponse {
   inference_ms: number;
   backend: VisionBackend;
   model: string;
+  input_check: InputCheck | null;
   warnings: string[];
+}
+
+export interface Rate {
+  k: number;
+  n: number;
+  rate: number;
+  ci95: [number, number];
+}
+
+export interface InputCheckInfo {
+  model: string;
+  version: string;
+  threshold: number;
+  measured?: {
+    false_rejection: { tune: Rate; plantvillage_test: Rate; orchard_test: Rate; detector_training_data: Rate };
+    false_acceptance: { near: Rate; far: Rate; overall: Rate };
+  };
 }
 
 export interface ModelCard {
@@ -169,4 +202,5 @@ export interface ModelInfo {
   exported_by: string | null;
   exported_at: string | null;
   card: ModelCard | null;
+  input_check?: InputCheckInfo | null;
 }

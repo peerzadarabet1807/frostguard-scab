@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Annotated, Any
 
 import pandas as pd
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from PIL import Image, UnidentifiedImageError
@@ -46,11 +46,13 @@ from src.engine.weather_fetcher import (
     WeatherResult,
 )
 from src.vision.detector import ScabVisionDetector
+from src.vision.input_check import DEFAULT_CONFIG_PATH, InputChecker
 
 logger = logging.getLogger("frostguard.api")
 
 MAX_UPLOAD_BYTES = int(os.getenv("FROSTGUARD_MAX_UPLOAD_MB", "10")) * 1024 * 1024
 MODEL_CARD_PATH = Path(__file__).resolve().parents[2] / "models" / "model_card.json"
+INPUT_CHECK_SUMMARY_PATH = Path(__file__).resolve().parents[2] / "results" / "input_check" / "summary.json"
 Image.MAX_IMAGE_PIXELS = 50_000_000  # guard against decompression bombs
 
 
@@ -67,6 +69,27 @@ def load_model_card(detector: ScabVisionDetector, card_path: Path = MODEL_CARD_P
     return card
 
 
+def load_input_checker() -> InputChecker | None:
+    """The input check (ONNX image encoder + rule); None, with a warning, if its files are missing."""
+    try:
+        checker = InputChecker()
+    except Exception as exc:  # noqa: BLE001 (any load failure: serve unchecked rather than not at all)
+        logger.warning("input check unavailable (%s); photos will be analysed unchecked", exc)
+        return None
+    checker.warmup()
+    return checker
+
+
+def input_check_info(checker: InputChecker | None) -> dict[str, Any] | None:
+    if checker is None:
+        return None
+    info: dict[str, Any] = {"model": checker.model_name, "version": checker.version, "threshold": checker.threshold}
+    if INPUT_CHECK_SUMMARY_PATH.is_file():
+        summary = json.loads(INPUT_CHECK_SUMMARY_PATH.read_text(encoding="utf-8"))
+        info["measured"] = {k: summary[k] for k in ("false_rejection", "false_acceptance") if k in summary}
+    return info
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Load the heavy singletons once per process."""
@@ -77,6 +100,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     app.state.detector = ScabVisionDetector()
     app.state.detector.warmup()
     app.state.model_card = load_model_card(app.state.detector)
+    app.state.input_checker = load_input_checker()
     logger.info("FrostGuard API ready (vision backend: %s)", app.state.detector.backend)
     yield
 
@@ -149,6 +173,7 @@ def model_info(request: Request) -> dict[str, Any]:
         "exported_by": f"Ultralytics {meta['version']}" if "version" in meta else meta.get("producer"),
         "exported_at": meta.get("date"),
         "card": request.app.state.model_card,
+        "input_check": input_check_info(getattr(request.app.state, "input_checker", None)),
     }
 
 
@@ -251,8 +276,19 @@ def predict_risk(payload: RiskRequest, request: Request) -> dict[str, Any]:
 def detect_lesion(
     request: Request,
     file: Annotated[UploadFile, File(description="Leaf photo (JPEG/PNG/WebP)")],
+    skip_input_check: Annotated[
+        bool,
+        Query(
+            description="Run the detector even if the photo does not look like an apple leaf. The input check still "
+            "runs and its result is returned with skipped=true."
+        ),
+    ] = False,
 ) -> dict[str, Any]:
-    """Detect apple scab lesions on a leaf photo and return boxes in image pixels."""
+    """Check that the photo looks like an apple leaf, then detect apple scab lesions (boxes in image pixels).
+
+    If the input check fails (and ``skip_input_check`` is not set), the detector is not run: ``analysed`` is false,
+    ``scab_detected`` is null and ``detections`` is empty. The check is a safeguard, not a guarantee.
+    """
     if file.content_type and not file.content_type.startswith("image/"):
         raise HTTPException(415, f"expected an image, got {file.content_type}")
     data = file.file.read(MAX_UPLOAD_BYTES + 1)
@@ -262,12 +298,38 @@ def detect_lesion(
         raise HTTPException(400, "empty upload")
 
     detector: ScabVisionDetector = request.app.state.detector
+    checker: InputChecker | None = getattr(request.app.state, "input_checker", None)
+    warnings: list[str] = []
     try:
+        check = checker.check(data, skip=skip_input_check) if checker else None
+        if check is not None and not check.passed and not check.skipped:
+            image = detector.load_image(data)
+            return {
+                "filename": file.filename,
+                "analysed": False,
+                "scab_detected": None,
+                "lesion_count": 0,
+                "max_confidence": None,
+                "detections": [],
+                "image_width": image.width,
+                "image_height": image.height,
+                "inference_ms": 0.0,
+                "backend": detector.backend,
+                "model": Path(detector.model_path).name,
+                "input_check": check.to_dict(),
+                "warnings": [
+                    "This doesn't look like an apple leaf, so the scab detector was not run. "
+                    "Repeat with skip_input_check=true to analyse it anyway."
+                ],
+            }
         result = detector.detect(data)
     except (UnidentifiedImageError, OSError, Image.DecompressionBombError) as exc:
         raise HTTPException(400, f"could not decode image: {exc}") from exc
 
-    warnings: list[str] = []
+    if checker is None:
+        warnings.append(f"Input check unavailable ({DEFAULT_CONFIG_PATH.name} or its model is missing): unchecked.")
+    elif check is not None and check.skipped and not check.passed:
+        warnings.append("Unchecked input: this photo did not look like an apple leaf (skip_input_check was set).")
     if detector.is_fallback:
         warnings.append(
             "models/scab_detector.onnx not found: using the colour-heuristic fallback detector. "
@@ -277,7 +339,9 @@ def detect_lesion(
     confidences = [d.confidence for d in result.detections]
     body.update(
         filename=file.filename,
+        analysed=True,
         scab_detected=bool(result.detections),
+        input_check=check.to_dict() if check is not None else None,
         max_confidence=max(confidences) if confidences else None,
         model=Path(result.model_path).name,
         warnings=warnings,

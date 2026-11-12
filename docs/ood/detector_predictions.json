@@ -1,0 +1,2151 @@
+{
+ "description": "The trained scab detector, with no input check, on every OOD photo (scripts/evaluate_ood_detector.py). Every photo got an answer about scab; none was told it is not an apple leaf.",
+ "model": "models/scab_detector.onnx (model-v1 release)",
+ "conf_threshold": 0.25,
+ "summary": {
+  "n": 228,
+  "scab_detected": 179,
+  "told_leaf_looks_clean": 49,
+  "by_category": {
+   "pear_leaves": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 10
+   },
+   "cherry_leaves": {
+    "proximity": "near",
+    "n": 12,
+    "scab_detected": 12
+   },
+   "grape_leaves": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 14
+   },
+   "maple_leaves": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 13
+   },
+   "other_leaves": {
+    "proximity": "near",
+    "n": 12,
+    "scab_detected": 12
+   },
+   "apple_fruit": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 13
+   },
+   "apple_blossom": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 14
+   },
+   "bark_branches": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 11
+   },
+   "grass": {
+    "proximity": "near",
+    "n": 14,
+    "scab_detected": 13
+   },
+   "hands": {
+    "proximity": "far",
+    "n": 12,
+    "scab_detected": 7
+   },
+   "sky": {
+    "proximity": "far",
+    "n": 12,
+    "scab_detected": 9
+   },
+   "documents": {
+    "proximity": "far",
+    "n": 14,
+    "scab_detected": 5
+   },
+   "screenshots": {
+    "proximity": "far",
+    "n": 14,
+    "scab_detected": 7
+   },
+   "people": {
+    "proximity": "far",
+    "n": 12,
+    "scab_detected": 9
+   },
+   "everyday_objects": {
+    "proximity": "far",
+    "n": 14,
+    "scab_detected": 5
+   },
+   "scenes": {
+    "proximity": "far",
+    "n": 14,
+    "scab_detected": 12
+   },
+   "other_animals": {
+    "proximity": "far",
+    "n": 14,
+    "scab_detected": 13
+   }
+  }
+ },
+ "photos": [
+  {
+   "file": "set/pear_leaves/pyrus_communis_herbstlaub.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.697,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_sur_sorbus_torminalis.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.285,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/pear_leaves_with_stemphylium_vesicarium.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_129.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 6,
+   "max_confidence": 0.5354,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/stemphylium_vesicarium_on_pyrus_josephine_de_malines.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.5225,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/pear_rust_on_a_pear_tree.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.4606,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/pyrus_calleryana_leaves_2.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 6,
+   "max_confidence": 0.8172,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_huron_county_mi_usa.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/pear_leaves/pyrus_calleryana_leaf_1.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5303,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_on_sorbus_aria_wf3_3.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/pear_leaves/pear_rust_the_underside_of_the_leaf.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4734,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/mycosphaerella_pyri_s1_2.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.4615,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/pear_leaves/pear_leaf.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/pear_leaves/mycosphaerella_pyri_s1_1.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.5219,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/cherry_leaves_01.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.7278,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/cherry_leaves_05.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.59,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/cherry_plum_prunus_cerasifera_leaves_jardim_fernando_pessa_l.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.5472,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_7.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.311,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/wild_cherry_leaves_in_loddebo.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.4083,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_6.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3122,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_9.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.3555,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_5.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 9,
+   "max_confidence": 0.4524,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_cerasifera_150495279.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 10,
+   "max_confidence": 0.6145,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_3.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 6,
+   "max_confidence": 0.4053,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/prunus_cerasifera_148572395.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 7,
+   "max_confidence": 0.7699,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/cherry_leaves/red_cherry_leaves_in_autumn_in_tuntorp_1.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5456,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/calitzdorp_za_weingut_weinbl_tter_2024_2660.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3654,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_seedling_featuring_various_leaf_shapes.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.4503,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/saulheim_vine_leaf_with_raindrops.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4626,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_rondo_leaf.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4542,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves_showing_translucence.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3796,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4493,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/yellow_common_grape_vine_leaf_vitis_vinifera_ponte_de_sor_po.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.5709,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves_merlot.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.3965,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/starr_110609_6063_vitis_vinifera_leaf_with_tornatellid_snail.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2729,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/crimean_tatar_sarma_stage_1.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5344,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_subsp_sylvestris_sl11.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.3798,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/fieberiella_florii_nymph_on_a_vitis_vinifera_leaf_2.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.4628,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_subsp_sylvestris_sl13.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.346,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves_01.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.7145,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/red_maple_leaf_on_paper_birch.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3661,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/red_maple_leaves_in_yahiko.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2503,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/maple_leaf_strong.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5697,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/fallen_maple_leaves_on_asphalt_vieux_limoilou.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.7043,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/maple_leaf_held_up_in_autumn_vieux_limoilou.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.4428,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/holding_a_dry_maple_leaf.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.8018,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/autumn_maple_leaves_and_evergreen_needles_on_the_oberg_mount.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3689,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/2020_year_herbarium_acer_negundo_img_002.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3674,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/acer_palmatum_japanese_maple_tree_leaves_autumn_newton_massa.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/maple_leaves/powdery_mildew_on_maple_leaf.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3186,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/autumn_acer_leaf_in_canada1.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6531,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/pacific_spirit_maple_leaf_compared_to_women_s_10_shoes.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4323,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/2016_11_maple_leaves_autumn_quebec.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3133,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/maple_leaves/autumn_leaves_in_sweden.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.5769,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/walnut_leaf_translucency_under_natural_sunlight.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3355,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/a_bud_of_a_rose_leaf.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4529,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/green_peach_aphid_myzus_persicae_on_a_leaf_lisbon_portugal_a.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3399,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/peach_blossom_caterpillar_on_a_raspberry_leaf_01.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3222,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/walnut_leaf_galls_upper_surface_geograph_org_uk_4574415.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.3665,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/walnut_leaf_galls_lower_surface_geograph_org_uk_4574421.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.525,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/apricot_leaf_veins.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6519,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/leaf_curl_on_leaf_and_young_shoots_of_peach.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5469,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/walnut_19_10_04_044.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.3932,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/apricot_mallow_leaf_closeup.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4042,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/photinia_serratifolia_diplocarpon_mespili_fungus.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 6,
+   "max_confidence": 0.2873,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_leaves/black_walnut_leaf.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.7404,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/red_apple.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.6128,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/red_delicious_apple_2021.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3339,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/golden_delicious_apples.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6095,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/rotten_apple_under_the_tree.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4588,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/green_apple_01.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/apple_fruit/apples_in_basket_2018_g2.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.749,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/green_apple_02.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4578,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/red_apple_cut.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 7,
+   "max_confidence": 0.5126,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/green_apple_gen.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.2565,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/pinkladyapples.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.7065,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/green_apple_from_kerala.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.389,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/red_apple_on_black_background.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.6439,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/whole_apple_and_bitten_apple.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.5745,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_fruit/2018_07_15_green_apples_on_tree.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.409,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/apple_tree_blossoms_2017_g3.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3143,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/apple_flowers_1.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5063,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/apple_flowers_2.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4145,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/flowers_of_malus_domestica_25.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 8,
+   "max_confidence": 0.6017,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/flowers_of_malus_domestica_26.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 7,
+   "max_confidence": 0.5511,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_lc0122.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.325,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/apple_tree_flowers.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.3563,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_apple_flowers_4.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.6293,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_apple_flowers_5.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3005,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_in_flower_in_lithuania_may_2019.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 9,
+   "max_confidence": 0.4913,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/crab_apple_flowers_floor_farm_kilmaurs_east_ayrshire.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 7,
+   "max_confidence": 0.4178,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/apple_flowers_spring_west_virginia_forestwander.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.5241,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_a1.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 8,
+   "max_confidence": 0.7287,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/apple_blossom/flowers_of_malus_domestica_6.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.6744,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/pine_log_cross_sections_teutendorf_2016_09_17.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.5305,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/apple_tree_bark_burrs.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4959,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/two_holes_and_green_leaves_on_the_bark_of_a_tree_trunk_in_th.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/bark_branches/20240602_apple_tree_malus_domestica_franciscan_monastery_kat.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.5953,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/ponderosa_pine_bark_68450.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5372,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/gibberd_garden_apple_tree_bough_harlow_essex_england.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5931,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/ailanthus_altissima_bark_siemianowice.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/bark_branches/apple_tree_trunk_and_boughs_gibberd_garden_harlow_essex_engl.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4232,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/aesculus_hippocastanum_bark_siemianowice_2.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.2838,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/apple_tree_trunk_and_green_man_ornament_in_nuthurst_west_sus.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3818,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/aesculus_hippocastanum_bark_siemianowice.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/bark_branches/2024_10_14_11_06_36_bark_on_an_old_apple_tree_at_terhune_orc.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3741,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/malus_domestica_landsberska_bark_zabrze.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.2896,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/bark_branches/apple_tree_trunk_and_boughs_gibberd_garden_harlow_essex_engl_2.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3062,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/d_lmen_kirchspiel_b_rnste_feld_2017_3171.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4214,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/mown_lawn_close_up_4440207851.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4803,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/poa_annua.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.5118,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/poa_annua_2.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.5052,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/annual_meadow_grass_poa_annua_easting_geograph_org_uk_449360.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2841,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/dew_on_grass_luc_viatour.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3942,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/ploughed_grass_logan_s_meadow_geograph_org_uk_4469713.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4653,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/poa_annua_126838450.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.2753,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/steppe_grassland_rostov_on_don_russia.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3718,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/monographella_nivalis_close_up_1.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2603,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/grass_meadow_at_bridge_end_geograph_org_uk_5141246.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/grass/poa_nemoralis_wood_meadow_grass_flowering.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4509,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/mown_grass_in_twyning_meadow_geograph_org_uk_7052300.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.7054,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/grass/grass_32.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6913,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/hand_and_power_stone_bracelets.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2905,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/boys_palm.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/hands/hand_image.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/hands/sole_of_foot_of_an_infant_held_between_the_middle_finger_and.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/hands/india_varanasi_green_peas_2714.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/hands/close_up_of_hands_playing_piano_keys.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4997,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/hand_comparison.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.4688,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/man_playing_an_acoustic_brazilian_guitar_viol_o_on_marco_zer.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/hands/wound_on_palm_of_hand_day_15.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.531,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/sausage_making_h_5_edited2.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.6397,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/close_up_of_a_female_sitting_on_ground.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3111,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/hands/hand_on_an_old_violin_close_up.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3288,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/colorful_sky_with_orange_clouds_reflecting_in_the_water_of_a.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.305,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/sky_over_munich_02.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/sky/colorful_sky_with_orange_and_pink_clouds_reflecting_in_the_w.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.6917,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/water_reflection_of_stringy_gray_and_white_clouds_in_a_pond_.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2933,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/pirogue_running_on_the_mekong_at_sunset_with_pink_clouds_in_.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4255,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/nasa_s_orion_spacecraft_parachutes_tested_at_u_s_army_yuma_p.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5612,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/water_reflection_of_sunset_with_gray_and_orange_clouds_and_p.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/sky/leaning_trees_over_the_grassy_hillock_of_nodong_ri_tombs_clo.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3053,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/red_clouds_over_mekong_banks_with_dwellings_and_pirogues_at_.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4806,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/samanea_saman_on_an_island_with_orange_clouds_and_blue_sky_a.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4045,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/blue_and_orange_clouds_over_the_mekong_with_a_pirogue_runnin.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.2841,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/sky/bridge_to_don_khon_seen_from_don_det_with_water_reflection_o.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/act_of_independence_of_central_america_scan.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/receiptswiss.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4332,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/documents/1920_re_u_berliet_consignes_16.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/felicien_rops_l_homme_et_l_artiste_1908_144064786.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3593,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/documents/abbott_and_holder_receipt_21_august_1969.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/official_document_annexure_11_dated_12_march_1997_loniya_vis.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/receipt_for_temporary_bonds.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/front_page_of_ottoman_newspaper_kadin.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/william_shurtless_letter_title_page_printed_by_kneeland_gree.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2768,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/documents/us_bep_receipt_for_currency_23_july_1915.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/front_page_of_newspaper_wilnaer_zeitung_with_lithuanian_vyti.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.6309,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/documents/shell_gas_station_receipt_mastercard.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/documents/receipt_from_josiah_wedgwood_1770.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.723,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/documents/front_page_of_the_newspaper_busch_7_june_1941_la_paz.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/screenshot_wikiwand.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3058,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_the_official_website_of_the_president_of_ukrai.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3064,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/screenshots/wikipedia_screenshot_2026.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_website_south_african_covid_19_vaccination_pro.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.5873,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_ilo_muni.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4848,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_system_tools.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2736,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/screenshots/screenshot_wikipedia_mobile_smartphone.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_x_s_website_sept_2025.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_crosstalk_mk_4.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/tatoeba_org_english_screenshot_2021.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/screenshot_of_the_main_page_on_the_english_wikipedia_wikiped.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6532,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/screenshots/tea_62_0_1_screenshot_editor_module.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/statproofbook_website_screenshot.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/screenshots/screenshot_flyback_0_3_3.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.6236,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/people_walking_on_the_street_in_nairobi_kenya.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4432,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/young_people_walking_in_the_street_hungary_2011.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3655,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/people_walking_in_a_street.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2609,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/people_walking_on_a_street_in_copenhagen.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 7,
+   "max_confidence": 0.6662,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/throngs_of_people_walking_towards_himeji_castle_himeji_2016.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.3946,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/people_walking_at_regent_street_on_a_car_free_day_london_uni.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/people/street_walking_castelo_lisbon_portugal.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/people/group_of_people_walking_down_the_street.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 7,
+   "max_confidence": 0.5526,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/woman_walking_next_to_edif_cio_sede_da_caixa_geral_de_dep_si.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/people/officers_walking_on_jinzhou_street_taipei_in_lunch_time_2015.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.73,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/people_walking_on_sidewalk_in_central_pyongyang_with_trolley.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.6572,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/people/people_walking_in_the_kirkegata_stavanger_norway_julesvernex.jpg",
+   "category": "people",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.689,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/everyday_objects/mug_wikipedia_malayalam.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2648,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/everyday_objects/parked_bicycle_with_graffitied_building_facade_and_doors_in_.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.4034,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/everyday_objects/santorin_gr_fira_2017_2598.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3374,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/everyday_objects/smartphone_display_screen.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/coffee_mug_on_table.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/backlit_keyboard.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/reebok_royal_glide_ripple_clip_shoe.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/shoes_in_a_spanish_shoe_store.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.5461,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/everyday_objects/smartphone_di_varie_marche.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4008,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/everyday_objects/coffee_mug_on_desk.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/razer_ornata_chroma_keyboard_top_pnr_0463.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/bicycle_crankset_shimano_105_r7000_chainring_50_34_length_17.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/coffee_mugs.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/everyday_objects/asics_gel_cumulus_22.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/scenes/landscape_arnisee_region.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.5339,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/eldridge_street_synagogue_42773.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3933,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/beech_forest_au_great_otway_national_park_beauchamp_falls_20.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.281,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/mulberry_street_nyc_c1900_loc_3g04637u_edit.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2836,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/beach_of_cape_fiolent_crimea.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.7919,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/spruce_forest_at_holma.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.7676,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/facade_of_the_conjunto_nacional_cropped_version.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/scenes/havelock_island_mangrove_tree_on_the_beach_andaman_islands.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.3312,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/wooden_staircase_steps_in_the_forest_of_hallasan_park_eorimo.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4185,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/parasols_evening_beach_rincon_de_la_victoria_andalusia_spain.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.7015,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/qu_bec_city_downtown.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6024,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/illuminated_facade_of_a_3_storey_restaurant_with_japanese_si.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.2741,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/seal_rocks_ocean_beach_san_francisco.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.6965,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/scenes/snowy_sainte_famille_street_in_quebec_city.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/other_animals/felis_catus_cat_on_snow.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": false,
+   "lesion_count": 0,
+   "max_confidence": null,
+   "app_showed": "no lesions detected, leaf looks clean"
+  },
+  {
+   "file": "set/other_animals/biandintz_eta_zaldiak_modified2.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.4736,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/flock_of_sheep.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.4156,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/dsc09611a_search_and_rescue_dog_austrian_red_cross_perchtold.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.4511,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/cow_in_field_image.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 4,
+   "max_confidence": 0.6325,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/horse_december_2014_1.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 1,
+   "max_confidence": 0.5122,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/cat_november_2010_1a.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3992,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/dode_merel_turdus_merula_locatie_tuinreservaat_jonkervallei_.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.4127,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/cow_on_a_field_resting_2025.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.7656,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/domestic_horse_at_suryachaur_and_the_mountains_in_the_back1.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.3167,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/swaledale_sheep_lake_district_england_june_2009.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 2,
+   "max_confidence": 0.5434,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/june_odd_eyed_cat_cropped.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 6,
+   "max_confidence": 0.6461,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/stubai_tiroler_bergschaf_bt_01.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 5,
+   "max_confidence": 0.3343,
+   "app_showed": "scab lesions detected"
+  },
+  {
+   "file": "set/other_animals/icelandichorseinwinter.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "scab_detected": true,
+   "lesion_count": 3,
+   "max_confidence": 0.3473,
+   "app_showed": "scab lesions detected"
+  }
+ ]
+}

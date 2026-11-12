@@ -1,0 +1,1522 @@
+{
+ "description": "Photos chosen from the candidates of scripts/build_ood_set.py --discover, after looking at every candidate on its contact sheet. Rule: the category's subject fills a large part of the frame, at most one photo per near-duplicate series, no people as the main subject. Every skipped candidate has a reason code. Far categories other than hands and sky reuse the poultry repository's far titles.",
+ "reason_codes": {
+  "dup": "near-duplicate of a chosen photo or of another photo in the same series",
+  "subject": "the category's subject is small, partly hidden or not the main subject",
+  "other": "does not show this category",
+  "art": "drawing, print, painting, render, diagram, scan or composite",
+  "people": "people are the main subject",
+  "animal": "an animal is the main subject",
+  "enough": "a similar photo of this category was already chosen (keeps the categories balanced)",
+  "moved": "chosen for another category instead",
+  "lab": "a plain-background lab-style leaf: covered by the PlantVillage photos"
+ },
+ "categories": {
+  "pear_leaves": {
+   "titles": [
+    "Pyrus-communis-herbstlaub.jpg",
+    "Eriophyes pyri sur Sorbus torminalis.JPG",
+    "Pear leaves with stemphylium vesicarium.jpg",
+    "Eriophyes pyri 129.JPG",
+    "Stemphylium Vesicarium on pyrus Josephine de Malines.jpeg",
+    "Pear Rust on a pear tree.jpg",
+    "Pyrus calleryana leaves 2.jpg",
+    "Eriophyes pyri (Huron County, MI, USA).jpg",
+    "Pyrus calleryana leaf 1.jpg",
+    "Eriophyes pyri on Sorbus aria WF3 (3).jpg",
+    "Pear Rust, the underside of the leaf.jpg",
+    "Mycosphaerella pyri S1 (2).jpg",
+    "Pear Leaf.jpg",
+    "Mycosphaerella pyri S1 (1).jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Wild pear leaves.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Gustav Klimt - Pear Tree - BR66.4 - Busch–Reisinger Museum.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Pyrus communis 'Beth' at Myddelton House, Enfield, London, England.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Pear Tree.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Pear tree leaves in October - panoramio.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Eriophyes pyri 122.JPG",
+     "reason": "subject"
+    },
+    {
+     "title": "Belle Air, Phila. Seckel residence with original Seckel pear tree, taken 1885 Star Tavern, opposite Woodland Cemetery, Darby Road, taken 1882. LCCN2016647948.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Eriophyes pyri 01.JPG",
+     "reason": "other"
+    },
+    {
+     "title": "Pyrus calleryana leaves scattered.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "PSM V42 D665 Treated and untreated pear leaf blight experiment.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Pear tree leaves newark campus.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Hering 02.034.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Eriophyes pyri galls in Sorbus aucuparia, Trawscoed, North Wales, June 2020.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Xiang Shengmo - Pear Blossom from a Flower Album of Ten Leaves - 2001.70.4.3 - Minneapolis Institute of Art.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Hering 17.323.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Madonna with Pear (SM 2091).png",
+     "reason": "art"
+    },
+    {
+     "title": "Eriophyes pyri galls in Sorbus aucuparia, Trawscoed, North Wales, June 2020 2.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Pyrus Calleryana leaves on sidewalk.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Hering 17.324.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Sacred garlic pear (445161720).jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Eriophyes pyri galls in Sorbus aucuparia, underside, Trawscoed, North Wales, June 2020.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mealy Bugs (Pseudococcidae) living on Prickly Pear Cactus Leaves (Leaves of Opuntia).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mojave Prickly-Pear Cactus (18080383262).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Eriophyes pyri on Sorbus aucuparia, underside, Trawscoed, North Wales, July 2020.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Asian Pear Fruit May 2018 (258794257).jpeg",
+     "reason": "other"
+    },
+    {
+     "title": "Eriophyes pyri124.JPG",
+     "reason": "subject"
+    }
+   ]
+  },
+  "cherry_leaves": {
+   "titles": [
+    "Cherry leaves 01.jpg",
+    "Cherry leaves 05.jpg",
+    "Cherry plum (Prunus cerasifera) leaves, Jardim Fernando Pessa, Lisbon, Portugal julesvernex2.jpg",
+    "Prunus avium - UK 7.jpg",
+    "Wild cherry leaves in Loddebo.jpg",
+    "Prunus avium - UK 6.jpg",
+    "Prunus avium - UK 9.jpg",
+    "Prunus avium - UK 5.jpg",
+    "Prunus cerasifera 150495279.jpg",
+    "Prunus avium - UK 3.jpg",
+    "Prunus cerasifera 148572395.jpg",
+    "Red cherry leaves in autumn in Tuntorp 1.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Red cherry leaves on branches in Tuntorp.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "359 Cherry Root stock Prunus avium x Prunus pseudocerasus CV Colt LEAF epidermis print.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Blossom of Mirabelle plum (cropped transparent).png",
+     "reason": "other"
+    },
+    {
+     "title": "Prunus avium leaf.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Prunus cerasifera LC0385.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cherry leaves 03.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Prunus avium subsp. avium sl14.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Prunus cerasifera 2016 G1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cherry leaves 04.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Prunus avium subsp. avium sl15.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Blutpflaume - Prunus cerasifera Nigra - March 22 2026.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cherry leaves 02.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Prunus avium - UK 4.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "20210329 Prunus cerasifera.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Prunus avium - UK 8.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Long-tailed tit Gennevilliers 2022 02 25.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Prunus cerasifera blossoms.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Prunier cerise (Prunus cerasifera) (2).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Autumn leaves, Cherry Hinton Road - geograph.org.uk - 7339957.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Prunier cerise (Prunus cerasifera) (1).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cherry Hinton Road, sunlit leaves - geograph.org.uk - 7357121.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "20140317Prunus cerasifera Hockenheimer Rheinbogen5.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cherry Sand leaves the Dock - geograph.org.uk - 625311.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Prunus avium - UK 10.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Out of focus.png",
+     "reason": "subject"
+    },
+    {
+     "title": "Prunus avium - UK 2.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Prunus cerasifera 117846351.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Large Bowl with Cherry Blossoms and Maple Leaves MET DP-17439-005.jpg",
+     "reason": "art"
+    }
+   ]
+  },
+  "grape_leaves": {
+   "titles": [
+    "Calitzdorp (ZA), Weingut, Weinblätter -- 2024 -- 2660.jpg",
+    "Vitis vinifera - seedling featuring various leaf shapes.jpg",
+    "Saulheim, vine leaf with raindrops.jpg",
+    "Vitis vinifera Rondo leaf.jpg",
+    "Grape leaves showing translucence.jpg",
+    "Grape leaves.png",
+    "Yellow common grape vine leaf (Vitis vinifera), Ponte de Sor, Portugal (approx. GPS location) julesvernex2.jpg",
+    "Grape leaves (Merlot).jpg",
+    "Starr-110609-6063-Vitis vinifera-leaf with tornatellid snail-Shibuya Farm Kula-Maui (25003347981).jpg",
+    "Crimean Tatar sarma Stage 1.jpg",
+    "Vitis vinifera subsp. sylvestris sl11.jpg",
+    "Fieberiella florii nymph on a Vitis vinifera leaf-2.jpg",
+    "Vitis vinifera subsp. sylvestris sl13.jpg",
+    "Grape leaves 01.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Postna sarma (vegetarian sarma, Cuisine of Serbia).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "279 Vine Vitis vinifera LEAF epidermis print.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Dawal (Grape Leaves).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "281 Vine Vitis vinifera small leaf LEAF epidermis print.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Spanish Maiolica Ware Dish Details with Vine-Leaf and Bryony.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Calitzdorp (ZA), Weingut, Weinblätter -- 2024 -- 2709.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Pickled grape leaves.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Vine leaf ornament Black LE.png",
+     "reason": "art"
+    },
+    {
+     "title": "Stomatal Apparatus of Grapevine (Vitis vinifera), “Liivandii Black” Cultivar.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Spanish Maiolica Ware Dish Details with Vine-Leaf and Mock Arabic.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Vine leaf ornament Blue RD.png",
+     "reason": "art"
+    },
+    {
+     "title": "Vitis vinifera sproutling 2.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Vine leaf ornament Green RD.png",
+     "reason": "art"
+    },
+    {
+     "title": "Sarma.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Vine leaf ornament Gray RD.png",
+     "reason": "art"
+    },
+    {
+     "title": "Vine leaf ornament Black LD.png",
+     "reason": "art"
+    },
+    {
+     "title": "Liat Portal for Foodie Disorder - Stuffed grape leaves (dolma) from San Francisco farmers market.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Vine leaf ornament Gray LE.png",
+     "reason": "art"
+    },
+    {
+     "title": "Crimean Tatar sarma Stage 2.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Vine leaf ornament Red ER.png",
+     "reason": "art"
+    },
+    {
+     "title": "Crimean Tatar sarma Stage 3.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Fieberiella florii nymph on a Vitis vinifera leaf-1.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Vine leaf ornament Gray ER.png",
+     "reason": "art"
+    },
+    {
+     "title": "Minois dryas on Vitis.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Vine leaf ornament Black ER.png",
+     "reason": "art"
+    },
+    {
+     "title": "Crimean Tatar sarma Stage 5.jpg",
+     "reason": "other"
+    }
+   ]
+  },
+  "maple_leaves": {
+   "titles": [
+    "Red maple leaf on paper birch.jpg",
+    "Red Maple Leaves in Yahiko.JPG",
+    "Maple Leaf Strong.jpg",
+    "Fallen maple leaves on asphalt, Vieux-Limoilou.jpg",
+    "Maple leaf held up in autumn, Vieux-Limoilou.jpg",
+    "Holding a dry maple leaf.jpg",
+    "Autumn maple leaves and evergreen needles on the Oberg Mountain Trail Head in Tofte, Minnesota.jpg",
+    "2020 year. Herbarium. Acer negundo. img-002.jpg",
+    "Acer Palmatum Japanese Maple Tree Leaves Autumn Newton Massachusetts.jpg",
+    "Powdery mildew on maple leaf.jpg",
+    "Autumn Acer leaf in Canada1.jpg",
+    "Pacific Spirit Maple leaf compared to women's 10 shoes.jpg",
+    "2016-11 Maple leaves autumn Quebec.jpg",
+    "Autumn leaves in Sweden.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Acer saccharinum Leaf epidermis and stomata print 400x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Acer platanoides Leaf epidermis and stomata print 400x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Maple Leaf train at Union Station.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Acer pseudoplatanus leaf epidermis and stomata print 100x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Acer platanoides leaf epidermis and stomata print 100x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Maple Leaf Playground from near the butterfly garden .jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Acer saccharinum leaf epidermis and stomata print 100x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Autumn Leaves, No. 2 (Maple) (Boston Public Library).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Maple Leaf found Circa 1990 by Ted Maitland Shawnigan Lake, B.C. Canada.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Measurement of Maple Leaf found Circa 1990 by Ted Maitland Shawnigan Lake, B.C. Canada.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "2020 year. Herbarium. Acer negundo. img-027.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Acer Palmatum Japanese Maple Tree Leaves autumn Newton Massachusetts.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Vancouver (BC, Canada), Canada Place, Ahornblatt -- 2022 -- 1862.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "2020 year. Herbarium. Acer negundo. img-031.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Acer Palmatum Japanese maple Tree Leaves Autumn Newton Massachusetts.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Interior of Maple Leaf Gardens.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "2020 year. Herbarium. Acer negundo. img-028.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Acer Palmatum Japanese Maple Tree leaves Autumn Newton Massachusetts.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "2020 year. Herbarium. Acer negundo. img-032.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Acer Palmatum Japanese Maple tree Leaves Autumn Newton Massachusetts.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Maple leaf cookie.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Maple with autumn leaves, by Osterley lake. - geograph.org.uk - 621358.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Autumn Acer leaf in Canada2.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Maple leaf cream cookie.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Big leaf 2926.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Half of a maple leaf cookie.jpg",
+     "reason": "other"
+    }
+   ]
+  },
+  "other_leaves": {
+   "titles": [
+    "Walnut Leaf translucency under natural sunlight.jpg",
+    "A bud of a rose leaf.jpg",
+    "Green peach aphid (Myzus persicae) on a leaf, Lisbon, Portugal (approx. GPS location) julesvernex2.jpg",
+    "Peach blossom caterpillar on a raspberry leaf 01.jpg",
+    "Walnut leaf galls - upper surface - geograph.org.uk - 4574415.jpg",
+    "Walnut leaf galls - lower surface - geograph.org.uk - 4574421.jpg",
+    "Apricot leaf veins.JPG",
+    "Leaf curl on leaf and young shoots of peach.jpg",
+    "Walnut 19-10-04 044.jpg",
+    "Apricot mallow leaf closeup.jpg",
+    "Photinia serratifolia - Diplocarpon mespili fungus.jpg",
+    "Black walnut leaf.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Blossom of Mirabelle plum (cropped transparent).png",
+     "reason": "other"
+    },
+    {
+     "title": "Basket of Peaches, with Quinces, and Plums LACMA M.2010.53.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Oak Creek May 2026 05 (Oak Leaf Trail).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "清 吳熙載 杏花 扇面-Apricot MET DT8379.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Prunus cerasifera LC0385.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mira calligraphiae monumenta (Model Book of Calligraphy) G. Bocskay 1562 J. Hoefnagel illumination 1596 Ms.20 (86.MV.527) fol. 039 Poppy Anemones, Caterpillar, Fig, and Quince (Getty Museum).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Juglans regia Walnut leaf epidermis print and stomata 100x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Oak Creek May 2026 12 (Oak Leaf Trail--South Shore Line).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Begonia Green Leaf Rose 0zz.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wu Xizai - Apricot - 1986.267.20 - Metropolitan Museum of Art.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Prunus cerasifera 2016 G1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mira calligraphiae monumenta (Model Book of Calligraphy) G. Bocskay 1562 J. Hoefnagel illumination 1596 Ms.20 (86.MV.527) fol. 039 poppy anemones caterpillar fig and quince (enhanced image by Rawpixel).jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Oak Creek May 2026 14 (Oak Leaf Trail--South Shore Line).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rose leaf 3.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Blackberry and apricot pie with yogurt and bay leaf (14358992957).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Peach blossom caterpillar on a raspberry leaf 02.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Blutpflaume - Prunus cerasifera Nigra - March 22 2026.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Stomata x400 magnification.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Oak Creek May 2026 13 (Oak Leaf Trail--South Shore Line).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rosa sp. (Rose) leaf epidermis and stomata print 100x.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "20210329 Prunus cerasifera.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Lámina 2 del Mapa Quinatzin, Palacio de Nezahualcóyotl.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Oak Creek May 2026 15 (Oak Leaf Trail--South Shore Line).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rose Leaf - geograph.org.uk - 7891783.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Birthday album for Wan Qingli – 1913.8 – Manchester Art Gallery – Leaf 19, detail of peach grove.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "20140317Prunus cerasifera Hockenheimer Rheinbogen5.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Oak Creek May 2026 11 (Oak Leaf Trail--South Shore Line).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rose, Gold Leaf, バラ, ゴールド リーフ, (15360954754).jpg",
+     "reason": "other"
+    }
+   ]
+  },
+  "apple_fruit": {
+   "titles": [
+    "Red Apple.jpg",
+    "Red Delicious Apple 2021.jpg",
+    "Golden Delicious apples.jpg",
+    "Rotten apple under the tree.jpg",
+    "Green apple 01.jpg",
+    "Apples in basket 2018 G2.jpg",
+    "Green apple 02.jpg",
+    "Red apple cut.jpg",
+    "Green apple gen.png",
+    "PinkLadyApples.JPG",
+    "Green apple from Kerala.jpg",
+    "Red apple on black background.jpg",
+    "Whole apple and bitten apple.jpg",
+    "2018-07-15 Green apples on tree.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Iced-tree-limbs-in-sun.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Tastee-Candy-Apple-Red-Caramel-wPeanuts.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mrs. Green Apple ミセスグリーンアップル in Seoul, Korea 2025 05.jpg",
+     "reason": "people"
+    },
+    {
+     "title": "Tree with red apples in Barkedal 4.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Apple-tree blossoms 2017 G3.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Green Apple Icon.png",
+     "reason": "art"
+    },
+    {
+     "title": "Malus domestica (Apple) flowers 3.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "The Red Apple 2010.JPG",
+     "reason": "other"
+    },
+    {
+     "title": "Apple cartoon with transparent background.png",
+     "reason": "art"
+    },
+    {
+     "title": "Malus domestica (Apple) flowers 2.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rotterdam The Red Apple Tower.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "2017-07-28 (024) Apples an tree west from old farmhouse Bichl at Haltgraben in Frankenfels, Austria.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Red Apple Rotterdam.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Santa Maria de Huerta Almacen.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "2017-07-28 (022) Apple tree near old Bichl, Haltgraben, Frankenfels, Austria.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Oak apples - Keila.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rotterdam - The Red Apple (1).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple II at Musée Bolo.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Malus domestica (Apple) flowers 4.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Green apple svln4821.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple fruit in illorin.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Malus domestica - Köhler–s Medizinal-Pflanzen-108.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Rotterdam - The Red Apple & Waterstadtoren.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Green Apple In Sulaymaniyah, Kurdistan.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Malus pumila Apple Tree.JPG",
+     "reason": "subject"
+    },
+    {
+     "title": "Red Apple Rotterdam Scheepmakershaven Ibisbrug Rotterdam.jpg",
+     "reason": "other"
+    }
+   ]
+  },
+  "apple_blossom": {
+   "titles": [
+    "Apple-tree blossoms 2017 G3.jpg",
+    "Apple flowers 1.jpg",
+    "Apple flowers 2.jpg",
+    "Flowers of Malus domestica (25).jpg",
+    "Flowers of Malus domestica (26).jpg",
+    "Malus domestica LC0122.jpg",
+    "Apple tree flowers .jpg",
+    "Malus domestica (Apple) flowers 4.jpg",
+    "Malus domestica (Apple) flowers 5.jpg",
+    "Malus domestica in flower in Lithuania, May 2019.jpg",
+    "Crab apple flowers, Floor Farm, Kilmaurs, East Ayrshire.jpg",
+    "Apple-flowers-spring - West Virginia - ForestWander.jpg",
+    "Malus domestica a1.jpg",
+    "Flowers of Malus domestica (6).jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Malus domestica (Apple) flowers 3.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Apple Blossom Egg Carl Fabergé (cropped).JPG",
+     "reason": "art"
+    },
+    {
+     "title": "Malus domestica (Apple) flowers 2.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Apple Blossom Egg Carl Fabergé.JPG",
+     "reason": "art"
+    },
+    {
+     "title": "Apple blossoms in Srinagar, India.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Clematis 'Apple Blossom'.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple flowers in Vantaa.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Clematis Apple Blossom (5582809058).jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "AMC Apple Blossom 12 - 106746.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Malus domestica Blüten 20150423.JPG",
+     "reason": "subject"
+    },
+    {
+     "title": "Flowers blossom in apple tree in Kashmir.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "AMC Apple Blossom 12 - 106748.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple cultivars in Priorwood Gardens in Melrose Scotland Flower of Kent.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "AMC Apple Blossom 12 - 106749.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Apple-Flowers-Tree ForestWander.JPG",
+     "reason": "subject"
+    },
+    {
+     "title": "AMC Apple Blossom 12 - 106745.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Flower of Kent Apple cultivars as grown at Priorwood Garden in 2020.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Collarette Dahlia - \"Apple Blossom\" cultivar.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Malus domestica (Apple) flowers.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "AMC Apple Blossom 12 side.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Malus domestica in bloom.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Rosa 'Apple Blossom' 04.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Apple flower dissected.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rosa 'Apple Blossom' 03.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Apple-blossom-flowers - West Virginia - ForestWander.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Wikiolo in Liechtenstein (29).jpg",
+     "reason": "art"
+    }
+   ]
+  },
+  "bark_branches": {
+   "titles": [
+    "Pine log cross-sections, Teutendorf, 2016-09-17.jpg",
+    "Apple tree bark burrs.JPG",
+    "Two holes and green leaves on the bark of a tree trunk in the forest in Luang Prabang Laos.jpg",
+    "20240602 Apple tree Malus domestica Franciscan monastery Katowice Panewniki 36.jpg",
+    "Ponderosa pine bark (68450).jpg",
+    "Gibberd Garden apple tree bough Harlow Essex England.jpg",
+    "Ailanthus altissima bark Siemianowice.jpg",
+    "Apple tree trunk and boughs Gibberd Garden Harlow Essex England 01.jpg",
+    "Aesculus hippocastanum bark Siemianowice 2.jpg",
+    "Apple tree trunk and Green Man ornament in Nuthurst, West Sussex, England.jpg",
+    "Aesculus hippocastanum bark Siemianowice.jpg",
+    "2024-10-14 11 06 36 Bark on an old apple tree at Terhune Orchards in Lawrence Township, Mercer County, New Jersey.jpg",
+    "Malus domestica ‘Landsberska’ bark Zabrze.jpg",
+    "Apple tree trunk and boughs Gibberd Garden Harlow Essex England 04.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Branches of a Ficus kurzii reflecting in the water at Singapore Botanic Gardens.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Black alder twig and water ripples at Wolfsberger Mühle, 2019-06-29.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Sninský kameň (v zime) 001.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Ploceus velatus beak open.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Münster, Park Sentmaring -- 2015 -- 9923.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Village weaver (Ploceus cucullatus cucullatus) male with leaf.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Dülmen, Wildpark -- 2017 -- 6075-81.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cuban tree frog (Osteopilus septentrionalis) 5.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Tree branch after ice storm.JPG",
+     "reason": "other"
+    },
+    {
+     "title": "Unid Brachycera diagonal 20070604.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Populus tremula bark Siemianowice.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Apple tree trunk in Nuthurst West Sussex England.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Dülmen, Kirchspiel, Bauerschaft Börnste -- 2021 -- 4406 (bw).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Purple roller (Coracias naevius mosambicus).jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Forest road Slavne 2017 BW G9.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Hornbill Zazu Chitwa South Africa Luca Galuzzi 2004.JPG",
+     "reason": "animal"
+    },
+    {
+     "title": "2024-10-14 11 24 12 Bark on an old apple tree at Terhune Orchards in Lawrence Township, Mercer County, New Jersey.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Forest road Slavne 2017 G8.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Marumba-Aralam-2016-10-30-001.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Kentucky Coffee Tree Gymnocladus dioicus Horizontal Bark.JPG",
+     "reason": "enough"
+    },
+    {
+     "title": "Bark of Angophora Costata or Smooth-barked Apple.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Snowy road Sosonka 2013 G1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "White-fronted bee-eater (Merops bullockoides) Namibia.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Siemianowice Malus domestica bark.jpg",
+     "reason": "enough"
+    },
+    {
+     "title": "Coucang.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Merops apiaster 04.jpg",
+     "reason": "animal"
+    }
+   ]
+  },
+  "grass": {
+   "titles": [
+    "Dülmen, Kirchspiel, Börnste, Feld -- 2017 -- 3171.jpg",
+    "Mown lawn close-up (4440207851).jpg",
+    "Poa annua.jpg",
+    "Poa annua.jpeg",
+    "Annual Meadow-grass (Poa annua), Easting - geograph.org.uk - 4493603.jpg",
+    "Dew on grass Luc Viatour.jpg",
+    "Ploughed grass, Logan's Meadow - geograph.org.uk - 4469713.jpg",
+    "Poa annua 126838450.jpg",
+    "Steppe, Grassland, Rostov-on-Don, Russia.jpg",
+    "Monographella nivalis-close-up-1.jpg",
+    "Grass meadow at Bridge End - geograph.org.uk - 5141246.jpg",
+    "Poa nemoralis (wood meadow grass), flowering.jpg",
+    "Mown grass in Twyning Meadow - geograph.org.uk - 7052300.jpg",
+    "Grass 32.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Red fox catches a vole - Tolyatti, Russia.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Close up of the lawn mower with grass and flowers in background.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Vulpes vulpes Mallnitz 01.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Close-up of a man starting a lawn mower.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "SBB RABDe 500 bei Twann.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Robot lawn mower close-up (51331550196).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Meadow Grass MET DP824533.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Close-up of the dandelions in the grass with a lawn mower in a blurry background.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Meadow Grass MET DP824534.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Athene cunicularia 20110524 02.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Close-up of the Arcelo-Mittal from the perimeter path around the South Lawn - geograph.org.uk - 5979306.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Schloss Philippsruhe (Westseite).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Close Up of Gemco Rotarider.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Meadow of Daisies and grass.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Günter Grass, 2004.jpg",
+     "reason": "people"
+    },
+    {
+     "title": "Lawn-meadow-close-up-view-animals (24030139770).jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Meadow-grass by Alice Brown.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Edible fungi in basket 2012 G1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Humenné - Manor park - Information board on the park lawn near the soutwest outside corner of the manor house, close-up on images (April 2025).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Kaplica grobowa rodziny Potockich P1680784 Peczera.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Central Libray Entrance at Night close up from Queen's Lawn, Imperial College London.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Common meadow grass (Poa pratensis); seedhead and leafy stem Wellcome V0044025.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "The Grass Snake - Natrix natrix.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Monographella nivalis-close-up-3.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Dülmen, Kirchspiel, VW 1303 -- 2017 -- 2279.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Monographella nivalis-close-up-2.jpg",
+     "reason": "dup"
+    }
+   ]
+  },
+  "hands": {
+   "titles": [
+    "Hand and power stone bracelets.jpg",
+    "Boys palm 手板心 手掌.png",
+    "Hand Image.jpg",
+    "Sole of foot of an infant held between the middle finger and the ring finger of an adult hand for size comparison.jpg",
+    "India - Varanasi green peas - 2714.jpg",
+    "Close-up of hands playing piano keys.jpg",
+    "Hand comparison.jpg",
+    "Man playing an acoustic brazilian guitar (Violão) on Marco Zero Square, Refice, Pernambuco, Brazil.jpg",
+    "Wound on palm of hand - day 15.jpg",
+    "Sausage making-H-5-edited2.jpg",
+    "Close-up of a Female sitting on ground.jpg",
+    "Hand on an old violin close-up.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Close-up of a woman disinfecting her hands with sanitizer spray.jpg",
+     "reason": "people"
+    },
+    {
+     "title": "Open Hand monument, Chandigarh.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Ambigram Escher and tessellation background - photomontage with reversible hands.jpg",
+     "reason": "art"
+    },
+    {
+     "title": "Close up on Crocodile in Hands 2017 3.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Open Hand Monument.JPG",
+     "reason": "other"
+    },
+    {
+     "title": "Boys palm 手掌 手板心.png",
+     "reason": "dup"
+    },
+    {
+     "title": "Macaca sylvanus feet and hands.JPG",
+     "reason": "animal"
+    },
+    {
+     "title": "Close up on Crocodile in Hands 2017 1.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Open Hand monument of Chandigarh.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Close up on Crocodile in Hands 2017 2.jpg",
+     "reason": "animal"
+    },
+    {
+     "title": "Open hand monument of Chandigarh.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "ഞാറുനടീൽ.jpg",
+     "reason": "people"
+    },
+    {
+     "title": "Open Hand Monument 1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Close up parent holding hands of little kid girl.jpg",
+     "reason": "people"
+    },
+    {
+     "title": "Open hand Monument 2.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Dean Rusk, Lyndon B. Johnson and Robert McNamara in Cabinet Room meeting February 1968.jpg",
+     "reason": "people"
+    },
+    {
+     "title": "Close-up of a child s hands gripping the seesaw handle.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Open hand monument of Chandigarh, India.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wound on palm of hand - day 19.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Bergelut dengan asap nan beracun.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Close-up of an x-ray of both hands in front of a nurse.jpg",
+     "reason": "subject"
+    },
+    {
+     "title": "Open Hand monument, Chandigarh (cropped).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wound on palm of hand - day 14.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "The Open Hand, Chandigarh (5664794701).jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wound on palm of hand - day 17.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Backlit keyboard.jpg",
+     "reason": "moved"
+    },
+    {
+     "title": "Open Hand monument of Chandigarh Capitol Complex.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wound on palm of hand - day 16.jpg",
+     "reason": "dup"
+    }
+   ]
+  },
+  "sky": {
+   "titles": [
+    "Colorful sky with orange clouds reflecting in the water of a paddy field, at sunset, Vang Vieng, Laos.jpg",
+    "Sky over Munich 02.jpg",
+    "Colorful sky with orange and pink clouds reflecting in the water of a paddy field at dusk in Don Det Laos.jpg",
+    "Water reflection of stringy gray and white clouds in a pond on a sand beach of Don Khon at sunrise in Laos.jpg",
+    "Pirogue running on the Mekong at sunset with pink clouds in Don Det Laos.jpg",
+    "NASA's Orion Spacecraft Parachutes Tested at U.S. Army Yuma Proving Ground.jpg",
+    "Water reflection of sunset with gray and orange clouds and pirogues moored to the bank in Don Det Laos.jpg",
+    "Leaning trees over the grassy hillock of Nodong-ri tombs clouds and blue sky in Gyeongju South Korea.jpg",
+    "Red clouds over Mekong banks with dwellings and pirogues at sunrise in Don Det Laos.jpg",
+    "Samanea saman on an island with orange clouds and blue sky at sunrise from Don Det Si Phan Don Laos.jpg",
+    "Blue and orange clouds over the Mekong with a pirogue running in the water at sunset in Don Det Laos.jpg",
+    "Bridge to Don Khon seen from Don Det with water reflection of stringy orange clouds at sunrise in Laos.jpg"
+   ],
+   "skipped": [
+    {
+     "title": "Burimun gate and pine under blue sky at Beomeosa temple in Busan, South Korea.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Cheomseongdae Observatory under blue sky in Gyeongju South Korea.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Nørre Vorupør Coast one third sky 2012-11-18.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Front view of Jibokjae Hall under blue sky at Gyeongbokgung Palace in Seoul.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Colorful sky with pink clouds reflecting in the water of a paddy field and mountains at dusk Vang Vieng Laos.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Li Phi falls at dusk with colorful sky in Don Khon Laos.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Trees rising out of Cheow Lan Lake, blue sky, eternal summer in Surat Thani edited.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "The Shard from the Sky Garden 2015.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Front view of the Imperial Throne Hall Geunjeongjeon at Gyeongbokgung Palace with blue sky in Seoul.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Rose Garden - NATO Vista Bridge 3 NBG LR.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Bulguksa temple entrance gate stairs flower bed and blue sky in Gyeongju South Korea.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mekong bank with stilt dwellings and clouds at golden hour in Don Det Laos.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Wooden footbridge in Shinjuku Gyoen National Garden, Tokyo, Japan, a sunny day with blue sky.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Front exterior view of Beomeosa temple with three stairs and blue sky in Busan South Korea.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Clouds over the Xe Don River with boats at sunset in Pakse Laos.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Three quarter view of the ruined Khmer Hindu temple of Wat Phou with blue sky in Champasak Laos.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Pachycereus pringlei forest.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Yellow clouds and chicken in freedom reflecting in the water of a paddy field at sunrise in Don Det Laos.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Bergtocht van parkeerplaats bij centrale Malga Mare naar Lago Lungo. Uitzicht op Monte Cevedale 07.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Blue Mountains National Park (AU), Three Sisters -- 2019 -- 1987-9.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "20200222 FIS NC COC Eisenerz PRC HS109 Men Manuel Einkemmer 850 4588.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Maid of the Mist VII approaching the Horseshoe Falls, West view 20170418 1.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Mode Gakuen Cocoon Tower in the evening with blue sky Tokyo Japan.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Blue stormy clouds at sunset with water reflection and a pirogue moored to the bank, in Don Det, Laos.jpg",
+     "reason": "dup"
+    },
+    {
+     "title": "Sossusvlei Dune Rippled cropped.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Banya yeonji pond water reflection of bridge and trees under blue sky at Bulguksa Gyeongju South Korea.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "RhB ABe 8-12 Malans winter.jpg",
+     "reason": "other"
+    },
+    {
+     "title": "Side view of the Château de Chantilly with water reflection and blue sky Oise France.jpg",
+     "reason": "other"
+    }
+   ]
+  },
+  "documents": {
+   "titles": [
+    "Act of Independence of Central America (scan).jpg",
+    "ReceiptSwiss.jpg",
+    "1920 Reçu Berliet consignes 16.jpg",
+    "Felicien Rops - l'homme et l'artiste 1908 (144064786).jpg",
+    "Abbott and Holder receipt - 21 August 1969.jpg",
+    "Official document annexure 11 dated 12 March 1997 loniya visthapit rajput.jpg",
+    "Receipt for temporary bonds.jpg",
+    "Front page of Ottoman newspaper Kadin.jpg",
+    "William Shurtless, Letter, title page, printed by Kneeland & Green, 1745.jpg",
+    "US-BEP-Receipt for currency (23 July 1915).jpg",
+    "Front page of newspaper Wilnaer Zeitung with Lithuanian Vytis (Waykimas), published on 12 April 1918.jpg",
+    "Shell-Gas-Station-Receipt-MasterCard.jpg",
+    "Receipt from Josiah Wedgwood 1770.jpg",
+    "Front page of the newspaper \"Busch\". 7 June 1941. La Paz.png"
+   ],
+   "skipped": [],
+   "note": "poultry repository's selection"
+  },
+  "screenshots": {
+   "titles": [
+    "Screenshot wikiwand.jpg",
+    "Screenshot of the official website of the President of Ukraine 2019-05-20 uk.png",
+    "Wikipedia screenshot 2026.jpg",
+    "Screenshot of website South African COVID-19 Vaccination Programme Registration.png",
+    "Screenshot of ilo Muni.png",
+    "Screenshot of System-Tools.png",
+    "Screenshot Wikipedia Mobile Smartphone.png",
+    "Screenshot of X's website (Sept 2025).png",
+    "Screenshot of Crosstalk Mk.4.png",
+    "Tatoeba.org English screenshot 2021.png",
+    "Screenshot of the Main Page on the English Wikipedia - Wikipedia 25.png",
+    "Tea 62.0.1 - Screenshot - Editor Module.png",
+    "StatProofBook website screenshot.png",
+    "Screenshot FlyBack 0.3.3.png"
+   ],
+   "skipped": [],
+   "note": "poultry repository's selection"
+  },
+  "people": {
+   "titles": [
+    "People walking on the street in Nairobi, Kenya.jpg",
+    "Young people walking in the street, Hungary 2011.jpg",
+    "People walking in a street.jpg",
+    "People walking on a street in Copenhagen.jpg",
+    "Throngs of people walking towards Himeji Castle, Himeji, 2016.jpg",
+    "People walking at Regent Street on a car-free day, London, United Kingdom julesvernex2.jpg",
+    "Street walking - Castelo, Lisbon, Portugal.jpg",
+    "Group of people walking down the street.jpg",
+    "Woman walking next to Edifício-sede da Caixa Geral de Depósitos, Arco do Cego Street, Lisbon, Portugal julesvernex2.jpg",
+    "Officers Walking on Jinzhou Street, Taipei in Lunch Time 20150901.jpg",
+    "People walking on sidewalk in central Pyongyang, with trolleybus and trams in background.jpg",
+    "People walking in the Kirkegata, Stavanger, Norway julesvernex2.jpg"
+   ],
+   "skipped": [],
+   "note": "poultry repository's selection"
+  },
+  "everyday_objects": {
+   "titles": [
+    "Mug Wikipedia Malayalam.jpg",
+    "Parked bicycle with graffitied building facade and doors in Amsterdam.jpg",
+    "Santorin (GR), Fira -- 2017 -- 2598.jpg",
+    "Smartphone display screen.jpg",
+    "Coffee mug on table.jpg",
+    "Backlit keyboard.jpg",
+    "Reebok Royal Glide Ripple Clip shoe.jpg",
+    "Shoes in a spanish shoe store.jpg",
+    "Smartphone di varie marche.png",
+    "Coffee Mug on Desk.jpg",
+    "Razer Ornata Chroma keyboard-top PNr°0463.jpg",
+    "Bicycle crankset Shimano 105 R7000 (chainring 50-34, length 172.5mm, 11 speed).jpg",
+    "Coffee mugs.jpg",
+    "Asics Gel-Cumulus 22.jpg"
+   ],
+   "skipped": [],
+   "note": "poultry repository's selection"
+  },
+  "scenes": {
+   "titles": [
+    "Landscape Arnisee-region.JPG",
+    "Eldridge Street Synagogue (42773).jpg",
+    "Beech Forest (AU), Great Otway National Park, Beauchamp Falls -- 2019 -- 1271.jpg",
+    "Mulberry Street NYC c1900 LOC 3g04637u edit.jpg",
+    "Beach of Cape Fiolent, Crimea.jpg",
+    "Spruce forest at Holma.jpg",
+    "Facade of the Conjunto Nacional cropped version.jpg",
+    "Havelock Island, Mangrove tree on the beach, Andaman Islands.jpg",
+    "Wooden staircase steps in the forest of Hallasan Park Eorimok Trail at dusk on Jeju Island in South Korea.jpg",
+    "Parasols, Evening, Beach, Rincon de la Victoria, Andalusia, Spain.jpg",
+    "Québec city downtown.jpg",
+    "Illuminated facade of a 3-storey restaurant with Japanese signs and red paper lanterns, Chiyoda, Tokyo.jpg",
+    "Seal Rocks, Ocean Beach, San Francisco.jpg",
+    "Snowy Sainte-Famille Street in Quebec City.jpg"
+   ],
+   "skipped": [],
+   "note": "poultry repository's selection"
+  },
+  "other_animals": {
+   "titles": [
+    "Felis catus-cat on snow.jpg",
+    "Biandintz eta zaldiak - modified2.jpg",
+    "Flock of sheep.jpg",
+    "DSC09611a Search and Rescue Dog, Austrian Red Cross Perchtoldsdorf, 2024-10.jpg",
+    "Cow in Field image.jpg",
+    "Horse December 2014-1.jpg",
+    "Cat November 2010-1a.jpg",
+    "Dode merel (Turdus merula). Locatie, Tuinreservaat Jonkervallei 02.jpg",
+    "Cow on a field resting 2025.jpg",
+    "Domestic horse at Suryachaur and the mountains in the back1.jpg",
+    "Swaledale Sheep, Lake District, England - June 2009.jpg",
+    "June odd-eyed-cat cropped.jpg",
+    "Stubai - Tiroler Bergschaf -BT- 01.jpg",
+    "IcelandicHorseInWinter.jpg"
+   ],
+   "skipped": [],
+   "note": "poultry repository's selection"
+  }
+ }
+}

@@ -218,11 +218,14 @@ class TestPredictRisk:
 
 # ---------------------------------------------------------------------------
 # /api/v1/detect-lesion
+# The procedural leaves below are drawings for testing the detector, not photos, and the input check (correctly)
+# turns them away; these tests skip the check to reach the detector. The check has its own tests.
+DETECT_UNCHECKED = "/api/v1/detect-lesion?skip_input_check=true"
 # ---------------------------------------------------------------------------
 class TestDetectLesion:
     def test_detects_lesions(self, client: TestClient) -> None:
         image, truth = render_synthetic_leaf(seed=3)
-        res = client.post("/api/v1/detect-lesion", files={"file": ("leaf.png", _png_bytes(image), "image/png")})
+        res = client.post(DETECT_UNCHECKED, files={"file": ("leaf.png", _png_bytes(image), "image/png")})
         assert res.status_code == 200, res.text
         body = res.json()
         assert body["scab_detected"] is True
@@ -236,14 +239,14 @@ class TestDetectLesion:
 
     def test_healthy_leaf(self, client: TestClient) -> None:
         files = {"file": ("healthy.png", _png_bytes(render_healthy_leaf()), "image/png")}
-        body = client.post("/api/v1/detect-lesion", files=files).json()
+        body = client.post(DETECT_UNCHECKED, files=files).json()
         assert body["scab_detected"] is False
         assert body["lesion_count"] == 0
         assert body["max_confidence"] is None
 
     def test_sample_jpeg_from_repo(self, client: TestClient) -> None:
         sample = Path(__file__).resolve().parents[1] / "data" / "sample_leaf_scab.jpg"
-        res = client.post("/api/v1/detect-lesion", files={"file": (sample.name, sample.read_bytes(), "image/jpeg")})
+        res = client.post(DETECT_UNCHECKED, files={"file": (sample.name, sample.read_bytes(), "image/jpeg")})
         assert res.json()["scab_detected"] is True
 
     def test_rejects_non_images(self, client: TestClient) -> None:

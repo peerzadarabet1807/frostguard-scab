@@ -37,14 +37,19 @@ describe("leafVerdict", () => {
     expect(leafVerdict(detection(1), risk)).toMatchObject({ severity: "warning", title: "1 scab lesion detected" });
   });
 
-  it("explains the incubation lag for clean leaves in high risk", () => {
+  it("explains the incubation lag when no scab is found in high risk", () => {
     const v = leafVerdict(detection(0), riskResponse());
     expect(v.severity).toBe("info");
+    expect(v.title).toBe("No scab lesions found.");
+    expect(v.body).toContain("This model only looks for scab; it cannot see other diseases.");
     expect(v.body).toContain("9–17 days");
   });
 
-  it("is all-clear for a clean leaf in low risk", () => {
+  it("never calls a leaf without scab lesions healthy or clean", () => {
     const risk = riskResponse({ risk_level: "LOW", fungicide: { action: "none", window_hours: null, deadline: null, message: "" } });
-    expect(leafVerdict(detection(0), risk).severity).toBe("good");
+    const v = leafVerdict(detection(0), risk);
+    expect(`${v.title} ${v.body}`).toBe("No scab lesions found. This model only looks for scab; it cannot see other diseases.");
+    expect(v.severity).not.toBe("good");
+    expect(`${v.title} ${v.body}`).not.toMatch(/healthy|clean/i);
   });
 });

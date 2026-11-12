@@ -1013,3 +1013,57 @@ th {
 .charts-placeholder {
   height: 690px;
 }
+
+/* ------------------------------------------------------------------------
+   Input check notice (soft block) and photo tips
+   ------------------------------------------------------------------------ */
+.input-check-notice h3 {
+  margin: 0 0 2px;
+  font-size: 15px;
+  outline: none;
+}
+.input-check-notice h3:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.input-check-notice small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0 4px;
+}
+.link-button {
+  background: none;
+  border: none;
+  padding: 7px 4px;
+  color: var(--text-2);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.leaf-tips {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--text-2);
+}
+.leaf-tips summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.leaf-tips ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+.input-check-facts {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--hairline);
+}
+.card-subtitle {
+  margin: 0 0 4px;
+  font-size: 14px;
+}

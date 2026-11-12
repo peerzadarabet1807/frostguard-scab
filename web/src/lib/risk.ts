@@ -32,6 +32,9 @@ export function classifyAlerts(risk: RiskResponse): Alert[] {
   return alerts;
 }
 
+export const NO_SCAB_TITLE = "No scab lesions found.";
+export const NO_SCAB_BODY = "This model only looks for scab; it cannot see other diseases.";
+
 export interface Verdict {
   severity: Severity;
   title: string;
@@ -74,12 +77,13 @@ export function leafVerdict(detection: DetectionResponse, risk: RiskResponse | n
       body: "Lesions release secondary spores at the next wetting. Tighten the protectant schedule before forecast rain.",
     };
   }
+  // Never present a leaf without scab lesions as healthy: the detector looks for scab only.
   if (level === "HIGH" || level === "CRITICAL") {
     return {
       severity: "info",
-      title: "No visible lesions yet",
-      body: "Scab takes 9–17 days to show symptoms after infection, so follow the fungicide window above.",
+      title: NO_SCAB_TITLE,
+      body: `${NO_SCAB_BODY} Scab takes 9–17 days to show symptoms after infection, so follow the fungicide window above.`,
     };
   }
-  return { severity: "good", title: "No lesions detected", body: "The leaf looks clean and weather risk is low." };
+  return { severity: "info", title: NO_SCAB_TITLE, body: NO_SCAB_BODY };
 }

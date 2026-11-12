@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ApiClient } from "../lib/api";
+import { INPUT_CHECK_COPY, isInputCheckWarning } from "../lib/inputCheck";
 import { leafVerdict } from "../lib/risk";
 import { SAMPLE_ATTRIBUTION, SAMPLE_LEAVES } from "../lib/samples";
 import type { ChartPalette } from "../lib/theme";
@@ -16,6 +17,8 @@ interface Selected {
   url: string;
   name: string;
   revoke: boolean;
+  /** kept so "Analyse anyway" can send the same photo again */
+  blob: Blob;
 }
 
 const MAX_BYTES = 10 * 1024 * 1024;
@@ -33,17 +36,20 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
     if (selected?.revoke) URL.revokeObjectURL(selected.url);
   }, [selected]);
 
+  const noticeRef = useRef<HTMLHeadingElement>(null);
+  const tipsRef = useRef<HTMLDetailsElement>(null);
+
   const run = useCallback(
-    async (blob: Blob, name: string, url: string, revoke: boolean) => {
+    async (blob: Blob, name: string, url: string, revoke: boolean, skipInputCheck = false) => {
       abortRef.current?.abort();
       const controller = new AbortController();
       abortRef.current = controller;
-      setSelected({ url, name, revoke });
+      setSelected({ url, name, revoke, blob });
       setResult(null);
       setError(null);
       setBusy(true);
       try {
-        setResult(await client.detectLesion(blob, name, controller.signal));
+        setResult(await client.detectLesion(blob, name, controller.signal, skipInputCheck));
       } catch (err) {
         if (!controller.signal.aborted) setError((err as Error).message);
       } finally {
@@ -65,7 +71,20 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
     void run(blob, `${id}.jpg`, url, false);
   };
 
-  const verdict = result ? leafVerdict(result, risk) : null;
+  const rejected = result !== null && !result.analysed;
+  const unchecked = result !== null && result.analysed && !!result.input_check?.skipped && !result.input_check.passed;
+  const verdict = result && result.analysed ? leafVerdict(result, risk) : null;
+
+  // Move focus to the notice when the input check turns a photo away, so keyboard users land on it.
+  useEffect(() => {
+    if (rejected) noticeRef.current?.focus();
+  }, [rejected, result]);
+
+  const openTips = () => {
+    if (tipsRef.current) tipsRef.current.open = true;
+    tipsRef.current?.scrollIntoView({ block: "center" });
+    tipsRef.current?.querySelector("summary")?.focus();
+  };
 
   return (
     <section className="card leaf-scan" id="leaf-scan">
@@ -95,6 +114,15 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
             <small>JPEG, PNG or WebP · up to 10 MB · one leaf on a plain background works best</small>
             <input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" hidden onChange={(e) => onFile(e.target.files?.[0])} />
           </div>
+
+          <details className="leaf-tips" id="leaf-tips" ref={tipsRef}>
+            <summary>Photo tips</summary>
+            <ul>
+              {INPUT_CHECK_COPY.tipList.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </details>
 
           <p className="field-label">Or try a held-out sample</p>
           <div className="samples">
@@ -144,8 +172,10 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
               </div>
               <figcaption>
                 {busy
-                  ? "Running the detector…"
-                  : result
+                  ? "Checking the photo, then running the detector…"
+                  : rejected
+                    ? "Not analysed: the input check turned this photo away"
+                    : result
                     ? `${result.lesion_count} lesion${result.lesion_count === 1 ? "" : "s"} · ${result.inference_ms.toFixed(0)} ms inference · ${result.backend === "trained" ? "trained YOLO11n" : "fallback heuristic"}`
                     : selected.name}
               </figcaption>
@@ -159,6 +189,48 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
             </p>
           )}
 
+          {rejected && selected && (
+            <div className="verdict sev-warning input-check-notice" data-testid="input-check-notice">
+              <h3 ref={noticeRef} tabIndex={-1}>
+                {INPUT_CHECK_COPY.heading}
+              </h3>
+              <span>{INPUT_CHECK_COPY.why}</span>
+              <span>
+                <strong>Tip:</strong> {INPUT_CHECK_COPY.tip}
+              </span>
+              <div className="notice-actions">
+                <button type="button" className="btn btn-primary" onClick={() => inputRef.current?.click()}>
+                  {INPUT_CHECK_COPY.retry}
+                </button>
+                <a
+                  className="btn"
+                  href="#leaf-tips"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openTips();
+                  }}
+                >
+                  {INPUT_CHECK_COPY.tips}
+                </a>
+                <button
+                  type="button"
+                  className="btn-link link-button"
+                  onClick={() => void run(selected.blob, selected.name, selected.url, selected.revoke, true)}
+                >
+                  {INPUT_CHECK_COPY.anyway}
+                </button>
+              </div>
+              <small>{INPUT_CHECK_COPY.safeguard}</small>
+            </div>
+          )}
+
+          {unchecked && (
+            <p className="alert sev-warning" role="note" data-testid="unchecked-label">
+              <span className="alert-icon" aria-hidden="true">!</span>
+              <span>{INPUT_CHECK_COPY.uncheckedLabel}</span>
+            </p>
+          )}
+
           {verdict && (
             <div className={`verdict sev-${verdict.severity}`}>
               <strong>{verdict.title}</strong>
@@ -166,7 +238,7 @@ export function LeafScan({ client, risk, palette, enabled }: Props) {
             </div>
           )}
 
-          {result?.warnings.map((w) => (
+          {result?.warnings.filter((w) => !isInputCheckWarning(w)).map((w) => (
             <p key={w} className="note">
               ℹ {w}
             </p>

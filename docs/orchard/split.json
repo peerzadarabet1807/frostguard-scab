@@ -1,0 +1,66 @@
+{
+  "description": "Fixed split of docs/orchard/, written once by scripts/split_sets.py.",
+  "seed": 20261112,
+  "shares": {
+    "prototype": 0.3,
+    "tune": 0.3
+  },
+  "per_category": {
+    "healthy": {
+      "prototype": 4,
+      "tune": 4,
+      "test": 5
+    },
+    "other_diseases": {
+      "prototype": 4,
+      "tune": 4,
+      "test": 7
+    },
+    "scab": {
+      "prototype": 2,
+      "tune": 2,
+      "test": 3
+    }
+  },
+  "prototype": [
+    "set/healthy/20240602_apple_tree_malus_domestica_jab_o_domowa_franciscan_.jpg",
+    "set/healthy/apple_tree_foglia_in_aria.jpg",
+    "set/healthy/apple_tree_leaf_j1.jpg",
+    "set/healthy/first_malus_domestica_leaf.jpg",
+    "set/other_diseases/apple_tree_leaves_with_insect_damage.jpg",
+    "set/other_diseases/cedar_apple_rust_on_crab_apple_leaf_upper_surface.jpg",
+    "set/other_diseases/podosphaera_leucotricha_detroit_usa_1.jpg",
+    "set/other_diseases/ruhland_ortrander_str_bei_hausnr_13e_apfelbaum_am_waldrand_a.jpg",
+    "set/scab/venturia_inaequalis_01.jpg",
+    "set/scab/wartenberg_angersbach_malus_tree_202408_a.jpg"
+  ],
+  "tune": [
+    "set/healthy/apple_leaves.jpg",
+    "set/healthy/malus_domestica_apple_leaves_kullu_2014_05_09_2200.jpg",
+    "set/healthy/malus_domestica_landsberska_leaves_zabrze.jpg",
+    "set/healthy/starr_130809_2953_malus_pumila_cv_pettingill_leaves_kula_mau.jpg",
+    "set/other_diseases/apple_powdery_mildew_geograph_org_uk_1274755.jpg",
+    "set/other_diseases/cedar_apple_rust_on_crab_apple_leaf_showing_underside_cup.jpg",
+    "set/other_diseases/podosphaera_leucotricha_ellis_everh_e_s_salmon_uga1236181.jpg",
+    "set/other_diseases/starr_140719_1080_malus_pumila_leaves_with_aphids_hawea_pl_o.jpg",
+    "set/scab/apple_fruits_scab.jpg",
+    "set/scab/camuesta_con_sarna.jpg"
+  ],
+  "test": [
+    "set/healthy/apple_tree_leaf.jpg",
+    "set/healthy/healthy_bda4f00e84.jpg",
+    "set/healthy/malus_domestica_in_aveyron_7.jpg",
+    "set/healthy/starr_130809_2923_malus_pumila_cv_gordon_leaves_kula_maui_24.jpg",
+    "set/healthy/starr_150323_0550_malus_pumila_leaves_hawea_pl_olinda_maui_2.jpg",
+    "set/other_diseases/apple_leaf_with_worm_infestation.jpg",
+    "set/other_diseases/cedar_apple_rust_heavily_infected_leaf_underside.jpg",
+    "set/other_diseases/malus_coronaria_w_gymnosporangium_juniperi_virginianae_27586.jpg",
+    "set/other_diseases/marssonina_blotch_on_a_rome_apple_leaf.jpg",
+    "set/other_diseases/mycosphaerella_pomi_a1.jpg",
+    "set/other_diseases/podosphaera_leucotricha_detroit_usa_3.jpg",
+    "set/other_diseases/starr_140719_1079_malus_pumila_leaves_with_aphids_hawea_pl_o.jpg",
+    "set/scab/apfelschorf_baum.jpg",
+    "set/scab/apple_scab_in_tashkent_region.jpg",
+    "set/scab/venturia_inaequalis2_lindsey.jpg"
+  ]
+}

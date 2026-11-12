@@ -152,9 +152,30 @@ class LesionBox(BaseModel):
     label: str
 
 
+class InputCheck(BaseModel):
+    """Does the photo look like an apple leaf? Checked before the detector runs (src/vision/input_check.py)."""
+
+    score: float = Field(..., description="Cosine similarity with the nearest apple-leaf prototype")
+    threshold: float
+    passed: bool = Field(..., description="score >= threshold")
+    skipped: bool = Field(
+        ..., description="True when the request asked for skip_input_check: the detector then ran whatever the score"
+    )
+    model: str
+    version: str
+    inference_ms: float
+
+
 class DetectionResponse(BaseModel):
     filename: str | None
-    scab_detected: bool
+    analysed: bool = Field(
+        ...,
+        description="False when the input check failed and the detector was not run: no result about scab either "
+        "way. Repeat with skip_input_check=true to run the detector anyway.",
+    )
+    scab_detected: bool | None = Field(
+        ..., description="null when the photo was not analysed; false only means no scab lesions were found"
+    )
     lesion_count: int
     max_confidence: float | None
     detections: list[LesionBox]
@@ -163,6 +184,7 @@ class DetectionResponse(BaseModel):
     inference_ms: float
     backend: Literal["trained", "fallback"]
     model: str
+    input_check: InputCheck | None = Field(None, description="null only if the input check model is not installed")
     warnings: list[str] = []
 
 
@@ -206,4 +228,7 @@ class ModelInfo(BaseModel):
     exported_at: str | None = None
     card: dict[str, Any] | None = Field(
         None, description="models/model_card.json, present only when its SHA-256 matches the loaded model"
+    )
+    input_check: dict[str, Any] | None = Field(
+        None, description="The input check in front of the detector: model, version, threshold and measured rates"
     )

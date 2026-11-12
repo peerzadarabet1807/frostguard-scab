@@ -43,6 +43,7 @@ export function riskResponse(overrides: Partial<RiskResponse> = {}): RiskRespons
 export function detection(n: number): DetectionResponse {
   return {
     filename: "leaf.jpg",
+    analysed: true,
     scab_detected: n > 0,
     lesion_count: n,
     max_confidence: n > 0 ? 0.59 : null,
@@ -60,6 +61,15 @@ export function detection(n: number): DetectionResponse {
     inference_ms: 55,
     backend: "trained",
     model: "scab_detector.onnx",
+    input_check: {
+      score: 0.95,
+      threshold: 0.86,
+      passed: true,
+      skipped: false,
+      model: "tinyclip-vit-8m-16-yfcc15m",
+      version: "test",
+      inference_ms: 40,
+    },
     warnings: [],
   };
 }

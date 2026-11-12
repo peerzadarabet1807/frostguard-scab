@@ -38,6 +38,7 @@ Revised Mills infection periods on live Open-Meteo weather, plus a YOLO11n lesio
 - [Why this exists](#why-this-exists-kashmirs-cold-climate-orchards)
 - [What it does](#what-it-does)
 - [Trained model results](#trained-model-results)
+- [Input check](#input-check)
 - [The physics: Revised Mills infection periods](#the-physics-revised-mills-infection-periods)
 - [Architecture](#architecture)
 - [Screenshots](#screenshots)
@@ -79,6 +80,7 @@ flags **six Mills infection periods** between 1 April and 15 May.
 | 🌦️ | Hourly weather from **Open-Meteo** (forecast + ERA5 archive), with cache, retries and a deterministic **offline** fallback | [`src/engine/weather_fetcher.py`](src/engine/weather_fetcher.py) |
 | 🧮 | **Revised Mills** leaf-wetness state machine: infection-risk ratio, protectant/curative fungicide windows, **frost-at-bud-break** alerts | [`src/engine/mills_physics.py`](src/engine/mills_physics.py) |
 | ⏪ | **Historical replay** of real Shopian ERA5 weather (spring 2024) through the same engine | [`src/engine/replay.py`](src/engine/replay.py) |
+| 🛂 | **Input check** before the detector: photos that do not look like an apple leaf get a notice instead of a scab result (TinyCLIP image encoder on ONNX Runtime) | [`src/vision/input_check.py`](src/vision/input_check.py) |
 | 🔬 | **YOLO11n** lesion detector (**trained, mAP50 0.531**) on **ONNX Runtime**: letterbox, decode, class-aware NMS, plus a fallback ONNX graph when the model isn't installed | [`src/vision/detector.py`](src/vision/detector.py) |
 | 🎓 | **Google Colab** notebook: Roboflow dataset → YOLO11n fine-tune on a T4 → ONNX; the executed run is committed | [`notebooks/`](notebooks/) · [`runs/`](runs/scab_yolo11n) |
 | 🔌 | **FastAPI** backend: risk, lesion detection, model card, replay datasets | [`src/api/app.py`](src/api/app.py) |
@@ -113,6 +115,64 @@ That dataset version ships no validation split, so the notebook held out a repro
   `python scripts/download_model.py`, which verifies the hash.
 - **Full training record:** [`runs/scab_yolo11n/`](runs/scab_yolo11n) (curves, confusion matrix, batches) and the
   executed notebook [`notebooks/train_yolo_colab_executed.ipynb`](notebooks/train_yolo_colab_executed.ipynb).
+
+## Input check
+
+Before this check existed, the detector answered for every photo: on 228 openly licensed photos that are not apple
+leaves (sky, hands, documents, fruit, other trees' leaves) it reported scab lesions on **179** and the app called
+the other 49 "clean" ([`docs/ood/`](docs/ood/README.md)). The API now asks one question first, *does this photo look
+like an apple leaf?*, and never changes the detector's answer.
+
+**How it works.** The image encoder of [TinyCLIP ViT-8M/16](https://huggingface.co/wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M)
+(Microsoft, MIT licence; ONNX with float16 weights, 16.8 MB, committed in [`models/gate/`](models/gate)) embeds the
+photo squashed to 224 × 224. The score is the cosine similarity with the nearest of seven prototypes: the mean
+embeddings of PlantVillage lab photos (healthy, scab, black rot, cedar apple rust; 30 each) and of orchard photos
+from Wikimedia Commons (healthy, scab, other diseases). A photo passes when the score is at least **0.8629**, the
+highest threshold that turns away at most 1% of the 130 tune photos ([`models/input_check.json`](models/input_check.json),
+written by [`build_input_check.py`](scripts/build_input_check.py)). The same gate family runs in the poultry and
+saffron web apps, where it was chosen against six other models and two baselines.
+
+**The API.** `POST /api/v1/detect-lesion` returns an `input_check` object (`score`, `threshold`, `passed`,
+`skipped`, `model`, `version`, `inference_ms`). If the check fails, the detector is not run: `analysed` is `false`,
+`scab_detected` is `null` (never "no scab") and a warning explains why. `?skip_input_check=true` runs the detector
+anyway; the check still runs and the response records `skipped: true`. Every client (the web app, `curl`, anything
+else) gets the check. The web app shows "This doesn't look like an apple leaf." with **Try another photo**, **Photo
+tips** and **Analyse anyway**, and labels an analysed-anyway result as unchecked input. A leaf without lesions now
+reads "No scab lesions found. This model only looks for scab; it cannot see other diseases.", never "healthy" or
+"clean".
+
+**Measured** on test photos only (the threshold came from the tune photos), with 95% Wilson intervals
+([`evaluation.md`](results/input_check/evaluation.md)):
+
+| | Rate |
+|---|---|
+| PlantVillage lab photos turned away (4 classes) | **0.0%** (0 of 120; 0.0 to 3.1) |
+| Orchard photos turned away | **6.7%** (1 of 15; 1.2 to 29.8): the one rejection is a scab photo |
+| The detector's own training photos turned away (PDD – Apple – Scab) | **0.0%** (0 of 200; 0.0 to 1.9) |
+| Look-alikes let through (other leaves, fruit, blossom, bark, grass) | **22.9%** (16 of 70; 14.6 to 34.0) |
+| Unrelated photos let through (hands, sky, people, documents, scenes, objects) | **0.0%** (0 of 61; 0.0 to 5.9) |
+
+All five sample leaves pass. Post-hoc, on the 131 ood-test photos: without the check the detector reported scab on
+77.9%; with it, on 10.7%, and every other photo gets the notice or, for 2 photos, "No scab lesions found".
+
+**What it cannot do.**
+- **Leaves of other trees often pass**: 6 of 8 pear leaves (apple's close relative, with similar leaves and
+  diseases), 4 of 7 other leaves (walnut, photinia) and 4 of 8 grape leaves. It mostly stops photos that are not
+  leaves at all.
+- **Field photos of scab are its weak spot**: 1 of 3 orchard scab test photos and 1 of 2 tune photos were turned
+  away. With 35 orchard photos in all, these rates are very uncertain; more field photos are the first thing to add.
+- The two procedural test drawings in `data/` (`sample_leaf_*.jpg`, made for the detector's tests) are turned away.
+
+**On Render's free plan** (512 MB, 0.1 CPU, one worker; measured locally in Docker with the same limits,
+[`docker_memory.json`](results/input_check/docker_memory.json), [`measure_docker.py`](scripts/measure_docker.py)):
+peak memory **251.9 MiB** with the check against 205.0 MiB without, so about 260 MiB stay free. A sample leaf takes
+a median 1,699.2 ms per request with the check against 1,296.5 ms without (the check itself 477.6 to 774.6 ms on a
+tenth of a CPU, 1,199.1 ms on the first request); a photo the check turns away returns in 603.1 to 796.4 ms because
+the detector is skipped.
+
+**Parity**: on 24 committed photos the shipped ONNX file matches the original PyTorch model at cosine ≥ 0.999 with
+the same decision on all of them (`tests/test_input_check.py`); the export itself reached cosine 0.9999996
+([`onnx_export.json`](results/input_check/onnx_export.json)).
 
 > **Treat these as honest small-data numbers.** 160 training images and a 40-image validation set give wide
 > error bars. The model works on single-leaf lab photos like its training data: the web app's samples are the
@@ -176,7 +236,7 @@ Every threshold is a field of [`EngineConfig`](src/engine/mills_physics.py) and 
  ┌────────── GitHub Pages ───────────┐   HTTPS / JSON   ┌──────────────────▼─── Render (free Docker web) ──┐
  │ web/  React 19 + TypeScript       │ ───────────────▶ │ Dockerfile: FastAPI + ONNX Runtime (CPU)        │
  │  zone map · 48 h charts · alerts  │                  │  /api/v1/predict-risk ─▶ engine/mills_physics   │
- │  leaf upload + box overlay        │ ◀─────────────── │  /api/v1/detect-lesion ─▶ vision/detector       │
+ │  leaf upload + box overlay        │ ◀─────────────── │  /api/v1/detect-lesion ─▶ input_check ─▶ detector│
  │  (VITE_API_URL → Render URL)      │                  │  /api/v1/model · /datasets · /scenarios · /docs │
  └───────────────────────────────────┘                  └───────────────────┬─────────────────────────────┘
                                                                             │ hourly forecast / ERA5
@@ -283,7 +343,7 @@ Interactive docs are served at `/docs` on the API.
 | `GET /api/v1/model` | Loaded detector, classes, input size, and the model card (when its SHA-256 matches) |
 | `GET /api/v1/zones` · `/scenarios` · `/datasets` | Orchard zones, simulated weather regimes, replayable historical datasets |
 | `POST /api/v1/predict-risk` | `zone` or `latitude`+`longitude` (live), uploaded `weather`, or `replay`+`as_of` → 48 h timeline, infection probability, fungicide window, frost |
-| `POST /api/v1/detect-lesion` | Multipart image → lesion boxes (image pixels), label, confidence |
+| `POST /api/v1/detect-lesion` | Multipart image → input check, then lesion boxes (image pixels), label, confidence. `?skip_input_check=true` runs the detector even if the photo does not look like an apple leaf |
 
 ```bash
 # Live 48 h risk for a zone (falls back to simulated weather if Open-Meteo is unreachable)
@@ -293,8 +353,11 @@ curl -s -X POST localhost:8000/api/v1/predict-risk -H 'Content-Type: application
 curl -s -X POST localhost:8000/api/v1/predict-risk -H 'Content-Type: application/json' \
      -d '{"replay": "shopian_spring_2024", "as_of": "2024-04-26T06:00:00+05:30"}'
 
-# Detect lesions on a held-out sample leaf
+# Detect lesions on a held-out sample leaf (the response includes the input check)
 curl -s -X POST localhost:8000/api/v1/detect-lesion -F "file=@data/samples/scab_leaf_4.jpg"
+
+# A photo that is not an apple leaf: analysed=false, scab_detected=null; add ?skip_input_check=true to analyse anyway
+curl -s -X POST localhost:8000/api/v1/detect-lesion -F "file=@docs/ood/set/sky/blue_and_orange_clouds_over_the_mekong_with_a_pirogue_runnin.jpg"
 ```
 
 ## Benchmarks
@@ -310,8 +373,9 @@ Measured on an Intel i7-10710U laptop CPU. Full method and tables are in [BENCHM
 ## Testing & CI
 
 ```bash
-pytest -q                           # 175 Python tests (trained-model checks skip until the model is downloaded)
-cd web && npm test                  # 19 web tests (Vitest + Testing Library)
+pytest -q                           # 188 Python tests (trained-model checks skip until the model is downloaded)
+FROSTGUARD_DOCKER_TESTS=1 pytest -q tests/test_input_check.py   # + memory and latency at 512 MB / 0.1 CPU in Docker
+cd web && npm test                  # 29 web tests (Vitest + Testing Library)
 cd web && npm run lint && npm run typecheck
 ```
 
@@ -326,6 +390,7 @@ cd web && npm run lint && npm run typecheck
 | Variable | Default | Effect |
 |---|---|---|
 | `FROSTGUARD_MODEL_PATH` | `models/scab_detector.onnx` | Detector to load (falls back to the heuristic graph if missing) |
+| `FROSTGUARD_GATE_PATH` | `models/gate/image_encoder.fp16.onnx` | Input check image encoder (if missing, photos are analysed unchecked, with a warning) |
 | `FROSTGUARD_OFFLINE` | `0` | `1` = never call Open-Meteo; simulated weather |
 | `FROSTGUARD_CORS_ORIGINS` | `*` | Comma-separated allowed origins ([`render.yaml`](render.yaml) allows GitHub Pages + localhost) |
 | `FROSTGUARD_ORT_THREADS` | auto | Pin ONNX Runtime threads and disable spin-waiting; `1` makes detection ~5× faster on fractional-CPU hosts |
@@ -341,14 +406,20 @@ cd web && npm run lint && npm run typecheck
 frostguard-scab/
 ├── src/
 │   ├── engine/           # weather_fetcher · mills_physics · replay · psychrometrics
-│   ├── vision/           # detector (ONNX Runtime) · fallback_model · synthetic test leaves
+│   ├── vision/           # detector (ONNX Runtime) · input_check · fallback_model · synthetic test leaves
 │   └── api/              # FastAPI app + Pydantic schemas
 ├── web/                  # React 19 + TypeScript app (Vite, Recharts, Leaflet), Dockerfile + nginx.conf
 ├── notebooks/            # Colab training notebook (template + executed run)
 ├── runs/scab_yolo11n/    # training curves, metrics, sample predictions (weights live on the release)
-├── models/               # model_card.json · fallback/ graph (trained .onnx is git-ignored, see release)
-├── data/                 # Shopian ERA5 spring 2024 · mock scenarios · samples/ (held-out leaves)
-├── scripts/              # download_model · build_model_card · benchmark · build_sample_data · deploy_hf_space (alt.)
+├── models/               # model_card.json · input_check.json · gate/ (input check encoder, MIT) · fallback/ graph
+│                         #   (the trained detector .onnx is git-ignored, see release)
+├── results/input_check/  # input check evaluation, Docker memory, ONNX export check
+├── data/                 # Shopian ERA5 spring 2024 · mock scenarios · samples/ (held-out leaves) ·
+│                         #   plantvillage_selection.json (input check lab photos)
+├── docs/                 # images · ood/ (228 non-leaf photos) · orchard/ (35 apple-leaf photos), with credits
+├── scripts/              # download_model · build_model_card · benchmark · build_sample_data · deploy_hf_space (alt.) ·
+│                         #   input check: build_ood_set · split_sets · fetch_* · export_gate_onnx · build_input_check ·
+│                         #   evaluate_ood_detector · make_gate_references · measure_docker
 ├── tests/                # pytest suites (engine, weather, vision, API, trained model)
 ├── .github/workflows/    # ci · pages
 ├── Dockerfile            # API image (also what Render deploys)
@@ -358,6 +429,8 @@ frostguard-scab/
 
 ## Limitations & roadmap
 
+- **The input check lets leaves of other trees through** (22.9% of look-alike photos, most of all pear) and turns
+  away some field photos of scab; see [Input check](#input-check). It is a safeguard, not a guarantee.
 - **Small, lab-only training data.** Collecting field photos from Kashmir orchards and retraining is the
   highest-value next step; the notebook and release flow are ready for it.
 - **Leaf wetness is inferred from RH and rain,** not measured. Planned: a LightGBM calibration layer against
@@ -374,6 +447,11 @@ frostguard-scab/
 
 - **Weather:** [Open-Meteo.com](https://open-meteo.com/) (CC BY 4.0), including ERA5 reanalysis from Copernicus / ECMWF.
 - **Training data:** [PDD – Apple – Scab](https://universe.roboflow.com/thesis-okplj/pdd-apple-scab) by *Thesis* on Roboflow Universe (CC BY 4.0).
+- **Input check:** image encoder of TinyCLIP (Wu et al., ICCV 2023; Microsoft, **MIT**, notice in
+  [`models/gate/LICENSE.txt`](models/gate/LICENSE.txt)); out-of-distribution and orchard photos by Wikimedia Commons
+  contributors (CC0, public domain, CC BY, CC BY-SA), credited in [`docs/ood/CREDITS.md`](docs/ood/CREDITS.md) and
+  [`docs/orchard/CREDITS.md`](docs/orchard/CREDITS.md); PlantVillage apple photos (CC BY-SA 3.0) listed in
+  [`data/plantvillage_selection.json`](data/plantvillage_selection.json) and fetched by script, not committed.
 - **Sample leaves:** PlantVillage dataset (Hughes & Salathé 2015), **CC BY-SA 3.0**, redistributed unmodified; see [`data/samples/ATTRIBUTION.md`](data/samples/ATTRIBUTION.md).
 - **Map tiles:** © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors.
 - **Model:** [Ultralytics YOLO11](https://github.com/ultralytics/ultralytics). The trained weights are **AGPL-3.0**.

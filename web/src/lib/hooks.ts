@@ -16,7 +16,7 @@ interface ProbeState {
   attempt: number;
 }
 
-/** Poll /health until the backend answers; a sleeping Hugging Face Space takes a while to wake. */
+/** Poll /health until the backend answers; a sleeping free-tier host (Render) takes a while to wake. */
 export function useBackend(client: ApiClient) {
   const [generation, setGeneration] = useState(0);
   const [probe, setProbe] = useState<ProbeState | null>(null);
