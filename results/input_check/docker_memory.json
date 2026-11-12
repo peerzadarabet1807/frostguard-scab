@@ -1,0 +1,188 @@
+{
+ "description": "API container on Render's free-plan limits (scripts/measure_docker.py): detector + input check as shipped, and with the input check disabled for comparison. Latency includes the HTTP round trip.",
+ "limits": {
+  "memory": "512m",
+  "cpus": "0.1"
+ },
+ "env": {
+  "WEB_CONCURRENCY": "1",
+  "FROSTGUARD_ORT_THREADS": "1"
+ },
+ "machine": "local Docker Desktop (WSL2); Render's CPUs differ, so latencies are indicative",
+ "startup_s": 19.4,
+ "peak_memory_mib": 251.9,
+ "peak_source": "cgroup memory.peak",
+ "max_polled_mib": 248.2,
+ "requests": [
+  {
+   "photo": "data/samples/healthy_leaf_1.jpg",
+   "kind": "sample",
+   "status": 200,
+   "latency_ms": 2951.8,
+   "analysed": true,
+   "input_check_passed": true,
+   "input_check_ms": 1199.1
+  },
+  {
+   "photo": "data/samples/scab_leaf_1.jpg",
+   "kind": "sample",
+   "status": 200,
+   "latency_ms": 1699.2,
+   "analysed": true,
+   "input_check_passed": true,
+   "input_check_ms": 575.5
+  },
+  {
+   "photo": "data/samples/scab_leaf_2.jpg",
+   "kind": "sample",
+   "status": 200,
+   "latency_ms": 1503.0,
+   "analysed": true,
+   "input_check_passed": true,
+   "input_check_ms": 477.6
+  },
+  {
+   "photo": "data/samples/scab_leaf_3.jpg",
+   "kind": "sample",
+   "status": 200,
+   "latency_ms": 1698.1,
+   "analysed": true,
+   "input_check_passed": true,
+   "input_check_ms": 508.3
+  },
+  {
+   "photo": "data/samples/scab_leaf_4.jpg",
+   "kind": "sample",
+   "status": 200,
+   "latency_ms": 1701.5,
+   "analysed": true,
+   "input_check_passed": true,
+   "input_check_ms": 478.7
+  },
+  {
+   "photo": "docs/ood/set/documents/1920_re_u_berliet_consignes_16.jpg",
+   "kind": "ood",
+   "status": 200,
+   "latency_ms": 796.4,
+   "analysed": false,
+   "input_check_passed": false,
+   "input_check_ms": 774.6
+  },
+  {
+   "photo": "docs/ood/set/sky/blue_and_orange_clouds_over_the_mekong_with_a_pirogue_runnin.jpg",
+   "kind": "ood",
+   "status": 200,
+   "latency_ms": 603.1,
+   "analysed": false,
+   "input_check_passed": false,
+   "input_check_ms": 546.0
+  },
+  {
+   "photo": "docs/ood/set/pear_leaves/eriophyes_pyri_129.jpg",
+   "kind": "ood",
+   "status": 200,
+   "latency_ms": 2093.6,
+   "analysed": true,
+   "input_check_passed": true,
+   "input_check_ms": 703.4
+  },
+  {
+   "photo": "docs/ood/set/hands/hand_comparison.jpg",
+   "kind": "ood, skip_input_check",
+   "status": 200,
+   "latency_ms": 1600.0,
+   "analysed": true,
+   "input_check_passed": false,
+   "input_check_ms": 487.4
+  }
+ ],
+ "without_input_check": {
+  "startup_s": 18.4,
+  "peak_memory_mib": 205.0,
+  "peak_source": "cgroup memory.peak",
+  "max_polled_mib": 201.2,
+  "requests": [
+   {
+    "photo": "data/samples/healthy_leaf_1.jpg",
+    "kind": "sample",
+    "status": 200,
+    "latency_ms": 2358.7,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "data/samples/scab_leaf_1.jpg",
+    "kind": "sample",
+    "status": 200,
+    "latency_ms": 1099.4,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "data/samples/scab_leaf_2.jpg",
+    "kind": "sample",
+    "status": 200,
+    "latency_ms": 1296.5,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "data/samples/scab_leaf_3.jpg",
+    "kind": "sample",
+    "status": 200,
+    "latency_ms": 1601.3,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "data/samples/scab_leaf_4.jpg",
+    "kind": "sample",
+    "status": 200,
+    "latency_ms": 1101.7,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "docs/ood/set/documents/1920_re_u_berliet_consignes_16.jpg",
+    "kind": "ood",
+    "status": 200,
+    "latency_ms": 1101.6,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "docs/ood/set/sky/blue_and_orange_clouds_over_the_mekong_with_a_pirogue_runnin.jpg",
+    "kind": "ood",
+    "status": 200,
+    "latency_ms": 1095.0,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "docs/ood/set/pear_leaves/eriophyes_pyri_129.jpg",
+    "kind": "ood",
+    "status": 200,
+    "latency_ms": 1097.0,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   },
+   {
+    "photo": "docs/ood/set/hands/hand_comparison.jpg",
+    "kind": "ood, skip_input_check",
+    "status": 200,
+    "latency_ms": 1198.1,
+    "analysed": true,
+    "input_check_passed": null,
+    "input_check_ms": null
+   }
+  ]
+ }
+}
