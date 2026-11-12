@@ -1,0 +1,25 @@
+{
+ "description": "ONNX export of the input check's image encoder vs PyTorch on data/samples/ (scripts/export_gate_onnx.py)",
+ "repo": "wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M",
+ "revision": "a2a8c6eaa2549ad66eb7c31b85022bf58273a26c",
+ "images": [
+  "healthy_leaf_1.jpg",
+  "scab_leaf_1.jpg",
+  "scab_leaf_2.jpg",
+  "scab_leaf_3.jpg",
+  "scab_leaf_4.jpg"
+ ],
+ "required_min_cosine": 0.999,
+ "fp32": {
+  "bytes": 33277834,
+  "sha256": "e1ca1704b2f9efd390876bdb8399c16543703f6f8f618a8edd2df18521e2445b",
+  "cosine_vs_pytorch_min": 0.9999999403953552,
+  "shipped": false
+ },
+ "fp16": {
+  "bytes": 16787868,
+  "sha256": "1fb256495af55241b2cfd1a9fbacbda294107ccc9b25eaff1f7a6eadbde2e35a",
+  "cosine_vs_pytorch_min": 0.9999995827674866,
+  "shipped": true
+ }
+}

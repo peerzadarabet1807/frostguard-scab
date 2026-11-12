@@ -1,0 +1,2059 @@
+{
+ "description": "Input check score and decision for every OOD photo, with the detector's answer (scripts/build_input_check.py).",
+ "version": "frostguard-tinyclip-8m16-proto-1",
+ "threshold": 0.8628829456784184,
+ "photos": [
+  {
+   "file": "set/pear_leaves/pyrus_communis_herbstlaub.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.786477,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_sur_sorbus_torminalis.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.902302,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/pear_leaves_with_stemphylium_vesicarium.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.873257,
+   "passed": true,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_129.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.913053,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/stemphylium_vesicarium_on_pyrus_josephine_de_malines.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.892155,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/pear_rust_on_a_pear_tree.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.889211,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/pyrus_calleryana_leaves_2.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.7229,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_huron_county_mi_usa.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.88931,
+   "passed": true,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/pear_leaves/pyrus_calleryana_leaf_1.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.852588,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/eriophyes_pyri_on_sorbus_aria_wf3_3.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.891544,
+   "passed": true,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/pear_leaves/pear_rust_the_underside_of_the_leaf.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.89076,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/mycosphaerella_pyri_s1_2.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.864374,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/pear_leaves/pear_leaf.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.888295,
+   "passed": true,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/pear_leaves/mycosphaerella_pyri_s1_1.jpg",
+   "category": "pear_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.862242,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/cherry_leaves_01.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.694425,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/cherry_leaves_05.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.733183,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/cherry_plum_prunus_cerasifera_leaves_jardim_fernando_pessa_l.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.778805,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_7.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.861797,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/wild_cherry_leaves_in_loddebo.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.785797,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_6.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.858185,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_9.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.806747,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_5.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.87225,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_cerasifera_150495279.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.874829,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_avium_uk_3.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.877894,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/prunus_cerasifera_148572395.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.843915,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/cherry_leaves/red_cherry_leaves_in_autumn_in_tuntorp_1.jpg",
+   "category": "cherry_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.753937,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/calitzdorp_za_weingut_weinbl_tter_2024_2660.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.808929,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_seedling_featuring_various_leaf_shapes.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.885081,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/saulheim_vine_leaf_with_raindrops.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.86635,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_rondo_leaf.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.832943,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves_showing_translucence.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.793779,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.826416,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/yellow_common_grape_vine_leaf_vitis_vinifera_ponte_de_sor_po.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.827748,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves_merlot.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.84689,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/starr_110609_6063_vitis_vinifera_leaf_with_tornatellid_snail.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.837217,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/crimean_tatar_sarma_stage_1.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.856167,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_subsp_sylvestris_sl11.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.893313,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/fieberiella_florii_nymph_on_a_vitis_vinifera_leaf_2.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.886308,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/vitis_vinifera_subsp_sylvestris_sl13.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.899334,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grape_leaves/grape_leaves_01.jpg",
+   "category": "grape_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.83423,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/red_maple_leaf_on_paper_birch.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.733239,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/red_maple_leaves_in_yahiko.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.823542,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/maple_leaf_strong.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.740454,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/fallen_maple_leaves_on_asphalt_vieux_limoilou.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.684622,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/maple_leaf_held_up_in_autumn_vieux_limoilou.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.700089,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/holding_a_dry_maple_leaf.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.590493,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/autumn_maple_leaves_and_evergreen_needles_on_the_oberg_mount.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.800348,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/2020_year_herbarium_acer_negundo_img_002.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.908137,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/acer_palmatum_japanese_maple_tree_leaves_autumn_newton_massa.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.756968,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/maple_leaves/powdery_mildew_on_maple_leaf.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.816585,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/autumn_acer_leaf_in_canada1.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.760633,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/pacific_spirit_maple_leaf_compared_to_women_s_10_shoes.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.800233,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/2016_11_maple_leaves_autumn_quebec.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.781083,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/maple_leaves/autumn_leaves_in_sweden.jpg",
+   "category": "maple_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.748493,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/walnut_leaf_translucency_under_natural_sunlight.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.795339,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/a_bud_of_a_rose_leaf.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.820471,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/green_peach_aphid_myzus_persicae_on_a_leaf_lisbon_portugal_a.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.820378,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/peach_blossom_caterpillar_on_a_raspberry_leaf_01.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.807588,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/walnut_leaf_galls_upper_surface_geograph_org_uk_4574415.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.880455,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/walnut_leaf_galls_lower_surface_geograph_org_uk_4574421.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.885584,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/apricot_leaf_veins.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.783432,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/leaf_curl_on_leaf_and_young_shoots_of_peach.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.750662,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/walnut_19_10_04_044.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.831733,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/apricot_mallow_leaf_closeup.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.875198,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/photinia_serratifolia_diplocarpon_mespili_fungus.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.882402,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_leaves/black_walnut_leaf.jpg",
+   "category": "other_leaves",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.726134,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/red_apple.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.701346,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/red_delicious_apple_2021.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.754865,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/golden_delicious_apples.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.719767,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/rotten_apple_under_the_tree.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.738684,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/green_apple_01.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.716349,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/apple_fruit/apples_in_basket_2018_g2.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.704772,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/green_apple_02.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.756852,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/red_apple_cut.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.665772,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/green_apple_gen.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.727243,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/pinkladyapples.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.692278,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/green_apple_from_kerala.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.670637,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/red_apple_on_black_background.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.633038,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/whole_apple_and_bitten_apple.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.618757,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_fruit/2018_07_15_green_apples_on_tree.jpg",
+   "category": "apple_fruit",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.880694,
+   "passed": true,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/apple_tree_blossoms_2017_g3.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.734769,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/apple_flowers_1.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.819141,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/apple_flowers_2.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.739633,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/flowers_of_malus_domestica_25.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.762814,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/flowers_of_malus_domestica_26.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.759318,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_lc0122.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.75144,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/apple_tree_flowers.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.727655,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_apple_flowers_4.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.777933,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_apple_flowers_5.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.778285,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_in_flower_in_lithuania_may_2019.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.708868,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/crab_apple_flowers_floor_farm_kilmaurs_east_ayrshire.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.743458,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/apple_flowers_spring_west_virginia_forestwander.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.720195,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/malus_domestica_a1.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.741757,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/apple_blossom/flowers_of_malus_domestica_6.jpg",
+   "category": "apple_blossom",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.719174,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/pine_log_cross_sections_teutendorf_2016_09_17.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.68736,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/apple_tree_bark_burrs.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.78216,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/two_holes_and_green_leaves_on_the_bark_of_a_tree_trunk_in_th.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.753071,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/bark_branches/20240602_apple_tree_malus_domestica_franciscan_monastery_kat.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.761355,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/ponderosa_pine_bark_68450.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.701345,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/gibberd_garden_apple_tree_bough_harlow_essex_england.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.784319,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/ailanthus_altissima_bark_siemianowice.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.727938,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/bark_branches/apple_tree_trunk_and_boughs_gibberd_garden_harlow_essex_engl.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.752348,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/aesculus_hippocastanum_bark_siemianowice_2.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.753133,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/apple_tree_trunk_and_green_man_ornament_in_nuthurst_west_sus.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.686897,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/aesculus_hippocastanum_bark_siemianowice.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.74117,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/bark_branches/2024_10_14_11_06_36_bark_on_an_old_apple_tree_at_terhune_orc.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.698069,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/malus_domestica_landsberska_bark_zabrze.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.768108,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/bark_branches/apple_tree_trunk_and_boughs_gibberd_garden_harlow_essex_engl_2.jpg",
+   "category": "bark_branches",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.770342,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/d_lmen_kirchspiel_b_rnste_feld_2017_3171.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.637079,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/mown_lawn_close_up_4440207851.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.821522,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/poa_annua.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.802441,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/poa_annua_2.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.825591,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/annual_meadow_grass_poa_annua_easting_geograph_org_uk_449360.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.835355,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/dew_on_grass_luc_viatour.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.711945,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/ploughed_grass_logan_s_meadow_geograph_org_uk_4469713.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.529954,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/poa_annua_126838450.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.827207,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/steppe_grassland_rostov_on_don_russia.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.606383,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/monographella_nivalis_close_up_1.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.80043,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/grass_meadow_at_bridge_end_geograph_org_uk_5141246.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.554678,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/grass/poa_nemoralis_wood_meadow_grass_flowering.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "tune",
+   "score": 0.775932,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/mown_grass_in_twyning_meadow_geograph_org_uk_7052300.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.491812,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/grass/grass_32.jpg",
+   "category": "grass",
+   "proximity": "near",
+   "split": "test",
+   "score": 0.732296,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/hand_and_power_stone_bracelets.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.45293,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/boys_palm.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.592305,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/hands/hand_image.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.582764,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/hands/sole_of_foot_of_an_infant_held_between_the_middle_finger_and.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.595572,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/hands/india_varanasi_green_peas_2714.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.558346,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/hands/close_up_of_hands_playing_piano_keys.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.453485,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/hand_comparison.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.570486,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/man_playing_an_acoustic_brazilian_guitar_viol_o_on_marco_zer.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.471455,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/hands/wound_on_palm_of_hand_day_15.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.719368,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/sausage_making_h_5_edited2.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.538396,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/close_up_of_a_female_sitting_on_ground.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.532508,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/hands/hand_on_an_old_violin_close_up.jpg",
+   "category": "hands",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.442709,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/colorful_sky_with_orange_clouds_reflecting_in_the_water_of_a.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.355619,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/sky_over_munich_02.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.615348,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/sky/colorful_sky_with_orange_and_pink_clouds_reflecting_in_the_w.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.476689,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/water_reflection_of_stringy_gray_and_white_clouds_in_a_pond_.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.456204,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/pirogue_running_on_the_mekong_at_sunset_with_pink_clouds_in_.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.422401,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/nasa_s_orion_spacecraft_parachutes_tested_at_u_s_army_yuma_p.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.455297,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/water_reflection_of_sunset_with_gray_and_orange_clouds_and_p.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.382899,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/sky/leaning_trees_over_the_grassy_hillock_of_nodong_ri_tombs_clo.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.542436,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/red_clouds_over_mekong_banks_with_dwellings_and_pirogues_at_.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.445301,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/samanea_saman_on_an_island_with_orange_clouds_and_blue_sky_a.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.437846,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/blue_and_orange_clouds_over_the_mekong_with_a_pirogue_runnin.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.465638,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/sky/bridge_to_don_khon_seen_from_don_det_with_water_reflection_o.jpg",
+   "category": "sky",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.416282,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/act_of_independence_of_central_america_scan.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.46562,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/receiptswiss.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.471031,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/documents/1920_re_u_berliet_consignes_16.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.467985,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/felicien_rops_l_homme_et_l_artiste_1908_144064786.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.525507,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/documents/abbott_and_holder_receipt_21_august_1969.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.470119,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/official_document_annexure_11_dated_12_march_1997_loniya_vis.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.523111,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/receipt_for_temporary_bonds.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.410281,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/front_page_of_ottoman_newspaper_kadin.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.489292,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/william_shurtless_letter_title_page_printed_by_kneeland_gree.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.377824,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/documents/us_bep_receipt_for_currency_23_july_1915.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.461684,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/front_page_of_newspaper_wilnaer_zeitung_with_lithuanian_vyti.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.36067,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/documents/shell_gas_station_receipt_mastercard.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.4468,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/documents/receipt_from_josiah_wedgwood_1770.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.438854,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/documents/front_page_of_the_newspaper_busch_7_june_1941_la_paz.jpg",
+   "category": "documents",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.377051,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/screenshot_wikiwand.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.312838,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/screenshots/screenshot_of_the_official_website_of_the_president_of_ukrai.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.313439,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/screenshots/wikipedia_screenshot_2026.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.355495,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/screenshot_of_website_south_african_covid_19_vaccination_pro.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.404755,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/screenshots/screenshot_of_ilo_muni.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.427892,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/screenshots/screenshot_of_system_tools.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.400513,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/screenshots/screenshot_wikipedia_mobile_smartphone.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.426181,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/screenshot_of_x_s_website_sept_2025.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.344842,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/screenshot_of_crosstalk_mk_4.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.385509,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/tatoeba_org_english_screenshot_2021.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.42504,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/screenshot_of_the_main_page_on_the_english_wikipedia_wikiped.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.436064,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/screenshots/tea_62_0_1_screenshot_editor_module.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.425736,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/statproofbook_website_screenshot.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.342373,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/screenshots/screenshot_flyback_0_3_3.jpg",
+   "category": "screenshots",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.360433,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/people_walking_on_the_street_in_nairobi_kenya.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.512856,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/young_people_walking_in_the_street_hungary_2011.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.453759,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/people_walking_in_a_street.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.385217,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/people_walking_on_a_street_in_copenhagen.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.341235,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/throngs_of_people_walking_towards_himeji_castle_himeji_2016.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.322225,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/people_walking_at_regent_street_on_a_car_free_day_london_uni.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.30563,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/people/street_walking_castelo_lisbon_portugal.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.419106,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/people/group_of_people_walking_down_the_street.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.533119,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/woman_walking_next_to_edif_cio_sede_da_caixa_geral_de_dep_si.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.542255,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/people/officers_walking_on_jinzhou_street_taipei_in_lunch_time_2015.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.305185,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/people_walking_on_sidewalk_in_central_pyongyang_with_trolley.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.27825,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/people/people_walking_in_the_kirkegata_stavanger_norway_julesvernex.jpg",
+   "category": "people",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.319429,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/everyday_objects/mug_wikipedia_malayalam.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.50935,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/everyday_objects/parked_bicycle_with_graffitied_building_facade_and_doors_in_.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.38794,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/everyday_objects/santorin_gr_fira_2017_2598.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.459004,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/everyday_objects/smartphone_display_screen.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.424378,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/coffee_mug_on_table.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.576581,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/backlit_keyboard.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.458364,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/reebok_royal_glide_ripple_clip_shoe.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.392358,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/shoes_in_a_spanish_shoe_store.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.510525,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/everyday_objects/smartphone_di_varie_marche.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.382827,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/everyday_objects/coffee_mug_on_desk.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.497704,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/razer_ornata_chroma_keyboard_top_pnr_0463.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.49806,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/bicycle_crankset_shimano_105_r7000_chainring_50_34_length_17.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.449043,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/coffee_mugs.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.33694,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/everyday_objects/asics_gel_cumulus_22.jpg",
+   "category": "everyday_objects",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.571421,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/scenes/landscape_arnisee_region.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.252628,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/eldridge_street_synagogue_42773.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.295934,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/beech_forest_au_great_otway_national_park_beauchamp_falls_20.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.444295,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/mulberry_street_nyc_c1900_loc_3g04637u_edit.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.254688,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/beach_of_cape_fiolent_crimea.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.355704,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/spruce_forest_at_holma.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.584849,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/facade_of_the_conjunto_nacional_cropped_version.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.491089,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/scenes/havelock_island_mangrove_tree_on_the_beach_andaman_islands.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.386127,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/wooden_staircase_steps_in_the_forest_of_hallasan_park_eorimo.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.504356,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/parasols_evening_beach_rincon_de_la_victoria_andalusia_spain.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.467907,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/qu_bec_city_downtown.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.292482,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/illuminated_facade_of_a_3_storey_restaurant_with_japanese_si.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.310047,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/seal_rocks_ocean_beach_san_francisco.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.321159,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/scenes/snowy_sainte_famille_street_in_quebec_city.jpg",
+   "category": "scenes",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.413876,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/other_animals/felis_catus_cat_on_snow.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.454889,
+   "passed": false,
+   "detector_scab_detected": false
+  },
+  {
+   "file": "set/other_animals/biandintz_eta_zaldiak_modified2.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.314817,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/flock_of_sheep.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.395966,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/dsc09611a_search_and_rescue_dog_austrian_red_cross_perchtold.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.45991,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/cow_in_field_image.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.462019,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/horse_december_2014_1.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.477298,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/cat_november_2010_1a.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.524436,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/dode_merel_turdus_merula_locatie_tuinreservaat_jonkervallei_.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.566389,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/cow_on_a_field_resting_2025.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.47415,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/domestic_horse_at_suryachaur_and_the_mountains_in_the_back1.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.334637,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/swaledale_sheep_lake_district_england_june_2009.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "test",
+   "score": 0.369546,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/june_odd_eyed_cat_cropped.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.492596,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/stubai_tiroler_bergschaf_bt_01.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.391477,
+   "passed": false,
+   "detector_scab_detected": true
+  },
+  {
+   "file": "set/other_animals/icelandichorseinwinter.jpg",
+   "category": "other_animals",
+   "proximity": "far",
+   "split": "tune",
+   "score": 0.438376,
+   "passed": false,
+   "detector_scab_detected": true
+  }
+ ]
+}

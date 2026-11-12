@@ -1,0 +1,1810 @@
+{
+ "description": "Seeded sample of PlantVillage apple leaves (raw/color) for the input check: prototype photos build the class prototypes, tune photos set the threshold, test photos measure false rejection. scripts/fetch_plantvillage.py",
+ "source": "https://github.com/spMohanty/PlantVillage-Dataset/tree/master/raw/color",
+ "license": "CC BY-SA 3.0 (Hughes & Salathe, 2015, arXiv:1511.08060)",
+ "seed": 20261112,
+ "per_class": 90,
+ "excluded": "the five photos in data/samples/",
+ "photos": [
+  {
+   "class": "Apple___healthy",
+   "file": "1d4ea234-bb1b-44ec-9114-d1ea9abece5c___RS_HL 8002.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "7a13d83d-7511-41c5-9fd5-9fd18d3cf3b1___RS_HL 5685.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "4ab36472-9140-4bab-a351-008dd4845fde___RS_HL 5870.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1cbe6aef-57d4-4f2a-b8fb-0375db7084d3___RS_HL 7356.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "375f1e44-235c-4ef0-a156-077b71abeed3___RS_HL 8162.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "7f06e481-8f9a-47cd-860a-8fea5b81fe9b___RS_HL 6193.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "72053aee-f044-46c5-ab44-322e198c3f1d___RS_HL 7588.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8912707b-6c5d-4744-ad9c-b5d3564a0850___RS_HL 7796.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "2260f331-0610-4dd8-9d8e-270115aba39b___RS_HL 6033.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "953743b5-d396-4f6f-926c-4e216df44f0b___RS_HL 5993.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "595381e5-c16b-4348-aaea-00763903646d___RS_HL 6153.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "11c35e07-255e-42cf-b8e9-4533c35ce2c6___RS_HL 7500.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "88ffb541-e088-4505-baef-c292c25925dc___RS_HL 6164.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "75bc8098-3ccc-4cc5-aff0-ce68b4fa2b82___RS_HL 7845.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "21c10a73-ebeb-4a16-898b-8b39d9d6eca2___RS_HL 6315.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "3e694355-bfdc-4dfe-978e-16c08b70bdba___RS_HL 8028.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "336c4870-9f2f-4cdc-ba05-f9d27271ef07___RS_HL 7670.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "18571abd-0d3c-42de-a257-f46c1a6d1517___RS_HL 6126.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "7a5ad785-c05e-49bd-b1e0-4d9405bedfb5___RS_HL 7804.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "44f96d95-150b-499d-8fb7-a95ed4df85c6___RS_HL 8152.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "4f9b8500-4510-4d79-bcbf-d9b680cd8fe8___RS_HL 6304.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1ceda3e6-3df1-4a82-a5f5-6c62dbd8ccc3___RS_HL 8072.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "203d4b1b-d358-43d5-bd7f-273e68993961___RS_HL 7590.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "48ff38b5-5af1-44e5-9d94-ee9a32715aba___RS_HL 6109.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "3df0da99-6c5d-4520-b396-9616e81f8935___RS_HL 6031.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "3ecbb982-2844-4662-ad65-9a94fee38fa3___RS_HL 8060.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "03cb0cf0-04cf-4549-a2b8-44ed75b2e56c___RS_HL 7460.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "4c7d424b-d418-4b72-84a9-2a639eabb5ec___RS_HL 5734.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "29745ef7-133c-4f61-a5bd-592790f81a32___RS_HL 6326.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "0e9d1f0c-19b3-4765-87cc-470413d16275___RS_HL 7637.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "4d6b1b98-2f9a-454d-9ac9-37433c715920___RS_HL 7338.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "682b3d72-607f-404f-b9e8-48acc1574f41___RS_HL 7419.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "862f3f9e-e9b4-4cd1-9810-832f6bf1d285___RS_HL 7879.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "85ebf3f6-11f4-45df-ac16-bd04b355cb31___RS_HL 5991.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "96717630-6d48-4660-b472-268f5f1304d9___RS_HL 7978.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "643e172f-02bf-4021-9587-6cfd21c8a344___RS_HL 6053.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1230a95a-5f08-4fd6-b6e9-44c0c7b1fe8c___RS_HL 8092.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "30fb7843-8e70-407e-b361-aa54a7473c32___RS_HL 6143.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "715ddd59-a49f-42e1-8eed-2c3dd29677fd___RS_HL 5832.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8201f21f-cd54-4ff6-9fc7-f3e97b0a8b42___RS_HL 8077.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8c678916-c5d8-445d-9283-88c90c529edc___RS_HL 5740.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "4f84889d-5057-4b56-9643-86b7ec5fcfdd___RS_HL 8063.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "02a0f44c-9cbe-4a2e-9710-296692635ec6___RS_HL 5789.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1141dcab-cf2a-40e4-8b19-a33aa318f875___RS_HL 5689.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "5d1bb18d-dda0-4079-b3c5-62bc50c3ce35___RS_HL 7560.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "2d6efa59-1d5a-4f92-8879-2fdfa163d404___RS_HL 6157.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "83849d18-49c5-412b-91c5-3fe882335e88___RS_HL 7840.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1a905d2f-3b54-41b4-bab8-3c2b0845a91d___RS_HL 7958.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "3aff0cab-c5f0-4fd5-8a7a-2a81160da701___RS_HL 7392.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "36ab2af7-aff6-4578-99ef-4cf5b6527a9c___RS_HL 7689.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "27d5e1e8-d30f-4514-bafe-f600ad03a871___RS_HL 7648.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "07942abf-8326-4742-bcba-52ddba093974___RS_HL 5731.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "08aaa4e8-ed92-49d3-9ac3-1f6c59740017___RS_HL 7701.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8ef4c6f0-d4fd-4d4c-bc4d-525b6b74b19a___RS_HL 7786.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "74bda678-63b6-44fb-8e8f-259788239618___RS_HL 5830.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "88aad30d-4d2e-461f-847f-a4d2e9caf035___RS_HL 7967.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "5ded9dac-20e0-4e68-a202-43c6723c335d___RS_HL 6186.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "62047680-5efb-4779-99e0-d2bfe2ddba8a___RS_HL 7791.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "25aa6094-5f2e-4551-9349-a3fe0edd3b92___RS_HL 7296.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "179ad6a1-385b-42a2-8232-538664869673___RS_HL 5771.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "94b7e2c6-9081-4546-b411-c89c0dd219e7___RS_HL 7416.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "0b6ec66f-fe63-4eef-8068-cf8ed0baf0de___RS_HL 7482.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1c807ca4-b6f5-4123-8d3b-cd44238df38d___RS_HL 6140.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "622b6e6e-1388-4933-9f74-3ae54937a3d7___RS_HL 5920.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8d45fcf9-d1c1-47b6-be37-6e3d2fde46e0___RS_HL 7261.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "526782c6-8d24-4438-8255-37422811d33f___RS_HL 7601.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8f4c3d68-2d5a-40c5-bca1-911002ff3324___RS_HL 7299.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "78308303-e9ca-4cc5-861a-9a7d8017bdad___RS_HL 6176.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "0ce497e6-8184-4ef6-9a9f-c46b66c898c3___RS_HL 6036.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "2fae96ef-fe0f-4004-bbb7-259c62cde5c3___RS_HL 7953.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "5941b857-a525-4aff-ba20-def608d63c4d___RS_HL 6119.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "3b0f637d-dd22-44a0-a4b4-2a7792e2ac76___RS_HL 7258.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "2363daeb-88d5-43f3-925b-be7360c10394___RS_HL 5828.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "20102c8b-dde0-47d2-8035-7ceeb42f1961___RS_HL 6207.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "2693000f-ad26-46ae-9d5f-3fb67de2b86c___RS_HL 8206.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "1ec5d93e-76ab-44cf-a53e-ef3f741a095a___RS_HL 7504.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "6e9b4ada-0f43-4de2-8e5d-463a3cb4da0f___RS_HL 7495.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "8ae37f10-377d-44a3-ad94-f271a95673c8___RS_HL 7297.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "60af8fc1-7f44-496c-9999-507d06e92142___RS_HL 7278.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "13575fc3-1674-4511-a124-2ed065f00cda___RS_HL 7351.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "5eea6ca0-2fb5-4382-bd60-2893d4367bc3___RS_HL 6007.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "00fca0da-2db3-481b-b98a-9b67bb7b105c___RS_HL 7708.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "13227870-bd81-48a1-97a0-8c5bcecef8f7___RS_HL 7452.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "51e374ab-4fe6-4207-9d81-ec059f4cd3b8___RS_HL 8050.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "4ec6e6f9-7f03-44ca-9bd0-1f64b5964308___RS_HL 5669.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "21321d47-a7a7-40e7-9514-cfa4f45e2f22___RS_HL 5651.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "5977222a-8f4a-44b3-9960-61fcf36c5e7f___RS_HL 5664.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "44be3db8-37a5-44e1-a1b5-df963562cb86___RS_HL 7531.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "42f558a0-c252-4949-ba12-232731aa9a6b___RS_HL 7543.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___healthy",
+   "file": "45584571-03d6-40eb-909e-00c752a4d66e___RS_HL 5803.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "13b10b04-7da6-4d34-8b43-258239a25ffd___FREC_Scab 2990.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "b34550a7-6327-4993-b112-16eedf8f0353___FREC_Scab 2922.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "4442b558-4db4-4de3-82c3-7524b59bb315___FREC_Scab 2961.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "7b17fb27-2af4-4c90-b499-0c0658ba7262___FREC_Scab 2943.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "321c7135-853f-444d-9952-a893e660d966___FREC_Scab 2958.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "ed1d17cd-a5c2-4b10-996f-53f316df30b7___FREC_Scab 3456.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "1cdf2779-8cb1-4ae4-be70-b0eeb1abb0f8___FREC_Scab 3370.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "b0b2a38c-396d-4d25-b346-5947e2c787d9___FREC_Scab 3077.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "3dd3d59c-be2a-4f29-8fa1-d4f37d7fb894___FREC_Scab 3412.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "c0f4f71a-8f53-4a0a-816f-d400a445680a___FREC_Scab 3459.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "fc9c12dc-1bdb-402d-ada8-dc1b33c84d5b___FREC_Scab 2932.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "680c56ea-dc23-4b7b-baeb-f51b156c98f6___FREC_Scab 3416.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "c4a3c215-aa1e-4d1c-b545-1ab2b15812fe___FREC_Scab 2938.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "4b51cc5d-4122-451b-8598-81ea29dc7cd4___FREC_Scab 3290.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "daf6db9e-a600-449c-8b66-482ab50ea431___FREC_Scab 3237.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "fdc58f83-8a94-4f0c-aefe-c6f2b5028682___FREC_Scab 3014.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "2d329823-7ad5-4189-89b7-4bdf24f9c393___FREC_Scab 3507.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "23576562-df0c-46bb-8c50-1bf03412097f___FREC_Scab 3086.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "e12cb6bc-9831-4a22-ba1f-95d3e7c1c62a___FREC_Scab 3040.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "4495850d-4478-4680-a657-c082a8ea69ed___FREC_Scab 3534.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "0a5e9323-dbad-432d-ac58-d291718345d9___FREC_Scab 3417.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "6b9ef56b-3338-4d2b-a5e4-a1547234e6d6___FREC_Scab 3474.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "8e04135b-2279-43a7-af41-147d96395478___FREC_Scab 3143.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "83b1935d-f1fc-4b9f-876e-c0dbbb2fcb03___FREC_Scab 3486.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "bc2ce052-84b8-4de9-bd9d-7528869b62dc___FREC_Scab 3309.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "96f7f6b4-4dd6-4887-b6b2-89449271274f___FREC_Scab 3047.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "f957b91b-878a-4f53-b8b5-a8bf7fa2c773___FREC_Scab 2970.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "b0744c40-7396-4efb-9d0e-d7b1f22a9dd4___FREC_Scab 3407.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "0d8d5b80-962d-4381-8d3b-9eca3f2f1bb0___FREC_Scab 3449.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "cbf63da6-f1a7-41e0-b581-6f5b6cff2bc2___FREC_Scab 3496.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "656265b3-9f9a-4a20-83f5-e5d6be938dcd___FREC_Scab 3454.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "679c439b-740f-45cb-a9ba-d2984694fb25___FREC_Scab 2950.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "d9a98a38-faa1-47dc-9710-28a86f024a29___FREC_Scab 3490.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "13b16e68-c82c-4de8-ab34-877ff352e821___FREC_Scab 3180.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "3c2f46e3-9f96-4912-a9d5-7a046aa6a1b2___FREC_Scab 2967.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "ea693d65-bcc9-4e76-9d64-cba561b520cc___FREC_Scab 3345.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "25aeb397-bc36-4fe5-affe-6b8195d4f282___FREC_Scab 3494.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "9082fc1b-6621-48be-9953-50d3de9a6661___FREC_Scab 3065.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "f3b61d33-8875-46a0-be57-ad3bda4cb5c6___FREC_Scab 3243.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "b963d384-123e-48e5-ac66-a1e87f33ba0b___FREC_Scab 3021.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "815d2612-ee00-407a-8a0d-d0d94c7e0a9f___FREC_Scab 3461.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "9100bed7-65dd-4425-840b-503f9db78ef8___FREC_Scab 3076.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "dc12e2fd-e41b-43b5-9874-09661913316e___FREC_Scab 3073.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "ef91867f-33c5-4063-9783-44fd47238fe0___FREC_Scab 2935.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "bbcecb36-bad4-4aa5-812b-00a402427943___FREC_Scab 3279.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "154842bb-6ee3-4176-9007-cf7a43cfe140___FREC_Scab 3434.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "23f31e0d-3330-4752-9f83-8aba28c90ccb___FREC_Scab 3178.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "c563cf1c-da17-4c03-b3e8-b306334e0270___FREC_Scab 2933.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "43f68711-decd-4831-bf5c-99fa40abe339___FREC_Scab 3413.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "08c42d78-aa7b-4106-b0c1-b260f898dcba___FREC_Scab 3151.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "623fb084-dbac-42fb-b636-7cfcb89ba9f6___FREC_Scab 3437.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "72d9363f-1e23-4154-92bd-5f34a149d444___FREC_Scab 2980.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "cb36375a-3a30-4d01-8764-358eb6300f16___FREC_Scab 3378.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "7c83792f-d375-42fb-a5a0-1bc2cb3a8eff___FREC_Scab 2914.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "98259104-a5dd-4751-88f2-27923a2317a3___FREC_Scab 3419.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "94ef05b0-aee5-4956-8a07-67808c0ca84c___FREC_Scab 3376.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "d8aeb323-17d2-4123-9988-3c2346558bc6___FREC_Scab 2996.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "8632c6b9-84e1-4779-9294-71548ff838e5___FREC_Scab 3423.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "44dbb7a4-4c41-4d4c-9e34-9e665a35926c___FREC_Scab 3438.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "ff99efdc-a9f8-4360-9c64-f8274f456be5___FREC_Scab 3161.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "fa9c1112-27fc-42db-930d-7e4956267ab5___FREC_Scab 3174.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "82488f15-ffb8-495f-b09f-3810e447681a___FREC_Scab 3007.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "f2d6beb9-e8b1-49f6-b7b7-903b51565435___FREC_Scab 3393.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "474cf33e-0289-4014-bb8a-8004b87b471b___FREC_Scab 3425.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "11c50257-617e-4a6a-a996-2b195af9ada4___FREC_Scab 3462.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "32550bbb-cdf1-4805-8167-27dc5a8e87d2___FREC_Scab 3195.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "c7dc7cfa-559a-4950-ba71-90d11dfe0b56___FREC_Scab 3381.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "9d586b46-914c-4715-a406-484a597e3bab___FREC_Scab 2998.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "5d398d0d-256d-4de5-8dcd-f3b455da2b76___FREC_Scab 3522.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "bda4a657-9bc8-4a02-a450-d38c7056172a___FREC_Scab 3316.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "c4175126-9e07-4465-9574-0229bb5b1f41___FREC_Scab 3304.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "f1017472-d391-4a66-b9b2-d52916cd0c0b___FREC_Scab 3176.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "b19d8a20-6d33-4ad5-848b-e618c07756b7___FREC_Scab 3198.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "f105cc0d-1cc5-4726-b46d-f5bd9c9aacc1___FREC_Scab 3321.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "8c916434-af92-4360-9833-0422aa510f7e___FREC_Scab 3245.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "81c34d6d-e734-4ee7-9645-0f8f80c809c7___FREC_Scab 3276.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "e181fe6a-6865-4ae7-8b3e-0ce6f70ac63b___FREC_Scab 3223.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "d1745979-75a6-4b00-a544-cf5ba043e7e0___FREC_Scab 3330.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "7966ec90-1939-40ea-a4f7-99aca4fe8af5___FREC_Scab 3402.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "d1a9a2ab-6d10-4c1a-87e1-349117b2700f___FREC_Scab 3389.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "84e61e7e-f106-442c-a954-63dc3a57d5d5___FREC_Scab 3057.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "730f20de-a19f-4320-89bf-027dceeff9b5___FREC_Scab 3185.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "48dcb319-8b65-4bac-bba4-aa8ffa8abdd0___FREC_Scab 3519.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "1a41bab0-45e0-4dda-a798-9bf4a998f1b6___FREC_Scab 3450.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "f0b1c450-fdbd-402f-9309-e7d5d06bc0e7___FREC_Scab 3210.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "97d9b70c-15fc-4463-a7cd-129e7bccef1c___FREC_Scab 2910.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "745cfcfa-5b39-46ad-8c40-96086e71f6ee___FREC_Scab 3448.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "6a1f119d-d210-4a87-b17f-699436b82bef___FREC_Scab 3025.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "fd3ae59f-e06e-403b-b317-83ee68aa9ea7___FREC_Scab 3492.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Apple_scab",
+   "file": "ae02ce53-61ad-41d0-870a-a5a8b2fb3e93___FREC_Scab 3359.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "f9c0a3a9-a08e-4b1d-baab-93fdc7fb2690___JR_FrgE.S 2896.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "cffe2528-d760-4e77-a117-a0253ba3af6f___JR_FrgE.S 8801.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "bd2af58a-c9fc-4c2f-bdcb-b53d979947d7___JR_FrgE.S 3029.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "337ea111-17e2-470d-8fae-1fe8c61c13dc___JR_FrgE.S 2985.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "56d05ee6-f6d5-4c34-838e-4ff2c0592d5d___JR_FrgE.S 2822.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "6330666e-a1cc-48c5-8e60-64cdf531c294___JR_FrgE.S 8795.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "af1789f1-b904-40db-bb01-dc3b08141319___JR_FrgE.S 8809.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "f2b57a5b-f46d-453a-bb33-21d01d8a10de___JR_FrgE.S 3036.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "c47676f2-2302-4efb-9598-6b51a45e28f7___JR_FrgE.S 8803.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "1a899717-5445-4d2b-8035-91bc47780504___JR_FrgE.S 8806.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "d2ca1cb3-50b5-4861-85d8-a7bdae78265d___JR_FrgE.S 2995.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "1c31a116-f51d-4f56-9c69-c26c5fe69f57___JR_FrgE.S 2844.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "47b996a0-b66a-4842-9da2-249ea1d62c38___JR_FrgE.S 2814.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "ecd4b7b6-2418-4fc0-ab1f-c63c7a61fac6___JR_FrgE.S 8672.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "3f7dbd31-47f7-45e4-aa23-42e23362a15d___JR_FrgE.S 2818.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "4d79f0a2-0f8a-406b-84de-2c7e74027d6f___JR_FrgE.S 3061.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "cc0f71b0-af7d-49e2-b7df-a45e97caab2c___JR_FrgE.S 8796.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "02859ed3-f56a-4315-82a5-c1cb72717225___JR_FrgE.S 8584.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "c4833395-fa04-4b3a-89f1-6fbc5c3d7d18___JR_FrgE.S 2866.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "90939c76-a197-49cd-b8cc-37f096cbaa97___JR_FrgE.S 3044.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "4b8b1d59-9aec-4b99-8be8-b61edcccb660___JR_FrgE.S 8659.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "d22325cf-3a6a-4dc8-8ddb-a4e1a8817d8b___JR_FrgE.S 3090.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "033b1492-d5cf-4de7-a195-941f7780e092___JR_FrgE.S 8710.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "04e74a0c-bda4-4e06-aeab-ec24b1007994___JR_FrgE.S 8782.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "bc64857e-c087-44c9-83b5-514d9b8dea37___JR_FrgE.S 2912.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "28f01d7f-27f8-4cf1-a473-ef4744b2dc61___JR_FrgE.S 8597.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "d32e96f1-8fde-4f6e-a558-7fdc1ab0807e___JR_FrgE.S 8676.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "df0e8bc3-8244-4843-8d54-0593a6f2ee05___JR_FrgE.S 2743.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "e11f6e9d-abff-4da2-864e-45f9aa2df34b___JR_FrgE.S 3072.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "e90a2dde-185e-46e4-82ad-ce94bf0100b7___JR_FrgE.S 2746.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "2f6893f9-0439-4409-b752-b910e03b076b___JR_FrgE.S 8814.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "c01c9e64-11b2-4c1e-adf0-2e781c6d69aa___JR_FrgE.S 8817.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "0bc40cc3-6a85-480e-a22f-967a866a56a1___JR_FrgE.S 2784.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "4231e86c-5f4c-439c-be0f-1fa0274581c6___JR_FrgE.S 3067.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "899768af-a460-4c1d-9889-afd2536e7238___JR_FrgE.S 2957.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "9eaff91a-1260-4d17-844d-65ab1ee09752___JR_FrgE.S 2736.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "f415bc3e-3e71-4636-a3dd-78b65002384d___JR_FrgE.S 2917.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "d734401a-6948-4be6-bfe7-1469d8c910f7___JR_FrgE.S 8732.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "6af653b0-6a01-458c-bb17-5ee1b76115f4___JR_FrgE.S 2753.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "07dbfcca-71aa-4c14-b895-60dfb63f701d___JR_FrgE.S 3063.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "4fcfd5b0-e312-41f4-a8cf-16976b5882fd___JR_FrgE.S 8589.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "67281292-f15a-4157-b531-395f3844e6ce___JR_FrgE.S 2792.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "394b4c4e-096d-4a4e-9498-8a18f240ab18___JR_FrgE.S 2855.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "e66666f1-bad7-4ceb-8142-389b841be362___JR_FrgE.S 3008.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "497e0a24-9a4e-4ace-8aa3-d60751b03abe___JR_FrgE.S 8794.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "169b07da-12eb-4a6d-9b24-f37692ca923d___JR_FrgE.S 8636.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "938c07c1-f2ad-4cbe-b088-51a085442c3b___JR_FrgE.S 2846.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "5e917525-fa2f-473b-bed0-cd45b77f2388___JR_FrgE.S 2816.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "788885e1-18b4-44a0-af85-226e66265220___JR_FrgE.S 8574.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "9e24d361-b5e7-4634-9c76-e3fab5e51d87___JR_FrgE.S 8816.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "60e1b273-cedb-4003-a197-014832ed51fa___JR_FrgE.S 8684.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "8503d510-a7c2-409d-bbbe-5a7b03611a8a___JR_FrgE.S 2740.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "b1fbd9e5-c3b6-4aac-a77e-87ca51994e4f___JR_FrgE.S 8752.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "9febcc67-da4b-4424-a2cc-2bd6e19833ce___JR_FrgE.S 3054.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "f3918f57-f4c8-44a4-bd0b-403755fa9615___JR_FrgE.S 3092.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "fe6a81b9-9198-4db7-82df-0802913716e1___JR_FrgE.S 2976.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "d240fec5-9b1e-4b36-a7df-d0007d0ebfcb___JR_FrgE.S 2929.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "4f9a2639-beb2-4e4c-a62d-805792a50f4e___JR_FrgE.S 2944.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "e6c8b854-6b46-4137-8e08-81e63ff418ea___JR_FrgE.S 2971.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "5a7cfbae-2b00-4f16-b1e9-eacd813a5378___JR_FrgE.S 2783.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "52c66129-6303-4aa4-97e7-8f1c0d24c57a___JR_FrgE.S 2759.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "fa8eff59-b9f9-45d9-a8f4-eca6fa5a8896___JR_FrgE.S 8647.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "f702f711-d90a-46be-8cd1-78521ecb6822___JR_FrgE.S 8724.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "954d8d3f-c11e-4202-b5e5-501d5e41752b___JR_FrgE.S 2942.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "b83cf31c-65e9-405d-a42b-5c4ffda9114c___JR_FrgE.S 8744.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "62da4031-70ae-4d8b-8beb-c5dc7b9b12f0___JR_FrgE.S 2832.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "a3fddb87-e0d3-4ebb-8a5e-2b7bc9c33ee8___JR_FrgE.S 3084.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "70336f72-8835-40a2-8635-22b60104c19a___JR_FrgE.S 8656.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "1a9e869f-62b0-4588-998a-30e0d62bef59___JR_FrgE.S 2876.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "2902e85c-1705-423b-bb02-80e2d93bc54e___JR_FrgE.S 2922.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "0ce8b939-3bdf-4078-8715-c0cb48afb078___JR_FrgE.S 2777.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "1021c460-93e4-48cd-9c84-c576b2c5117c___JR_FrgE.S 2983.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "a5c9d465-9070-44e2-9974-ad6ed6ffaaf5___JR_FrgE.S 2853.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "e956f107-ce57-4996-82a1-2336be5943c0___JR_FrgE.S 8704.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "24cdceb7-e70a-4164-9cd4-72b514771abf___JR_FrgE.S 2962.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "9691ae31-5b5d-4160-ae00-77358aff80ee___JR_FrgE.S 8719.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "70186489-b6ea-477c-8893-d6915b7d5490___JR_FrgE.S 2974.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "03fd7154-2e33-4fb6-999d-bfc3a3f467fe___JR_FrgE.S 8681.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "fb9d8933-5a5b-4553-a75e-dc50efc35975___JR_FrgE.S 8686.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "2a4cbd85-e831-4ec4-8acf-49cea51eeb5f___JR_FrgE.S 2900.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "132a74c4-3bdc-410b-931d-887bac16b074___JR_FrgE.S 8705.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "e2da6207-2cfa-4620-8569-2f4c57a34f30___JR_FrgE.S 8682.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "848b600b-f609-44c5-bc09-15dd1af0b01c___JR_FrgE.S 8735.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "0b8dabb7-5f1b-4fdc-b3fa-30b289707b90___JR_FrgE.S 3047.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "a23597b9-4e73-4b9c-8ef1-de02d2f2178c___JR_FrgE.S 8690.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "559b0b4a-085d-46e6-b924-fce94fb8c375___JR_FrgE.S 2781.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "98f61299-9578-49f4-8907-1d06e8b15d8a___JR_FrgE.S 8617.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "a352005b-d036-4aa9-8e17-babac0a9b882___JR_FrgE.S 8628.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "6e21042a-928f-4e40-81bf-3a103ff52765___JR_FrgE.S 2938.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Black_rot",
+   "file": "3ee8f19d-38a4-4e9d-adc1-c8ab5e95ba60___JR_FrgE.S 2839.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "4abb2c64-458c-473b-bbe4-4b9bc69cd035___FREC_C.Rust 9974.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "3e123b1b-a57d-4689-8211-e270c19fd4a9___FREC_C.Rust 9962.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "1a67f47d-d35d-4c47-a336-af8ec6141113___FREC_C.Rust 4404.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "e5521dec-ea35-479d-93be-38743927db53___FREC_C.Rust 4356.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "8c16e58c-0272-4c95-a53c-1984bd6bb83e___FREC_C.Rust 0059.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "71c08a14-4875-40dc-b35c-8216951ffd8a___FREC_C.Rust 0195.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "052e3deb-0499-4685-bc39-cea7f1df0700___FREC_C.Rust 3742.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "4ddf4752-f02c-40ae-a2a8-19095f07137d___FREC_C.Rust 3733.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "60ecab05-90df-45d5-8a50-edb8635aac87___FREC_C.Rust 4155.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "c16bbb5c-bd59-4568-80a4-ac10eb488a4e___FREC_C.Rust 4274.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "9ace7aaf-8950-43b5-bafb-2c63f8839c20___FREC_C.Rust 9867.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "d6485527-aab0-463c-b895-64d7612f45f1___FREC_C.Rust 0144.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "c8ef20c5-1117-4774-aeec-0f263f9f3b3c___FREC_C.Rust 3853.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "54f60420-248f-41f6-be1a-a0be7936005f___FREC_C.Rust 3801.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "8306d4f0-6a4f-4f02-86ca-72b1a950f420___FREC_C.Rust 0175.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "04da297e-5238-41b1-a8a0-0c87c6c2f21f___FREC_C.Rust 4394.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "7e32ce27-bc89-4fca-9f49-c50de91210d1___FREC_C.Rust 4425.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "43850a33-b2c2-4d67-aa90-685f8f76da3a___FREC_C.Rust 3664.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "68a4878f-c220-49ff-a858-5b026e56e7b0___FREC_C.Rust 9844.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "0340baaa-e9cc-4c04-8f9b-c204180d9ae3___FREC_C.Rust 3805.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "809c7104-6f46-4117-8c8c-6d5491b2178d___FREC_C.Rust 3839.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "763123be-8a12-4d7a-8fa5-deff863b70f9___FREC_C.Rust 3691.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "98db1965-ab83-41ac-bd9b-a029d42a236c___FREC_C.Rust 9878.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "a5644e1f-cc61-4ecc-a642-a39cb32cf157___FREC_C.Rust 4450.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "f6af5eb5-6338-48a2-8b23-c7143b7f4a62___FREC_C.Rust 0016.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "ec8120c7-f9b9-4831-a7b3-242a9c22a17a___FREC_C.Rust 3720.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "a7918302-395d-4bd8-854b-b2a335f1cc3f___FREC_C.Rust 4075.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "7ce07da8-973f-467f-98af-642a1ffbea04___FREC_C.Rust 4334.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "69561ee3-9a1f-42cd-a2fc-f3f06102747c___FREC_C.Rust 0190.JPG",
+   "part": "prototype"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "31cd0e16-01aa-442a-af4d-1162ac8a7b81___FREC_C.Rust 9889.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "2af1177b-1a2f-4dbe-b7f1-93118342d44e___FREC_C.Rust 0036.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "fbf3ccdb-6130-47f3-b5e3-3d2726b4b5c7___FREC_C.Rust 4237.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "af89cf7a-446b-4a39-b454-99a611c10ed2___FREC_C.Rust 3862.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "fc170fda-2b0d-4b02-a569-fbe37a23264d___FREC_C.Rust 3704.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "b5869aff-ad9c-4d28-8e57-c20e21d25c01___FREC_C.Rust 3561.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "e15e3b48-edda-485d-b5a0-0d876f441b73___FREC_C.Rust 3692.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "fb11d069-d664-4666-ab51-3a7a4284e495___FREC_C.Rust 3791.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "23f6e0fa-3860-48a5-a3f4-4e64b54a3046___FREC_C.Rust 4336.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "503fa8ad-36cc-41ea-997c-d61727a7677c___FREC_C.Rust 3842.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5b047b56-77e8-4bbd-8b5c-7c72821b50f0___FREC_C.Rust 0101.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "9ebff92f-999c-49d0-9235-6c98aaa63bbd___FREC_C.Rust 4206.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "d79cfdd6-fa8a-4a96-aa90-3c347bb9c800___FREC_C.Rust 4125.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "96a1d021-2c27-46a0-9891-41e449e4910e___FREC_C.Rust 3610.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5ba35826-8831-4638-a443-5c28f80c4de8___FREC_C.Rust 0212.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "18ba5927-bf67-47ff-bdcf-11056e368b60___FREC_C.Rust 4258.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "85f1b51d-ad5e-4ec2-a46b-2a9dade22e2a___FREC_C.Rust 9971.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "cf570118-397c-434d-b158-d3539dd12786___FREC_C.Rust 0122.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "a0277f94-ece7-4f93-8b26-adea371f0a32___FREC_C.Rust 9917.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5cc20b25-edc1-4ec9-afc8-c19a5ef1cfda___FREC_C.Rust 3540.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5eba8ca8-b4f7-4f49-9481-9703adc53678___FREC_C.Rust 3732.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "3b1e5132-71dd-4e75-b04a-513a3851ca02___FREC_C.Rust 4439.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "fdaecc2c-c48c-447d-9cdc-5d52efdc979a___FREC_C.Rust 3858.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5367e167-14f3-4d65-bd93-4c4b693e0bc7___FREC_C.Rust 4109.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "1a69060b-e45e-4d95-881c-f6d1960dffcd___FREC_C.Rust 0065.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "99efb674-1e97-4f94-978a-a87c24dde48a___FREC_C.Rust 9995.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "2ddde539-6c5f-4d76-8611-14761bb240de___FREC_C.Rust 3564.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "9b3023a6-f35a-46b4-be98-022eb2ac42e4___FREC_C.Rust 9801.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "79e57aaf-f825-4818-9594-621327134e0b___FREC_C.Rust 4219.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "92d7ce46-da77-4c87-a58b-81a44b0a9a58___FREC_C.Rust 4351.JPG",
+   "part": "tune"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "ee7229ad-03bd-4ca3-9814-ace05f041b4c___FREC_C.Rust 0187.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "6b9f9f65-4359-40a4-bdba-3db5057489f4___FREC_C.Rust 3748.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "1440b8ad-ba66-44dc-aeff-13515fe5eb68___FREC_C.Rust 3816.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "d5d4f65c-aeca-4965-82d4-05d179dfa92e___FREC_C.Rust 4382.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "3ef85bf3-728f-46d7-95cc-a5bddf34db98___FREC_C.Rust 3885.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "3dc7b8db-79dd-4206-b3f0-7091d28475b2___FREC_C.Rust 0079.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "b884b0a2-44bb-4bf5-b335-946b1757c822___FREC_C.Rust 3955.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5271addc-c445-4af1-ba68-318c7b509e1f___FREC_C.Rust 3585.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "3f9bd33d-ceeb-49fa-8874-d9cc013ca018___FREC_C.Rust 4183.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "fa148283-75ee-4806-8282-63662a2e05c1___FREC_C.Rust 4416.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "ee625c73-927a-4959-ac97-d98a753ae99c___FREC_C.Rust 9904.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "252e347b-262e-4dd8-8d6d-852324d5bcfd___FREC_C.Rust 3841.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "d3df6ac8-4b20-460a-ad91-68e50d49078c___FREC_C.Rust 3879.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "f02732b5-5250-4c05-80cf-fa68e71fee69___FREC_C.Rust 0234.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5069c246-1254-4396-a0f3-11bb6becd234___FREC_C.Rust 9868.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "fc477749-2fe6-48a5-9393-5eedeb7cedc3___FREC_C.Rust 3826.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "7e6e24dd-b8e6-4668-b4ae-a2480441bb78___FREC_C.Rust 3627.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "cf65a122-3455-40dc-8ba0-f6f71c4b0782___FREC_C.Rust 3673.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "82ecdc54-ded2-4767-b865-c1df8ac85eaf___FREC_C.Rust 0128.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "1a80b84d-1a5a-4e23-8deb-823ba928e29a___FREC_C.Rust 4431.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "57a522fe-b1f4-47e0-9b4c-b30635b402f7___FREC_C.Rust 4226.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "84eda310-5cbd-4de7-949d-471213cd0016___FREC_C.Rust 3679.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "e95a95f3-6650-4134-82fe-d6eae344b27d___FREC_C.Rust 3587.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "5d85daec-3dd3-4c35-aceb-2a9cf0eb87ad___FREC_C.Rust 3710.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "a3141843-3628-45c2-ac01-5b1726744c6d___FREC_C.Rust 9906.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "097f37e1-d490-42e6-84d2-51e5385bf886___FREC_C.Rust 9861.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "40761a05-eac1-44d2-b543-7e83ee6507ba___FREC_C.Rust 3556.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "b75430d8-c8a2-4620-9bbb-88c301cba700___FREC_C.Rust 4385.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "58c70126-b289-441f-a608-eff6a2df3762___FREC_C.Rust 3654.JPG",
+   "part": "test"
+  },
+  {
+   "class": "Apple___Cedar_apple_rust",
+   "file": "0ce943e7-3fed-41cb-8430-0e0f54ff2bc4___FREC_C.Rust 0014.JPG",
+   "part": "test"
+  }
+ ]
+}

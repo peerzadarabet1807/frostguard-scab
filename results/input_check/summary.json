@@ -1,0 +1,82 @@
+{
+ "description": "The numbers the API and web app show about the input check (from evaluation.json).",
+ "version": "frostguard-tinyclip-8m16-proto-1",
+ "model": {
+  "name": "tinyclip-vit-8m-16-yfcc15m",
+  "repo": "wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M",
+  "license": "MIT"
+ },
+ "threshold": 0.8628829456784184,
+ "false_rejection": {
+  "tune": {
+   "k": 1,
+   "n": 130,
+   "rate": 0.007692307692307693,
+   "ci95": [
+    0.001359174220562906,
+    0.042285440311596305
+   ]
+  },
+  "plantvillage_test": {
+   "k": 0,
+   "n": 120,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.03101916689287469
+   ]
+  },
+  "orchard_test": {
+   "k": 1,
+   "n": 15,
+   "rate": 0.06666666666666667,
+   "ci95": [
+    0.01186689536153232,
+    0.2981653010887565
+   ]
+  },
+  "detector_training_data": {
+   "k": 0,
+   "n": 200,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.018845326668962936
+   ]
+  }
+ },
+ "false_acceptance": {
+  "near": {
+   "k": 16,
+   "n": 70,
+   "rate": 0.22857142857142856,
+   "ci95": [
+    0.14588063169758836,
+    0.33950331689033175
+   ]
+  },
+  "far": {
+   "k": 0,
+   "n": 61,
+   "rate": 0.0,
+   "ci95": [
+    0.0,
+    0.0592438687773587
+   ]
+  },
+  "overall": {
+   "k": 16,
+   "n": 131,
+   "rate": 0.12213740458015267,
+   "ci95": [
+    0.07659559239691915,
+    0.18920885067758098
+   ]
+  }
+ },
+ "samples": {
+  "passed": 5,
+  "n": 7
+ },
+ "source": "scripts/build_input_check.py"
+}
