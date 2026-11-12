@@ -57,6 +57,15 @@ describe("LeafScan input check", () => {
     expect(screen.queryByTestId("input-check-notice")).toBeNull();
   });
 
+  it("shows results from an API older than the input check (no analysed field) as before", async () => {
+    const older = { ...detection(2) } as Partial<DetectionResponse>;
+    delete older.analysed;
+    delete older.input_check;
+    await upload(vi.fn(async () => older as DetectionResponse));
+    expect(await screen.findByText(/2 scab lesions detected/)).toBeInTheDocument();
+    expect(screen.queryByTestId("input-check-notice")).toBeNull();
+  });
+
   it("a leaf without lesions is never called healthy", async () => {
     await upload(vi.fn(async () => detection(0)));
     expect(await screen.findByText("No scab lesions found.")).toBeInTheDocument();
