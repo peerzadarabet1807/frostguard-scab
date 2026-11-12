@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# FrostGuard-Scab — slim runtime for the API image (local Docker + Hugging Face Space).
+# FrostGuard-Scab: slim runtime for the API image (local Docker and Render).
 # No PyTorch / Ultralytics / Jupyter: training happens on Google Colab and the
 # service only needs ONNX Runtime. See requirements.txt for the full dev stack.
 # ---------------------------------------------------------------------------

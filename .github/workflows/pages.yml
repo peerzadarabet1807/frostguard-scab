@@ -38,7 +38,7 @@ jobs:
       - name: Build against the hosted API
         run: npm run build
         env:
-          # Repository variable set to the Hugging Face Space URL (Settings -> Variables).
+          # Repository variable set to the hosted API URL on Render (Settings -> Variables).
           VITE_API_URL: ${{ vars.FROSTGUARD_API_URL }}
           VITE_BASE: /${{ github.event.repository.name }}/
       - uses: actions/configure-pages@v6
