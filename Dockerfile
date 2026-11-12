@@ -25,6 +25,8 @@ RUN pip install -r requirements-runtime.txt
 COPY src/ src/
 COPY data/ data/
 COPY models/ models/
+# measured rates of the input check, served by /api/v1/model
+COPY results/input_check/summary.json results/input_check/summary.json
 COPY scripts/download_model.py scripts/
 
 # Bake in the trained detector from the model-v1 release (SHA-256 verified; skipped if the
